@@ -238,6 +238,37 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     #backToTop:hover { transform: scale(1.1); }
+  /* Responsive for tablets and below */
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-image { order: -1; }
+      .about-image img {
+        width: 65%;
+        max-width: 220px;
+      }
+      .about-text { width: 100%; }
+      .about-text .btn { margin: 1rem auto 0 auto; }
+    }
+
+    /* Extra small devices */
+    @media (max-width: 480px) {
+      .topbar {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+      .about-image img {
+        width: 75%;
+        max-width: 180px;
+      }
+    }
   </style>
 </head>
 <body>
