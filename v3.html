@@ -114,7 +114,7 @@
     .about-image img {
       width: 80%;
       height: auto;
-      border-radius: 50%; /* Makes it circular */
+      border-radius: 0.5rem; /* subtle rounding instead of circle */
       object-fit: cover;
       position: relative;
       z-index: 2;
@@ -122,19 +122,19 @@
       box-shadow: none;
     }
 
-    /* Decorative blob behind image */
-    .about-image::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      height: 90%;
-      background: var(--primary);
-      border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
-      z-index: 1;
-    }
+ /* Decorative block behind image */
+.about-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 95%;
+  background: #d8c7a9; /* beige color from your screenshot */
+  border-radius: 1rem; /* soft rounded edges */
+  z-index: 1;
+}
 
     /* PROJECTS */
     .projects {
