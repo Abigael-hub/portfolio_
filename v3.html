@@ -111,9 +111,15 @@
       position: relative;
     }
 
+.about-image {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
 .about-image img {
-  width: 55%;     /* smaller than before */
-  max-width: 260px; /* reduced max cap */
+  width: 55%;          /* slightly smaller */
+  max-width: 260px;    /* cap size */
   height: auto;
   border-radius: 0.5rem;
   object-fit: cover;
@@ -123,17 +129,17 @@
   box-shadow: none;
 }
 
-/* Decorative block behind image */
+/* Decorative abstract blob behind image */
 .about-image::before {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 65%;   /* match reduced width */
-  height: 70%;  /* height reduced */
-  background: #d8c7a9; /* beige block */
-  border-radius: 1rem;
+  width: 80%;    /* blob area */
+  height: 80%;
+  background: #e6dfd2; /* soft beige */
+  border-radius: 50% 40% 60% 50% / 55% 60% 45% 50%;
   z-index: 1;
 }
 
