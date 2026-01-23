@@ -1,258 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abigael Cherotich | Research, M&E & Impact Evaluation Consultant</title>
-  <meta name="description" content="Consultant in social and market research, monitoring & evaluation, data analysis, and impact evaluation." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0f172a;
-      --panel: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56,189,248,0.15);
+      --primary: #016064;
+      --secondary: #02393d;
+      --accent: #f64c57;
+      --bg: #f4f4f9;
+      --muted: #6b7280;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
     body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #020617, var(--bg));
-      color: var(--text);
+      background: var(--bg);
+      color: #333;
       line-height: 1.6;
+      padding-top: 120px;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
-
-    header {
-      padding-top: 96px;
-      padding-bottom: 64px;
-    }
-
-    .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      line-height: 1.2;
-      margin: 0 0 16px 0;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 24px;
-    }
-
-    h3 {
-      font-size: 1.25rem;
-      margin-bottom: 8px;
-    }
-
-    p { color: var(--muted); max-width: 800px; }
-
-    nav {
+    /* Header */
+    .header-wrapper {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(2,6,23,0.85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      z-index: 10;
+      z-index: 1000;
+      background: var(--primary);
+      color: #fff;
     }
 
-    nav .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
+    .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 24px;
+      padding: 1.2rem 2rem;
     }
 
-    nav a { margin-left: 20px; font-weight: 500; color: var(--text); }
+    .branding h1 {
+      font-size: 2rem;
+    }
 
-    section { margin-bottom: 96px; }
+    .branding p {
+      font-size: 0.95rem;
+      color: #f1f1f1;
+    }
 
-    .grid {
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 2rem auto;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #ddd;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* About */
+    .about {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+    }
+
+    .about img {
+      max-width: 180px;
+      border-radius: 50%;
+      margin-right: 2rem;
+      flex-shrink: 0;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+    }
+
+    /* Stats */
+    .quick-stats {
+      background-color: #e0e0e0;
+      padding: 1rem;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .stat {
+      flex: 1;
+      margin: 0.5rem;
+    }
+
+    .stat h2 {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    /* Tools */
+    .tools {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .tool-category {
+      flex: 1;
+      min-width: 230px;
+      background: var(--bg);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .tool-category h3 {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Projects */
+    .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      gap: 1.5rem;
     }
 
-    .card {
-      background: var(--panel);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 16px;
-      padding: 24px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    .project-card {
+      background: #fff;
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    .meta {
-      font-size: 0.85rem;
-      color: var(--muted);
+    .tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
       margin-bottom: 8px;
     }
 
-    ul { padding-left: 20px; }
-    li { margin-bottom: 8px; color: var(--muted); }
-
-    .cta {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 14px 22px;
-      border-radius: 10px;
-      background: var(--accent);
-      color: #020617;
-      font-weight: 600;
+    .tag {
+      background: #eee;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--secondary);
     }
 
-    footer {
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 32px 24px;
-      text-align: center;
+    .meta {
+      font-size: 0.9rem;
       color: var(--muted);
     }
 
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      header { padding-top: 72px; }
+    .card-footer {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn, .ghost {
+      padding: 8px 12px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+    }
+
+    .ghost {
+      border: 1px solid #ccc;
+      color: var(--secondary);
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    footer {
+      background: var(--secondary);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
     }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <strong>Abigael Cherotich</strong>
-    <div>
+<div class="header-wrapper">
+  <div class="topbar">
+    <div class="branding">
+      <h1>Abigael Cherotich</h1>
+      <p>Research, M&E & Impact Evaluation Consultant | Evidence for Policy, Programs & Markets</p>
+    </div>
+    <nav>
       <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#projects">Projects</a>
+      <a href="#tools">Methods</a>
+      <a href="#projects">Assignments</a>
       <a href="#contact">Contact</a>
-    </div>
+    </nav>
   </div>
-</nav>
+</div>
 
-<header class="container">
-  <span class="badge">Research & Impact Consultant</span>
-  <h1>Social & Market Research,<br>Monitoring & Evaluation,<br>Impact Evaluation</h1>
-  <p>
-    I support NGOs, donors, and consulting firms with rigorous research design, mixed‑methods analysis,
-    and evidence‑based insights to inform policy, programming, and investment decisions.
-  </p>
-  <a class="cta" href="#contact">Work With Me</a>
-</header>
+<div class="container">
 
-<section id="about" class="container">
-  <h2>About Me</h2>
-  <p>
-    I am a research and data analytics consultant with over five years of experience delivering social research,
-    market studies, and M&E assignments across governance, youth, gender, livelihoods, and accountability programs.
-    My work combines statistical rigor with clear storytelling for decision‑makers.
-  </p>
-</section>
-
-<section id="expertise" class="container">
-  <h2>Core Expertise</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Social & Market Research</h3>
-      <ul>
-        <li>Study design and sampling strategies</li>
-        <li>Qualitative & quantitative data collection</li>
-        <li>Survey design (ODK, Kobo, USSD, SMS)</li>
-        <li>Market assessments and user research</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Monitoring & Evaluation</h3>
-      <ul>
-        <li>Theory of Change & logframe development</li>
-        <li>Indicator design and performance tracking</li>
-        <li>Baseline, midline & endline evaluations</li>
-        <li>Learning & adaptive management</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Impact Evaluation & Analytics</h3>
-      <ul>
-        <li>Quasi‑experimental designs</li>
-        <li>Driver analysis & contribution analysis</li>
-        <li>Statistical analysis (Stata, R, Python)</li>
-        <li>Data visualization & reporting</li>
-      </ul>
-    </div>
+<!-- About -->
+<section id="about" class="about">
+  <img src="images/profile/may.jpg" alt="Abigael Cherotich">
+  <div class="about-text">
+    <p>
+      I am a research, monitoring and evaluation (M&E), and impact evaluation consultant with over five years of experience supporting international NGOs, development partners, and private sector clients to generate evidence for decision-making.
+    </p>
+    <p>
+      My work spans social and market research, programme evaluation, and applied data analysis, including baseline and endline studies, quasi-experimental impact evaluations, A/B testing, and mixed-methods research across governance, financial inclusion, youth, and civic engagement programmes.
+    </p>
+    <p>
+      I combine strong statistical expertise (R, Stata, Python, SPSS, SQL) with practical M&E experience to deliver donor-ready reports, dashboards, and learning briefs that inform programme adaptation, accountability, and scale.
+    </p>
+    <a href="images/profile/Abigael_Cherotich_ATS_CV-26sept251.pdf" class="btn" target="_blank">Download CV</a>
   </div>
 </section>
 
-<section id="projects" class="container">
-  <h2>Selected Engagements</h2>
-  <div class="grid">
-    <div class="card">
-      <span class="meta">Governance & Accountability</span>
-      <h3>Final Evaluation – Civic Engagement Program</h3>
+<!-- Stats -->
+<section class="quick-stats">
+  <div class="stat"><h2>5+</h2><p>Years Experience</p></div>
+  <div class="stat"><h2>40+</h2><p>Studies & Dashboards</p></div>
+  <div class="stat"><h2>20+</h2><p>Evaluations Supported</p></div>
+</section>
+
+<!-- Methods & Tools -->
+<section id="tools" class="tools">
+  <h2>Methods & Tools</h2>
+  <div class="tools-list">
+
+    <div class="tool-category">
+      <h3>Evaluation & Research Methods</h3>
       <p>
-        Led a mixed‑methods final evaluation assessing citizen participation, accountability outcomes,
-        and sustainability across three counties.
+        Baseline & Endline Studies, Quasi-Experimental Designs (DiD, PSM),
+        Theory of Change, Indicator Frameworks, Mixed-Methods Analysis,
+        Survey Design & Sampling, Data Quality Assurance
       </p>
     </div>
-    <div class="card">
-      <span class="meta">Youth & Media</span>
-      <h3>Youth Skills & Media Training Assessment</h3>
-      <p>
-        Designed and analyzed pre‑/post‑training surveys to measure skills acquisition, confidence gains,
-        and public reach of youth‑led media outputs.
-      </p>
+
+    <div class="tool-category">
+      <h3>Statistical & Programming</h3>
+      <p>R, Stata, Python, SPSS, SQL, RShiny</p>
     </div>
-    <div class="card">
-      <span class="meta">Market & User Research</span>
-      <h3>Digital Feedback & USSD Research</h3>
-      <p>
-        Evaluated SMS and USSD‑based feedback mechanisms, analyzing participation drivers and data quality
-        for large‑scale citizen engagement initiatives.
-      </p>
+
+    <div class="tool-category">
+      <h3>BI & Visualization</h3>
+      <p>Power BI, Tableau, Looker, Looker Studio, Excel</p>
     </div>
+
+    <div class="tool-category">
+      <h3>Data & Cloud</h3>
+      <p>AWS, BigQuery, Snowflake, Airflow, Git</p>
+    </div>
+
   </div>
 </section>
 
-<section id="contact" class="container">
+<!-- Assignments -->
+<section id="projects">
+  <h2>Selected Consulting Assignments</h2>
+
+  <div class="projects">
+
+    <article class="project-card">
+      <h3>Impact of Mobile Money on Financial Inclusion</h3>
+      <div class="tags">
+        <span class="tag">Impact Evaluation</span>
+        <span class="tag">DiD</span>
+        <span class="tag">PSM</span>
+      </div>
+      <p class="meta">
+        Quasi-experimental impact evaluation assessing the contribution of mobile money adoption to financial inclusion outcomes using World Bank Findex data.
+      </p>
+    </article>
+
+    <article class="project-card">
+      <h3>Market Performance & Sales Analysis</h3>
+      <div class="tags">
+        <span class="tag">Market Research</span>
+        <span class="tag">Power BI</span>
+      </div>
+      <p class="meta">
+        Market performance analysis and decision-support dashboard enabling management to track sales trends, regional performance, and short-term forecasts.
+      </p>
+    </article>
+
+    <article class="project-card">
+      <h3>Customer Segmentation Study</h3>
+      <div class="tags">
+        <span class="tag">Segmentation</span>
+        <span class="tag">SQL</span>
+      </div>
+      <p class="meta">
+        Customer segmentation and behavioral analysis supporting market strategy and retention decisions through structured data pipelines.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<!-- Services -->
+<section>
+  <h2>Consulting Services</h2>
+  <ul style="margin-left:20px; line-height:1.8;">
+    <li>Monitoring, Evaluation, and Learning (MEL) system design</li>
+    <li>Baseline, midline, endline, and impact evaluations</li>
+    <li>Social and market research (quantitative & mixed-methods)</li>
+    <li>Survey design, sampling, and enumerator training</li>
+    <li>Data analysis, visualization, and donor reporting</li>
+  </ul>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact">
   <h2>Contact</h2>
-  <p>
-    Available for short‑term and long‑term consultancy assignments in social research,
-    M&E, and impact evaluation.
-  </p>
-  <p>
-    Email: <a href="mailto:abigael.cherotich@gmail.com">abigael.cherotich@gmail.com</a><br>
-    LinkedIn: <a href="#">Add your LinkedIn URL</a>
-  </p>
+  <a href="mailto:abigaelcherotich867@gmail.com">Email</a>
+  <a href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a>
 </section>
+
+</div>
 
 <footer>
-  © 2026 Abigael Cherotich · Research & Impact Consulting
+  <p>&copy; 2025 Abigael Cherotich</p>
 </footer>
 
 </body>
