@@ -1,311 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Abigael Cherotich | Monitoring, Evaluation & Research Consultant</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Abigael Cherotich | Monitoring, Evaluation & Impact Specialist</title>
 
 <style>
 :root{
-  --primary:#203764;
-  --secondary:#16274f;
-  --accent:#f64c57;
-  --bg:#f4f4f9;
+  --primary:#0f2a44;
+  --accent:#e63946;
+  --light:#f6f8fb;
   --card:#ffffff;
-  --shadow:rgba(0,0,0,0.12);
-  --radius:16px;
+  --shadow:rgba(0,0,0,0.08);
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial,sans-serif;}
 
-body{
-  background:linear-gradient(180deg,#f4f4f9 0%,#ffffff 100%);
-  color:#333;line-height:1.6;
+body{background:var(--light);color:#1f2937;line-height:1.7;}
+
+.container{max-width:1150px;margin:auto;padding:2.5rem 1.5rem;}
+
+h1,h2,h3{color:var(--primary);}
+h2{margin-bottom:1rem;border-left:5px solid var(--accent);padding-left:12px;}
+
+.section{margin-bottom:4rem;}
+
+.card{
+  background:var(--card);
+  padding:1.8rem;
+  border-radius:14px;
+  box-shadow:0 6px 18px var(--shadow);
 }
 
-/* HEADER */
-.header{
-  background:rgba(32,55,100,0.95);
-  color:#fff;position:sticky;top:0;z-index:1000;
-  backdrop-filter:blur(8px);
-}
-
-.topbar{
-  max-width:1200px;margin:auto;
-  display:flex;justify-content:space-between;
-  align-items:center;padding:1rem 2rem;
-}
-
-nav a{
-  color:#fff;margin-left:20px;text-decoration:none;
-  font-weight:600;
-}
-nav a:hover{color:var(--accent);}
-
-/* CONTAINER */
-.container{width:90%;max-width:1100px;margin:2.5rem auto;}
-section{margin-bottom:4rem;}
-
-h2{
-  color:var(--primary);
-  margin-bottom:1.2rem;
-  border-bottom:3px solid #ddd;
-  display:inline-block;
-}
-
-/* HOME */
-.home{
+.grid{
   display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:2rem;align-items:center;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:1.6rem;
 }
-.home img{
-  width:220px;border-radius:50%;
-  box-shadow:0 12px 24px rgba(0,0,0,0.2);
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0f2a44,#1b3b5f);
+  color:#fff;
+  padding:3.5rem 2rem;
+  border-radius:16px;
 }
+
+.hero h1{color:#fff;font-size:2.2rem;margin-bottom:8px;}
+.hero p{opacity:.95;max-width:850px;}
+
 .btn{
-  display:inline-block;margin-top:1rem;
-  background:var(--primary);color:#fff;
+  display:inline-block;
+  margin-top:1rem;
+  background:#fff;color:#0f2a44;
   padding:12px 22px;border-radius:10px;
   text-decoration:none;font-weight:700;
 }
-.btn:hover{background:var(--accent);}
 
-/* GRID CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.5rem;
-}
-.card{
-  background:var(--card);
-  padding:1.6rem;border-radius:var(--radius);
-  box-shadow:0 8px 18px var(--shadow);
-}
-
-/* TAGS */
-.tags{margin-top:8px;}
 .tag{
   display:inline-block;
-  background:#eee;padding:4px 8px;
-  margin:2px;border-radius:999px;
-  font-size:12px;
+  background:#edf2f7;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:13px;
+  margin:3px;
 }
 
 /* CONTACT */
 .contact{text-align:center;}
 .contact a{
   display:inline-block;margin:8px;
-  padding:12px 22px;border-radius:10px;
-  background:var(--primary);color:#fff;
-  text-decoration:none;font-weight:700;
+  padding:12px 20px;
+  background:var(--primary);
+  color:#fff;text-decoration:none;
+  border-radius:10px;font-weight:600;
 }
 .contact a:hover{background:var(--accent);}
 
 footer{
-  background:var(--secondary);
-  color:#fff;text-align:center;
-  padding:1.2rem;margin-top:2rem;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .home{grid-template-columns:1fr;text-align:center;}
+  text-align:center;
+  padding:1.4rem;
+  color:#6b7280;
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="topbar">
-    <div>
-      <h1>Abigael Cherotich</h1>
-      <p>Monitoring, Evaluation & Research Consultant</p>
-    </div>
-    <nav>
-      <a href="#home">Profile</a>
-      <a href="#competencies">Competencies</a>
-      <a href="#assignments">Assignments</a>
-      <a href="#approach">Approach</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
 <div class="container">
 
-<!-- PROFILE -->
-<section id="home">
-<div class="home">
-<img src="images/profile/may.jpg" alt="Abigael Cherotich">
-
-<div>
-<p>
-Monitoring, Evaluation, and Research Consultant with over five years of
-experience designing and delivering complex evaluations, surveys, and
-analytical studies across East Africa. Specialized in experimental and
-quasi-experimental methods, MEL system strengthening, and evidence
-generation for donor-funded programmes.
-</p>
+<!-- HERO -->
+<section class="hero section">
+<h1>Abigael Cherotich</h1>
+<p><strong>Monitoring, Evaluation, Research & Impact Specialist</strong></p>
 
 <p>
-Experience spans baseline, midline, and endline studies, performance
-monitoring systems, learning agendas, and strategic research across
-governance, youth development, financial inclusion, health, and civic
-engagement sectors.
-</p>
-
-<p>
-Work covers the full evaluation cycle — research design, sampling,
-fieldwork oversight, statistical analysis, and production of donor-ready
-reports and policy briefs.
+Independent consultant providing rigorous evaluation, MEL system design,
+and analytical advisory services for development programmes across
+East Africa. Known for translating complex evidence into actionable
+strategic insights for donors, NGOs, and implementing partners.
 </p>
 
 <a href="Abigael_Cherotich_CV.pdf" class="btn" target="_blank">
-Download CV
+Download Curriculum Vitae
 </a>
-</div>
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="section">
+<h2>Executive Profile</h2>
+
+<div class="card">
+<p>
+Senior Monitoring, Evaluation, and Research Consultant with extensive
+experience delivering large-scale surveys, impact evaluations, and
+analytical studies across governance, youth development, financial
+inclusion, health, and civic engagement programmes.
+</p>
+
+<p>
+Provides end-to-end evaluation leadership — from methodology design
+and sampling to field supervision, statistical modelling, and production of
+donor-grade reports. Combines methodological rigor with operational
+practicality in complex field environments.
+</p>
 </div>
 </section>
 
-<!-- CORE COMPETENCIES -->
-<section id="competencies">
-<h2>Core Competencies</h2>
+<!-- VALUE PROPOSITION -->
+<section class="section">
+<h2>Value Proposition</h2>
+
 <div class="grid">
 
 <div class="card">
-<h3>MEL System Design</h3>
-<p>Results frameworks, indicators, monitoring tools, and learning agendas aligned with donor requirements.</p>
+<h3>Rigorous Evidence Generation</h3>
+<p>Applies causal inference techniques and mixed-methods designs to produce credible findings suitable for high-stakes decision-making.</p>
 </div>
 
 <div class="card">
-<h3>Impact Evaluation</h3>
-<p>Baseline, midline, endline studies using experimental and quasi-experimental approaches.</p>
+<h3>Operational Feasibility</h3>
+<p>Designs studies that are both scientifically sound and implementable in real-world programme contexts.</p>
 </div>
 
 <div class="card">
-<h3>Mixed-Methods Research</h3>
-<p>Quantitative and qualitative studies supporting programme design and policy decisions.</p>
+<h3>Decision-Oriented Reporting</h3>
+<p>Focuses on actionable insights rather than descriptive outputs, enabling programme improvement and accountability.</p>
+</div>
+
+</div>
+</section>
+
+<!-- SECTOR EXPERTISE -->
+<section class="section">
+<h2>Sector Expertise</h2>
+
+<div class="card">
+<span class="tag">Governance & Accountability</span>
+<span class="tag">Youth Development</span>
+<span class="tag">Financial Inclusion</span>
+<span class="tag">Health & SRHR</span>
+<span class="tag">Civic Engagement</span>
+<span class="tag">Education</span>
+</div>
+</section>
+
+<!-- TECHNICAL CAPABILITIES -->
+<section class="section">
+<h2>Technical Capabilities</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Evaluation & Research Design</h3>
+<p>RCTs, quasi-experimental methods, Theory of Change development, baseline–endline studies.</p>
 </div>
 
 <div class="card">
-<h3>Data Analysis & Visualization</h3>
-<p>Advanced statistical modelling, dashboards, and insight communication.</p>
+<h3>Quantitative & Qualitative Analysis</h3>
+<p>Regression modelling, causal inference, thematic analysis, triangulation.</p>
+</div>
+
+<div class="card">
+<h3>MEL Systems</h3>
+<p>Indicator frameworks, performance monitoring tools, learning agendas.</p>
+</div>
+
+<div class="card">
+<h3>Data Systems & Visualization</h3>
+<p>Dashboard development, advanced analytics, decision-support tools.</p>
 </div>
 
 </div>
 </section>
 
 <!-- METHODS -->
-<section>
-<h2>Methods & Technical Expertise</h2>
+<section class="section">
+<h2>Methodological Expertise</h2>
+
 <div class="card">
 <p>
-RCTs • Difference-in-Differences • Propensity Score Matching • Regression modelling •
-Longitudinal analysis • Survey design • FGDs & KIIs • Theory of Change •
-Indicator development • Data quality assurance
+Difference-in-Differences • Propensity Score Matching • Multivariate regression •
+Longitudinal analysis • Survey sampling • Instrument design •
+FGDs & KIIs • Data quality protocols • Causal inference
 </p>
 </div>
 </section>
 
-<!-- SOFTWARE -->
-<section>
-<h2>Software & Analytical Tools</h2>
-<div class="card">
-<p>
-SPSS • R • Python • Stata • SQL • Power BI • Tableau • Looker • R Shiny • Advanced Excel
-</p>
-</div>
-</section>
-
-<!-- SELECTED ASSIGNMENTS -->
-<section id="assignments">
+<!-- ASSIGNMENTS -->
+<section class="section">
 <h2>Selected Assignments</h2>
+
 <div class="grid">
 
 <div class="card">
-<h3>Governance Programme Evaluation — Kenya</h3>
+<h3>Multi-County Governance Programme Evaluation</h3>
 <p>
-Designed and implemented a multi-year evaluation across several counties,
-including methodology development, sampling, instrument design,
-fieldwork oversight, and statistical analysis.
-Produced donor-ready reports and learning briefs.
+Led evaluation design and analysis for a large governance programme,
+including sampling strategy, instrument development, and statistical
+analysis. Findings informed programme redesign and donor reporting.
 </p>
-<div class="tags">
-<span class="tag">Baseline–Endline</span>
-<span class="tag">Mixed Methods</span>
-<span class="tag">Quasi-Experimental</span>
-</div>
 </div>
 
 <div class="card">
-<h3>Financial Inclusion Impact Study</h3>
+<h3>Financial Inclusion Impact Assessment</h3>
 <p>
-Quasi-experimental analysis examining the impact of mobile money
-adoption on financial inclusion outcomes using national datasets.
-Applied causal inference techniques to estimate programme effects.
+Conducted quasi-experimental analysis of mobile money adoption
+effects using national datasets and causal inference methods.
 </p>
-<div class="tags">
-<span class="tag">DiD</span>
-<span class="tag">PSM</span>
-<span class="tag">Secondary Data</span>
-</div>
 </div>
 
 <div class="card">
-<h3>Market Systems Research & Analytics</h3>
+<h3>Market Systems Performance Study</h3>
 <p>
-Led data analysis and dashboard development for a large market study,
-enabling stakeholders to monitor performance indicators and trends.
+Delivered analytics and dashboards enabling real-time monitoring of
+programme outcomes and operational indicators.
 </p>
-<div class="tags">
-<span class="tag">Market Research</span>
-<span class="tag">Power BI</span>
-</div>
 </div>
 
 </div>
 </section>
 
 <!-- GEOGRAPHY -->
-<section>
+<section class="section">
 <h2>Geographic Experience</h2>
+
 <div class="card">
 <p>
-Extensive experience conducting research and evaluation across East Africa,
-including urban, peri-urban, and rural contexts.
+Extensive experience across East Africa, including complex fieldwork in
+urban, peri-urban, and rural environments.
 </p>
 </div>
 </section>
 
-<!-- APPROACH -->
-<section id="approach">
-<h2>Approach to Assignments</h2>
-<div class="card">
-<p>
-Combines methodological rigor with practical implementation. Emphasizes
-data quality, stakeholder engagement, and clear communication of findings
-to ensure evidence informs decision-making and programme improvement.
-</p>
-</div>
-</section>
+<!-- ENGAGEMENT MODEL -->
+<section class="section">
+<h2>Engagement Model</h2>
 
-<!-- AVAILABILITY -->
-<section>
-<h2>Consultancy Availability</h2>
 <div class="card">
 <p>
-Available for short-term and long-term assignments, remote analytical work,
-field supervision, and leadership of evaluation teams.
+Available for short-term and long-term consultancy assignments,
+including independent advisory roles, technical specialist positions,
+or leadership of multidisciplinary evaluation teams.
 </p>
 </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact">
+<section class="section contact">
 <h2>Contact</h2>
-<p>Nairobi, Kenya — Available for regional assignments</p>
+<p>Nairobi, Kenya — Available for regional and international assignments</p>
 
 <a href="mailto:abigaelcherotich867@gmail.com">Email</a>
 <a href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a>
@@ -314,7 +279,7 @@ field supervision, and leadership of evaluation teams.
 </div>
 
 <footer>
-<p>© 2026 Abigael Cherotich — Monitoring, Evaluation & Research Consultant</p>
+© 2026 Abigael Cherotich — Monitoring, Evaluation & Impact Specialist
 </footer>
 
 </body>
