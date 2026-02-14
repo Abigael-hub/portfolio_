@@ -1,369 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Abigael Cherotich | Research, MEL & Impact Evaluation Consultant</title>
-
-<style>
-:root{
-  --primary:#203764;
-  --secondary:#16274f;
-  --accent:#f64c57;
-  --bg:#f4f4f9;
-  --card:#ffffff;
-  --muted:#6b7280;
-  --shadow:rgba(0,0,0,.12);
-  --radius:16px;
-}
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:"Inter",Arial,sans-serif;}
-
-body{
-  background:linear-gradient(180deg,#f4f4f9 0%,#ffffff 100%);
-  color:#333;
-  line-height:1.6;
-  scroll-behavior:smooth;
-}
-
-/* ---------- HEADER ---------- */
-
-.header-wrapper{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(32,55,100,.95);
-  backdrop-filter:blur(8px);
-  color:#fff;
-  box-shadow:0 8px 18px rgba(0,0,0,.15);
-}
-
-.topbar{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:1rem 2rem;
-}
-
-.branding h1{font-size:1.7rem;}
-.branding p{font-size:.9rem;color:#e5e7eb;margin-top:4px;}
-
-nav a{
-  color:#fff;
-  margin-left:20px;
-  text-decoration:none;
-  font-weight:600;
-  transition:.3s;
-}
-nav a:hover{color:var(--accent);}
-
-/* ---------- CONTAINER ---------- */
-
-.container{
-  width:90%;
-  max-width:1100px;
-  margin:2.5rem auto;
-}
-
-section{margin-bottom:4.5rem;}
-
-h2{
-  color:var(--primary);
-  margin-bottom:1.4rem;
-  border-bottom:3px solid #ddd;
-  display:inline-block;
-  padding-bottom:6px;
-}
-
-/* ---------- HERO ---------- */
-
-.home{
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:2.5rem;
-  align-items:center;
-}
-
-.home img{
-  width:220px;
-  border-radius:50%;
-  border:6px solid #fff;
-  box-shadow:0 12px 24px rgba(0,0,0,.18);
-}
-
-.home-text p{
-  margin-bottom:1rem;
-  color:#4b5563;
-}
-
-.highlight{
-  font-weight:600;
-  color:var(--primary);
-}
-
-.cta{margin-top:1.5rem;}
-
-.btn{
-  display:inline-block;
-  background:var(--primary);
-  color:#fff;
-  padding:12px 22px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:700;
-  margin-right:10px;
-  transition:.2s;
-  box-shadow:0 10px 18px rgba(0,0,0,.15);
-}
-
-.btn.secondary{
-  background:#fff;
-  color:var(--primary);
-  border:2px solid var(--primary);
-}
-
-.btn:hover{
-  background:var(--accent);
-  color:#fff;
-  transform:translateY(-2px);
-}
-
-/* ---------- STATS ---------- */
-
-.quick-stats{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  padding:1.6rem;
-  border-radius:var(--radius);
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  text-align:center;
-  gap:1rem;
-}
-
-.stat{color:#fff;flex:1;min-width:160px;}
-
-.stat h2{
-  font-size:2.6rem;
-  font-weight:800;
-  margin-bottom:.2rem;
-  color:#fff;
-}
-
-.stat p{color:rgba(255,255,255,.95);}
-
-/* ---------- CARDS ---------- */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1.5rem;
-}
-
-.card{
-  background:var(--card);
-  padding:1.6rem;
-  border-radius:var(--radius);
-  box-shadow:0 8px 18px var(--shadow);
-  transition:.2s;
-}
-
-.card:hover{transform:translateY(-4px);}
-
-.card h3{
-  color:var(--secondary);
-  margin-bottom:.6rem;
-}
-
-.card p{color:#4b5563;font-size:.95rem;}
-
-/* ---------- TAGS ---------- */
-
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0;}
-
-.tag{
-  background:#eee;
-  padding:4px 8px;
-  border-radius:999px;
-  font-size:12px;
-  color:var(--secondary);
-}
-
-/* ---------- CONTACT ---------- */
-
-.contact{text-align:center;}
-
-.contact a{
-  display:inline-block;
-  margin:10px;
-  padding:12px 22px;
-  background:var(--primary);
-  color:#fff;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:700;
-  transition:.2s;
-}
-
-.contact a:hover{background:var(--accent);}
-
-/* ---------- FOOTER ---------- */
-
-footer{
-  background:var(--secondary);
-  color:#fff;
-  text-align:center;
-  padding:1.4rem;
-  margin-top:2rem;
-  font-size:.9rem;
-}
-
-/* ---------- RESPONSIVE ---------- */
-
-@media(max-width:900px){
-  .home{grid-template-columns:1fr;text-align:center;}
-  .home img{margin:auto;}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abigael Cherotich — Monitoring, Evaluation & Research Consultant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-white text-gray-800">
 
-<body>
-
-<div class="header-wrapper">
-  <div class="topbar">
-    <div class="branding">
-      <h1>Abigael Cherotich</h1>
-      <p>Research, MEL & Impact Evaluation Consultant</p>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <!-- NAVIGATION -->
+  <header class="fixed w-full bg-white shadow z-50">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <div class="text-xl font-bold">AC</div>
+      <ul class="hidden md:flex gap-8 font-medium">
+        <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600">Profile</a></li>
+        <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+        <li><a href="#portfolio" class="hover:text-blue-600">Portfolio</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
     </nav>
-  </div>
-</div>
+  </header>
 
-<div class="container">
-
-<!-- HERO -->
-
-<section id="home">
-  <div class="home">
-    <img src="images/profile/may.jpg" alt="Abigael Cherotich" />
-
-    <div class="home-text">
-      <p class="highlight">
-        Senior Research and Monitoring, Evaluation & Learning (MEL) specialist supporting governments, NGOs, and international donors across East Africa.
+  <!-- HERO -->
+  <section id="home" class="pt-28 pb-20 bg-gradient-to-r from-blue-900 to-blue-600 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+        Monitoring, Evaluation & Research Consultant
+      </h1>
+      <p class="mt-6 text-lg md:text-xl max-w-2xl">
+        Delivering rigorous impact evaluations, mixed‑methods research, and evidence‑based insights for governments, NGOs, and development partners across Africa.
       </p>
+      <a href="#contact" class="inline-block mt-8 bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100">
+        Request Consultancy
+      </a>
+    </div>
+  </section>
 
-      <p>
-        I design and lead rigorous evaluations, mixed-methods studies, and large-scale surveys that generate credible evidence for policy, program improvement, and accountability.
-      </p>
-
-      <p>
-        My work spans governance, education, youth, financial inclusion, public health, and civic engagement programmes.
-      </p>
-
-      <div class="cta">
-        <a href="Abigael_CV.pdf" class="btn" target="_blank">Download CV</a>
-        <a href="Capability_Statement.pdf" class="btn secondary" target="_blank">Capability Statement</a>
+  <!-- PROFILE -->
+  <section id="about" class="py-20">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold mb-6">Profile</h2>
+        <p class="mb-4">
+          Abigael Cherotich is a Monitoring, Evaluation, and Research Consultant with over seven years of experience leading large‑scale surveys, longitudinal evaluations, and mixed‑methods studies across East Africa.
+        </p>
+        <p class="mb-4">
+          Her work spans education, adolescent health, SRHR, governance, gender, and economic empowerment programs. She has delivered donor‑facing research for international NGOs, foundations, and consulting firms.
+        </p>
+        <p>
+          Core strengths include quasi‑experimental design, sampling strategy, data quality systems, advanced analytics, and translating evidence into actionable policy insights.
+        </p>
+      </div>
+      <div class="bg-gray-100 h-80 rounded-2xl flex items-center justify-center text-gray-400">
+        Profile Photo
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- STATS -->
+  <!-- SERVICES -->
+  <section id="services" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center">Monitoring, Evaluation & Research Services</h2>
 
-<section class="quick-stats">
-  <div class="stat"><h2>7+</h2><p>Years experience</p></div>
-  <div class="stat"><h2>50+</h2><p>Research & evaluation projects</p></div>
-  <div class="stat"><h2>20+</h2><p>Impact evaluations</p></div>
-  <div class="stat"><h2>11+</h2><p>Donor-funded assignments</p></div>
-</section>
+      <div class="grid md:grid-cols-3 gap-8">
 
-<!-- SERVICES -->
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Evaluation & Research</h3>
+          <p>Impact and outcome evaluations, performance assessments, process evaluations, and formative research using rigorous mixed‑methods approaches.</p>
+        </div>
 
-<section id="services">
-<h2>Consulting Services</h2>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Monitoring Support</h3>
+          <p>Monitoring frameworks, indicators, results measurement plans, monitoring tools, and data quality audits or assessments (DQAs).</p>
+        </div>
 
-<div class="grid">
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Capacity Building</h3>
+          <p>Training workshops, mentoring, and institutional support to strengthen M&E systems and staff competencies.</p>
+        </div>
 
-<div class="card">
-<h3>MEL System Design</h3>
-<p>Development of results frameworks, indicators, learning agendas, and performance measurement systems aligned with donor standards.</p>
-</div>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Data Visualization & KM</h3>
+          <p>Database design, dashboard reporting systems, automated analytics, and knowledge management solutions.</p>
+        </div>
 
-<div class="card">
-<h3>Impact Evaluation</h3>
-<p>Baseline, midline, endline, and quasi-experimental evaluations using robust statistical and mixed-methods approaches.</p>
-</div>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Design & Planning</h3>
+          <p>Needs assessments, theory of change development, M&E framework design, KPI definition, baseline studies, and evaluation plans.</p>
+        </div>
 
-<div class="card">
-<h3>Social & Market Research</h3>
-<p>Survey design, sampling strategies, fieldwork management, and analytical reporting.</p>
-</div>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Data Collection & Analysis</h3>
+          <p>Survey and tool design, quantitative and qualitative data collection, data management systems, and advanced analysis.</p>
+        </div>
 
-<div class="card">
-<h3>Data Analysis & Visualization</h3>
-<p>Advanced statistical analysis, dashboards, and decision-support tools for evidence-based planning.</p>
-</div>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Implementation Support</h3>
+          <p>Process monitoring, fieldwork coordination, and quality assurance systems to ensure effective programme delivery.</p>
+        </div>
 
-</div>
-</section>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Evaluation & Reporting</h3>
+          <p>Mid‑term and final evaluations, impact assessments, and donor‑ready reports, policy briefs, and presentations.</p>
+        </div>
 
-<!-- PROJECTS -->
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="font-semibold text-xl mb-3">Learning & Adaptation</h3>
+          <p>Feedback systems, after‑action reviews, strategic recommendations, and knowledge‑sharing workshops.</p>
+        </div>
 
-<section id="projects">
-<h2>Selected Projects</h2>
+      </div>
 
-<div class="grid">
+      <!-- CLIENTS & SECTORS -->
+      <h3 class="text-2xl font-bold mt-16 mb-8 text-center">Clients & Sector Experience</h3>
 
-<div class="card">
-<h3>Financial Inclusion Evaluation</h3>
-<div class="tags">
-<span class="tag">Impact Evaluation</span>
-<span class="tag">Quasi-experimental</span>
-</div>
-<p>Assessment of mobile money adoption effects on financial inclusion outcomes using nationally representative datasets.</p>
-</div>
+      <div class="grid md:grid-cols-2 gap-8">
 
-<div class="card">
-<h3>Governance Programme Evaluation</h3>
-<div class="tags">
-<span class="tag">MEL</span>
-<span class="tag">Mixed Methods</span>
-</div>
-<p>Evaluation of civic engagement interventions across multiple counties, informing programme redesign.</p>
-</div>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h4 class="font-semibold mb-2">Clients Served</h4>
+          <p>Government ministries and agencies, academic institutions, domestic and international NGOs, UN agencies, multilateral organizations, and major grant‑making bodies.</p>
+        </div>
 
-<div class="card">
-<h3>Youth & Education Study</h3>
-<div class="tags">
-<span class="tag">Survey Research</span>
-<span class="tag">Longitudinal</span>
-</div>
-<p>Multi-wave study tracking outcomes for youth development programmes.</p>
-</div>
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h4 class="font-semibold mb-2">Geographic Experience</h4>
+          <p>Project evaluation and research experience across Eastern, Central, and West Africa.</p>
+        </div>
 
-</div>
-</section>
+        <div class="bg-white p-6 rounded-2xl shadow md:col-span-2">
+          <h4 class="font-semibold mb-2">Key Sectors</h4>
+          <p>Education; Health and Nutrition; Democracy, Governance, and Conflict; Child Protection and Gender; Youth Development; Economy and Finance; Environment, Agriculture, Natural Resources, and Livelihoods.</p>
+        </div>
 
-<!-- CONTACT -->
+      </div>
 
-<section id="contact" class="contact">
-<h2>Contact</h2>
-<a href="mailto:abigaelcherotich867@gmail.com">Email</a>
-<a href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a>
-</section>
+    </div>
+  </section>
 
-</div>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center">Selected Work</h2>
+      <div class="grid md:grid-cols-3 gap-8">
 
-<footer>
-<p>© 2026 Abigael Cherotich — Independent Research & MEL Consultant</p>
-</footer>
+        <div class="border rounded-2xl p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold mb-2">Governance & Accountability Evaluation</h3>
+          <p class="text-sm">Three‑year multi‑county evaluation assessing civic engagement outcomes.</p>
+        </div>
+
+        <div class="border rounded-2xl p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold mb-2">Adolescent SRHR Study</h3>
+          <p class="text-sm">Mixed‑methods research on youth health knowledge, attitudes, and behaviors.</p>
+        </div>
+
+        <div class="border rounded-2xl p-6 hover:shadow-lg transition">
+          <h3 class="font-semibold mb-2">Education Program Evaluation</h3>
+          <p class="text-sm">Baseline to endline assessment measuring learning and wellbeing outcomes.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 bg-blue-900 text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Contact</h2>
+      <p class="mb-6">Available for high‑value consultancy engagements, evaluations, and research collaborations.</p>
+      <p class="font-semibold">Email: <a href="mailto:abigaelcherotich867@gmail.com" class="underline">abigaelcherotich867@gmail.com</a></p>
+      <p class="font-semibold">Phone: +254 704 990 012</p>
+      <a href="#home" class="mt-6 inline-block bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100">Back to top</a>
+    </div>
+  </section>
+
+  <footer class="py-6 text-center text-sm text-gray-500">
+    © 2026 Abigael Cherotich. All rights reserved.
+  </footer>
 
 </body>
 </html>
