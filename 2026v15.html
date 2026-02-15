@@ -19,6 +19,17 @@
     font-weight: 700;
     border-bottom: 2px solid #1d4ed8;
   }
+
+  /* Process infographic connecting lines */
+  .process-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #bfdbfe; /* Tailwind blue-200 */
+    z-index: 0;
+  }
 </style>
 </head>
 
@@ -28,17 +39,11 @@
 <header class="fixed w-full bg-white/95 backdrop-blur shadow z-50">
   <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
 
-    <!-- NAME + SUBTITLE -->
     <div>
-      <div class="font-bold text-lg text-blue-900 leading-tight">
-        Abigael Cherotich
-      </div>
-      <div class="text-xs text-gray-500">
-        Research, M&E & Impact Evaluation Consultant
-      </div>
+      <div class="font-bold text-lg text-blue-900 leading-tight">Abigael Cherotich</div>
+      <div class="text-xs text-gray-500">Research, M&E & Impact Evaluation Consultant</div>
     </div>
 
-    <!-- NAV LINKS -->
     <ul class="hidden md:flex gap-8 font-medium">
       <li><a href="#home" class="nav-link hover:text-blue-600">Home</a></li>
       <li><a href="#services" class="nav-link hover:text-blue-600">Services</a></li>
@@ -57,11 +62,13 @@
 
     <div>
      <p class="mt-4 text-lg">
-        Abigael Cherotich is Senior consultant with 7+ years of experience leading large-scale surveys, longitudinal evaluations, and mixed-methods studies across East Africa. Worked with consultancy firms such as <strong>Dalberg</strong>, <strong>Nielsen</strong>, and as an independent consultant.
+        I am a Senior Research & M&E Consultant with <strong>7+ years experience</strong> leading large-scale surveys, longitudinal evaluations, and mixed-methods studies across East Africa. I have worked with :contentReference[oaicite:0]{index=0}, :contentReference[oaicite:1]{index=1}, and independently.
       </p>
-
       <p class="mt-4 text-lg">
-       I specialize in education, adolescent health, SRHR, governance, gender, and economic empowerment programs for international NGOs, foundations, and development partners.
+        My educational background is in <strong>Economics & Statistics</strong>, with certification in Monitoring & Evaluation.
+      </p>
+      <p class="mt-4 text-lg">
+       I specialize in <strong>education, adolescent health, SRHR, governance, gender, and economic empowerment</strong> programs for international NGOs, foundations, and development partners.
       </p>
 
       <p class="mt-6 font-medium">
@@ -80,7 +87,6 @@
       <p class="mt-6">📍 Nairobi, Kenya · Available for consultancy assignments</p>
     </div>
 
-    <!-- IMAGE -->
     <div class="flex justify-center md:justify-end relative -top-12 md:-top-16">
       <div class="w-80 h-80 md:w-[420px] md:h-[420px] rounded-3xl overflow-hidden shadow-[0_25px_80px_rgba(0,0,0,0.4)] border-4 border-white">
         <img src="images/profile/may.jpg" class="object-cover w-full h-full">
@@ -131,76 +137,77 @@
 <!-- EXPERIENCE -->
 <section id="portfolio" class="py-20 bg-gray-100">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">
-      Selected Consulting Experience
-    </h2>
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Selected Consulting Experience</h2>
 
     <div class="grid md:grid-cols-2 gap-8">
 
       <div class="bg-white p-6 rounded-2xl shadow">
-        <h3 class="font-semibold text-lg mb-2">
-          Governance & Accountability Evaluation — Buni Media
-        </h3>
-        <p class="text-sm">
-          Multi-county civic engagement evaluation with 1,200+ respondents.
-        </p>
+        <h3 class="font-semibold text-lg mb-2">Governance & Accountability Evaluation — Buni Media</h3>
+        <p class="text-sm">Multi-county civic engagement evaluation with 1,200+ respondents.</p>
       </div>
 
       <div class="bg-white p-6 rounded-2xl shadow">
-        <h3 class="font-semibold text-lg mb-2">
-          Education Program Evaluation — CRS
-        </h3>
-        <p class="text-sm">
-          Longitudinal evaluation measuring learning outcomes and wellbeing.
-        </p>
+        <h3 class="font-semibold text-lg mb-2">Education Program Evaluation — CRS</h3>
+        <p class="text-sm">Longitudinal evaluation measuring learning outcomes and wellbeing.</p>
       </div>
 
     </div>
   </div>
 </section>
-  <!-- PROCESS -->
-<section id="process">
-<div class="container">
 
-<h2>Consulting Process</h2>
+<!-- PROCESS INFOGRAPHIC -->
+<section id="process" class="py-20 bg-blue-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-16 text-blue-900">Consulting Process</h2>
 
-<div class="grid grid-3">
+    <div class="relative">
+      <!-- Connecting line -->
+      <div class="process-line hidden md:block"></div>
 
-<div class="card"><strong>1.</strong> Scoping & methodology design</div>
-<div class="card"><strong>2.</strong> Tool development & piloting</div>
-<div class="card"><strong>3.</strong> Data collection & supervision</div>
-<div class="card"><strong>4.</strong> Analysis & validation</div>
-<div class="card"><strong>5.</strong> Reporting & dissemination</div>
-
-</div>
-</div>
+      <div class="grid md:grid-cols-5 gap-12 items-center">
+        <div class="relative z-10">
+          <div class="w-20 h-20 mx-auto rounded-full bg-blue-900 text-white flex items-center justify-center text-2xl font-bold shadow-lg">1</div>
+          <h3 class="mt-6 font-semibold text-lg">Scoping & Design</h3>
+          <p class="text-sm mt-2">Understanding objectives, stakeholders, and evaluation questions.</p>
+        </div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 mx-auto rounded-full bg-blue-900 text-white flex items-center justify-center text-2xl font-bold shadow-lg">2</div>
+          <h3 class="mt-6 font-semibold text-lg">Tools & Piloting</h3>
+          <p class="text-sm mt-2">Instrument development, translation, and field testing.</p>
+        </div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 mx-auto rounded-full bg-blue-900 text-white flex items-center justify-center text-2xl font-bold shadow-lg">3</div>
+          <h3 class="mt-6 font-semibold text-lg">Data Collection</h3>
+          <p class="text-sm mt-2">Enumerator training, supervision, and quality assurance.</p>
+        </div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 mx-auto rounded-full bg-blue-900 text-white flex items-center justify-center text-2xl font-bold shadow-lg">4</div>
+          <h3 class="mt-6 font-semibold text-lg">Analysis</h3>
+          <p class="text-sm mt-2">Data cleaning, statistical analysis, and validation.</p>
+        </div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 mx-auto rounded-full bg-blue-900 text-white flex items-center justify-center text-2xl font-bold shadow-lg">5</div>
+          <h3 class="mt-6 font-semibold text-lg">Reporting</h3>
+          <p class="text-sm mt-2">Evidence synthesis, recommendations, and dissemination.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="py-20 bg-white">
   <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">
-      Testimonials
-    </h2>
-
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Testimonials</h2>
     <div class="grid md:grid-cols-2 gap-8">
-
       <div class="bg-gray-50 p-6 rounded-xl shadow">
-        <p class="italic">
-          “Abigael delivered a rigorous evaluation under tight timelines.
-          Her insights directly shaped program redesign.”
-        </p>
+        <p class="italic">“Abigael delivered a rigorous evaluation under tight timelines. Her insights directly shaped program redesign.”</p>
         <p class="mt-4 font-semibold">Program Director — International NGO</p>
       </div>
-
       <div class="bg-gray-50 p-6 rounded-xl shadow">
-        <p class="italic">
-          “Exceptional analytical skills and stakeholder engagement.
-          Highly recommended for complex multi-country studies.”
-        </p>
+        <p class="italic">“Exceptional analytical skills and stakeholder engagement. Highly recommended for complex multi-country studies.”</p>
         <p class="mt-4 font-semibold">Research Lead — Development Consultancy</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -208,30 +215,22 @@
 <!-- METHODS -->
 <section id="methods" class="py-20 bg-gray-100">
   <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6 text-blue-900">
-      Methods & Technical Skills
-    </h2>
-
-    <p>
-      RCTs · Quasi-experimental designs · SurveyCTO · ODK · R · Stata · SPSS · Tableau · Power BI
-    </p>
+    <h2 class="text-3xl font-bold mb-6 text-blue-900">Methods & Technical Skills</h2>
+    <p>RCTs · Quasi-experimental designs · SurveyCTO · ODK · R · Stata · SPSS · Tableau · Power BI</p>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="py-20 bg-blue-900 text-white text-center">
   <h2 class="text-3xl font-bold mb-6">Contact</h2>
-
   <p>Email: abigaelcherotich867@gmail.com</p>
   <p class="mt-2">Phone: +254 704 990 012</p>
   <p class="mt-2">Nairobi, Kenya</p>
 </section>
 
-<footer class="py-6 text-center text-sm text-gray-400">
-  © 2026 Abigael Cherotich. All rights reserved.
-</footer>
+<footer class="py-6 text-center text-sm text-gray-400">© 2026 Abigael Cherotich. All rights reserved.</footer>
 
-<!-- SCROLL SPY SCRIPT -->
+<!-- SCROLL SPY -->
 <script>
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-link");
