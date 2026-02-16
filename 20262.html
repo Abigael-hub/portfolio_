@@ -1,376 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abigael Cherotich | Research, M&E & Impact Evaluation Consultant</title>
+<!-- ABOUT ME PAGE / SECTION -->
+<section id="about" class="py-20 bg-gray-50 text-gray-800">
+  <div class="max-w-5xl mx-auto px-6">
 
-  <style>
-    :root {
-      --primary: #203764;
-      --secondary: #16274f;
-      --accent: #f64c57;
-      --bg: #f4f4f9;
-      --card: #ffffff;
-      --muted: #6b7280;
-    }
+    <!-- TITLE -->
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-900">
+      About Me
+    </h2>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: #333;
-      line-height: 1.6;
-      padding-top: 110px;
-    }
-
-    /* Header */
-    .header-wrapper {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .topbar {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 2rem;
-    }
-
-    .branding h1 {
-      font-size: 1.9rem;
-    }
-
-    .branding p {
-      font-size: 0.9rem;
-      color: #e5e7eb;
-    }
-
-    nav a {
-      color: #fff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: 2rem auto;
-    }
-
-    section {
-      margin-bottom: 4.5rem;
-    }
-
-    h2 {
-      color: var(--primary);
-      margin-bottom: 1.4rem;
-      border-bottom: 2px solid #ddd;
-      display: inline-block;
-      padding-bottom: 6px;
-    }
-
-    /* HOME */
-    .home {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-
-    .home img {
-      width: 180px;
-      border-radius: 50%;
-    }
-
-    .home-text p {
-      margin-bottom: 1rem;
-    }
-
-    .cta {
-      margin-top: 1.5rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: var(--accent);
-    }
-
-    /* CORE SKILLS */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .skill-card {
-      background: var(--card);
-      padding: 1.6rem;
-      border-radius: 12px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.08);
-    }
-
-    .skill-card h3 {
-      color: var(--secondary);
-      margin-bottom: 0.6rem;
-    }
-
-    /* SERVICES (AlexTheAnalyst-style blocks) */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.6rem;
-    }
-
-    .service-card {
-      background: var(--card);
-      padding: 2rem;
-      border-radius: 14px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-      border-top: 5px solid var(--primary);
-    }
-
-    .service-card h3 {
-      margin-bottom: 0.8rem;
-      color: var(--secondary);
-    }
-
-    .service-card p {
-      font-size: 0.95rem;
-    }
-
-    /* PROJECTS PAGE */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.8rem;
-    }
-
-    .project-card {
-      background: var(--card);
-      padding: 1.8rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .project-card h3 {
-      margin-bottom: 0.6rem;
-      color: var(--secondary);
-    }
-
-    .tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin: 8px 0;
-    }
-
-    .tag {
-      background: #eee;
-      padding: 4px 8px;
-      border-radius: 999px;
-      font-size: 12px;
-      color: var(--secondary);
-    }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-    }
-
-    .contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 22px;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer {
-      background: var(--secondary);
-      color: #fff;
-      text-align: center;
-      padding: 1.2rem;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="header-wrapper">
-  <div class="topbar">
-    <div class="branding">
-      <h1>Abigael Cherotich</h1>
-      <p>Research, M&E & Impact Evaluation Consultant</p>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</div>
-
-<div class="container">
-
-<!-- HOME -->
-<section id="home">
-  <div class="home">
-    <img src="images/profile/may.jpg" alt="Abigael Cherotich" />
-    <div class="home-text">
+    <!-- INTRO -->
+    <div class="space-y-6 text-lg leading-relaxed">
       <p>
-        I am a research, monitoring and evaluation (M&E), and impact evaluation consultant with over five years of experience supporting international NGOs, development partners, and private sector clients to generate evidence for decision-making.
+        I am a Monitoring, Evaluation, and Research Consultant with over seven years of experience designing and delivering rigorous studies that inform program strategy, accountability, and funding decisions across East Africa. My work focuses on generating credible evidence that helps organizations understand what works, why it works, and how to improve outcomes for the communities they serve.
       </p>
+
       <p>
-        My work spans social and market research, programme evaluation, and applied data analysis, including baseline and endline studies, quasi-experimental designs, and mixed-methods research across governance, financial inclusion, youth, and civic engagement programmes.
+        I have worked with leading global consultancies, including <strong>:contentReference[oaicite:0]{index=0}</strong> and <strong>:contentReference[oaicite:1]{index=1}</strong>, as well as international NGOs, foundations, and research organizations implementing complex social programs. Through these engagements, I have led and contributed to large-scale evaluations, longitudinal studies, and mixed-methods research across diverse sectors and contexts.
       </p>
+
       <p>
-        I combine strong statistical expertise with practical MEL experience to deliver donor-ready reports, dashboards, and learning products that inform policy, programme adaptation, and accountability.
-      </p>
-      <div class="cta">
-        <a href="images/profile/Abigael_Cherotich_ATS_CV-26sept251.pdf" class="btn" target="_blank">Download CV</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CORE SKILLS -->
-<section>
-  <h2>Core Skills</h2>
-  <div class="skills">
-    <div class="skill-card">
-      <h3>Research & Evaluation</h3>
-      <p>Baseline & Endline Studies, Impact Evaluation, Theory of Change, Indicator Frameworks, Mixed-Methods</p>
-    </div>
-    <div class="skill-card">
-      <h3>Quantitative Analysis</h3>
-      <p>R, Stata, Python, SPSS, SQL, Quasi-Experimental Designs (DiD, PSM)</p>
-    </div>
-    <div class="skill-card">
-      <h3>Data Visualization & Reporting</h3>
-      <p>Power BI, Tableau, Looker, Dashboards, Donor Reporting & Learning Briefs</p>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section>
-  <h2>Consulting Services</h2>
-  <div class="services">
-
-    <div class="service-card">
-      <h3>Monitoring, Evaluation & Learning (MEL)</h3>
-      <p>
-        Design and strengthening of MEL systems, indicator frameworks, results measurement plans, and learning agendas aligned with donor and organisational requirements.
+        My technical expertise spans the full evaluation cycle — from study design and methodology development to data collection oversight, statistical analysis, and dissemination of findings. I specialize in baseline, midline, endline, and impact evaluations, as well as longitudinal and quasi-experimental designs that produce robust and defensible evidence. My approach integrates quantitative and qualitative methods to capture both measurable outcomes and contextual insights, ensuring that recommendations are grounded in real program realities.
       </p>
     </div>
 
-    <div class="service-card">
-      <h3>Impact Evaluation</h3>
-      <p>
-        Baseline, midline, endline, and quasi-experimental impact evaluations using rigorous quantitative and mixed-methods approaches.
+    <!-- SECTOR EXPERTISE -->
+    <div class="mt-12">
+      <h3 class="text-2xl font-semibold mb-4 text-blue-900">Sector Expertise</h3>
+      <ul class="grid md:grid-cols-2 gap-4 text-gray-700 list-disc list-inside">
+        <li>Education and learning outcomes</li>
+        <li>Sexual and Reproductive Health and Rights (SRHR)</li>
+        <li>Governance and civic engagement</li>
+        <li>Youth empowerment and livelihoods</li>
+        <li>Gender and social inclusion</li>
+      </ul>
+    </div>
+
+    <!-- APPROACH -->
+    <div class="mt-12">
+      <h3 class="text-2xl font-semibold mb-4 text-blue-900">Approach to Evaluation & Research</h3>
+      <p class="text-gray-700 mb-4">
+        I bring a balance of methodological rigor and practical implementation experience. Having managed field operations as well as analytical work, I understand the operational constraints programs face and design studies that are both scientifically sound and feasible in real-world settings.
+      </p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Clear alignment with program theory and objectives</li>
+        <li>Strong sampling and measurement strategies</li>
+        <li>Data quality assurance throughout fieldwork</li>
+        <li>Ethical research practices</li>
+        <li>Transparent and defensible analysis</li>
+        <li>Actionable recommendations for decision-makers</li>
+      </ul>
+    </div>
+
+    <!-- WHY CLIENTS ENGAGE ME -->
+    <div class="mt-12">
+      <h3 class="text-2xl font-semibold mb-4 text-blue-900">Why Clients Engage My Services</h3>
+      <p class="text-gray-700 mb-4">
+        Clients value working with me because I offer the rigor of a consultancy team combined with the responsiveness and cost-effectiveness of an independent expert. I am accustomed to working under tight timelines, coordinating with diverse stakeholders, and adapting to evolving project needs without compromising quality.
+      </p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Evaluation design and planning</li>
+        <li>Tool development and piloting</li>
+        <li>Fieldwork supervision and quality control</li>
+        <li>Data analysis and visualization</li>
+        <li>Report writing and presentation of findings</li>
+      </ul>
+    </div>
+
+    <!-- BACKGROUND -->
+    <div class="mt-12">
+      <h3 class="text-2xl font-semibold mb-4 text-blue-900">Professional Background</h3>
+      <p class="text-gray-700">
+        I hold training in Economics, Statistics, and Monitoring and Evaluation, which provides a strong analytical foundation for my work. Over the course of my career, I have led or supported more than twenty studies, ranging from rapid assessments to complex multi-phase evaluations. My experience working across consultancy firms and independent assignments has equipped me with both strategic perspective and hands-on implementation skills.
       </p>
     </div>
 
-    <div class="service-card">
-      <h3>Social & Market Research</h3>
-      <p>
-        Quantitative and mixed-methods research including survey design, sampling, data collection oversight, and analytical reporting.
+    <!-- GEOGRAPHIC FOCUS -->
+    <div class="mt-12">
+      <h3 class="text-2xl font-semibold mb-4 text-blue-900">Geographic Focus</h3>
+      <p class="text-gray-700">
+        Based in Nairobi, Kenya, I support projects across East Africa and am available for both in-country and remote engagements.
       </p>
     </div>
 
-    <div class="service-card">
-      <h3>Data Analysis & Decision Support</h3>
-      <p>
-        Advanced data analysis, dashboards, and donor-ready reporting products that translate evidence into actionable insights.
+    <!-- CLOSING -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-700 text-lg font-medium">
+        I am committed to producing high-quality evidence that supports effective programs and meaningful impact. Whether working independently or as part of a larger evaluation team, I aim to deliver work that meets international standards while remaining grounded in local realities.
       </p>
+
+      <a href="#contact" class="mt-8 inline-block bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold shadow hover:bg-blue-800 transition">
+        Contact Me
+      </a>
     </div>
 
   </div>
 </section>
-
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Selected Projects</h2>
-  <div class="projects">
-
-    <div class="project-card">
-      <h3>Impact of Mobile Money on Financial Inclusion</h3>
-      <div class="tags">
-        <span class="tag">Impact Evaluation</span>
-        <span class="tag">DiD</span>
-        <span class="tag">PSM</span>
-      </div>
-      <p>
-        Quasi-experimental evaluation assessing the contribution of mobile money adoption to financial inclusion outcomes using World Bank Findex data.
-      </p>
-    </div>
-
-    <div class="project-card">
-      <h3>Market Performance & Sales Analytics</h3>
-      <div class="tags">
-        <span class="tag">Market Research</span>
-        <span class="tag">Power BI</span>
-      </div>
-      <p>
-        Decision-support dashboard enabling leadership teams to monitor sales performance, regional trends, and strategic KPIs.
-      </p>
-    </div>
-
-    <div class="project-card">
-      <h3>Customer Segmentation Study</h3>
-      <div class="tags">
-        <span class="tag">Segmentation</span>
-        <span class="tag">SQL</span>
-      </div>
-      <p>
-        Segmentation and behavioural analysis supporting customer targeting and market strategy decisions.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <a href="mailto:abigaelcherotich867@gmail.com">Email</a>
-  <a href="https://linkedin.com/in/abigael-cherotich" target="_blank">LinkedIn</a>
-</section>
-
-</div>
-
-<footer>
-  <p>&copy; 2025 Abigael Cherotich</p>
-</footer>
-
-</body>
-</html>
