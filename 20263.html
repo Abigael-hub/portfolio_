@@ -356,11 +356,13 @@ const observer = new IntersectionObserver(
 sections.forEach(section => observer.observe(section));
 </script>
 
-<!-- LUCIDE ICONS -->
 <script src="https://cdn.jsdelivr.net/npm/lucide/dist/lucide.min.js"></script>
 <script>
-  lucide.replace();
+  document.addEventListener("DOMContentLoaded", function() {
+    lucide.replace();
+  });
 </script>
+
 
 </body>
 </html>
