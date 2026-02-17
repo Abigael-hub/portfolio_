@@ -3,12 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Abigael Cherotich — Monitoring, Evaluation & Research Consultant</title>
+<title>Abigael Cherotich — Monitoring, Evaluation & Statistical Analysis Consultant</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- AOS Animation Library -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <style>
   body { font-family: 'Inter', sans-serif; }
@@ -25,26 +28,19 @@
 <body class="bg-gray-50 text-gray-800 scroll-smooth">
 
 <!-- NAV -->
-<header class="fixed w-full bg-white/95 backdrop-blur shadow z-50">
+<header class="fixed w-full bg-white/95 backdrop-blur shadow-md z-50 transition-shadow">
   <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
-
-    <!-- NAME + SUBTITLE -->
     <div>
-      <div class="font-bold text-lg text-blue-900 leading-tight">
-        Abigael Cherotich
-      </div>
-      <div class="text-xs text-gray-500">
-        Research, M&E & Impact Evaluation Consultant
-      </div>
+      <div class="font-bold text-lg text-blue-900">Abigael Cherotich</div>
+      <div class="text-xs text-gray-500">Monitoring, Evaluation & Statistical Analysis Consultant</div>
     </div>
-
-    <!-- NAV LINKS -->
     <ul class="hidden md:flex gap-8 font-medium">
       <li><a href="#home" class="nav-link hover:text-blue-600">Home</a></li>
       <li><a href="#services" class="nav-link hover:text-blue-600">Services</a></li>
-      <li><a href="#portfolio" class="nav-link hover:text-blue-600">Experience</a></li>
-      <li><a href="#process"class="nav-link hover:text-blue-600">Process</a></li>
-       <li><a href="#why" class="nav-link hover:text-blue-600">Why Me</a></li>
+      <li><a href="#expertise" class="nav-link hover:text-blue-600">Expertise</a></li>
+       <li><a href="#process" class="nav-link hover:text-blue-600">Process</a></li>
+      <li><a href="#experience" class="nav-link hover:text-blue-600">Experience</a></li>
+      <li><a href="#why" class="nav-link hover:text-blue-600">Why Me</a></li>
       <li><a href="#testimonials" class="nav-link hover:text-blue-600">Testimonials</a></li>
       <li><a href="#contact" class="nav-link hover:text-blue-600">Contact</a></li>
     </ul>
@@ -53,188 +49,90 @@
 
 <!-- HERO -->
 <section id="home" class="pt-32 pb-24 bg-gradient-to-r from-gray-900 to-blue-900 text-white">
-  <div class="container mx-auto grid md:grid-cols-2 gap-16 items-center px-6">
-
-    <!-- TEXT -->
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center" data-aos="fade-up">
     <div>
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight">
-        Rigorous Evaluations That Drive Program Decisions and Funding Confidence
-      </h1>
-      <p class="mt-4 text-lg">
-        I help NGOs, foundations,UN agencies, and development partners make data-driven decisions through rigorous evaluations, longitudinal studies, and mixed-methods research across East Africa.
-      </p>
-      <p class="mt-4 text-lg">
-      I have worked for big consultancy firms; <strong>Dalberg</strong>, <strong>Nielsen</strong>, and as an independent consultant helping multiple international NGOs</li>
-      </p>
-      <ul class="mt-6 text-lg space-y-2">
-        <li>✅ 7+ years leading 20+ M&E and impact evaluation projects</li>
-        <li>✅ Education background: Economics and Statistics, Monitoring and Evaluation</li>
-        <li>✅ Experienced and specialize in education, SRHR, governance, and youth empowerment sectors</li>
-      </ul>
-
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100 transition">
-          Download CV
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight"> Robust M&E & Statistical Analysis for Evidence-Based Programs</h1>
+      <p class="mt-6 text-lg">I am a Monitoring, Evaluation, and Statistical Analysis Consultant with 7 years of experience designing and implementing complex evaluations, large-scale surveys, and data systems across East Africa.My work combines rigorous quantitative methods with qualitative inquiry to generate credible, decision-ready evidence for governments, donors, and development partners.</p>
+      <p class="mt-4 text-lg">With education background in economics and statistics and Monitoring and evaluation, I apply advanced analytical approaches, including quasi-experimental designs, causal inference techniques, and mixed-methods evaluation to assess program effectiveness, outcomes, and impact.</p>
+      <p class="mt-4 text-lg">I have supported international NGOs, foundations, and consulting firms (Dalberg and Nielsen) in sectors including education, adolescent health, SRHR, governance, gender equality, and economic empowerment.</p>
+       <ul class="mt-6 text-lg space-y-2">
+        <li>🌟 7+ years leading 20+ M&E and impact evaluation projects</li>
+       <li> 🌟 I specialize in evaluation and analysis of programs in education,GBV,SRHR, governance, and youth empowerment</li>
+      </ul>  
+         <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-100 transition">Download CV</a>
+        <a href="#contact" class="bg-blue-800 px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition">Contact Me</a>
+        <a href="https://www.linkedin.com/in/abigael-cherotich/" target="_blank" rel="noopener" class="bg-blue-800 px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition">LinkedIn</a>  
+               <div class="mt-8 flex flex-wrap gap-4">
         </a>
-        <a href="#contact" class="bg-blue-800 px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-700 transition">
-          Contact Me
-        </a>
-        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener"
-           class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition">
-          LinkedIn
-        </a>
+      </div>   
       </div>
-
-      <p class="mt-6">📍 Nairobi, Kenya · Available for consultancy assignments</p>
+      <p class="mt-6 text-sm flex items-center gap-2">📍 Nairobi, Kenya · Available for M& E and Statistical consultancy assignments</p>
     </div>
-
-    <!-- IMAGE -->
-    <div class="flex justify-center md:justify-end relative -top-12 md:-top-16">
-      <div class="relative w-80 h-80 md:w-[420px] md:h-[420px]">
-        <div class="absolute inset-0 rounded-3xl bg-blue-500 blur-2xl opacity-20 animate-pulse-slow"></div>
-        <div class="relative rounded-3xl p-[6px] bg-white/20 backdrop-blur-xl shadow-[0_25px_80px_rgba(0,0,0,0.5)]">
-          <div class="rounded-2xl overflow-hidden">
-            <img src="images/profile/may.jpg"
-                 alt="Abigael Cherotich portrait"
-                 class="object-cover w-full h-full">
-          </div>
-        </div>
-      </div>
+    <div class="flex justify-center md:justify-end">
+      <img src="images/profile/may.jpg" alt="Abigael Cherotich portrait" class="rounded-2xl shadow-2xl w-80 md:w-[420px] object-cover">
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="py-20 bg-white">
-  <div class="container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">
-      Services I Offer
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- M&E -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition transform">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="bg-blue-100 text-blue-900 p-3 rounded-lg"><i data-lucide="bar-chart-3"></i></div>
-        <h3 class="font-semibold text-xl mb-4">Monitoring & Evaluation</h3>
-          </div>
-        <p class="text-sm mb-2">
-          Designing and executing evaluations that measure impact and inform program decisions.
-        </p>
-        <ul class="space-y-2 text-sm">
-          <li>Baseline, Midline & Endline Studies</li>
-          <li>Impact Evaluations & Outcome Assessments</li>
-          <li>Monitoring Frameworks & KPI Development</li>
-          <li>OECD-DAC Criteria Assessments</li>
-        </ul>
-      </div>
-
-      <!-- Research & Analytics -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition transform">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="bg-blue-100 text-blue-900 p-3 rounded-lg"><i data-lucide="line-chart"></i></div>
-        <h3 class="font-semibold text-xl mb-4">Social Research & Analytics</h3>
-          </div>
-        <p class="text-sm mb-2">
-          Translating data into actionable insights for programs and policies.
-        </p>
-        <ul class="space-y-2 text-sm">
-          <li>Mixed-Methods Research & Quasi-Experimental Designs</li>
-          <li>Advanced Statistical Analysis & Sampling</li>
-          <li>Dashboards & Data Visualization</li>
-          <li>Theory of Change & Report Synthesis</li>
-        </ul>
-      </div>
-
-      <!-- Capacity Building -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition transform">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="bg-blue-100 text-blue-900 p-3 rounded-lg"><i data-lucide="users"></i></div>
-          </div>
-        <h3 class="font-semibold text-xl mb-4">Capacity Building</h3>
-        <p class="text-sm mb-2">
-          Strengthening organizations to use data effectively and improve outcomes.
-        </p>
-        <ul class="space-y-2 text-sm">
-          <li>Training on M&E Frameworks</li>
-          <li>Data Quality Assurance</li>
-          <li>Evidence-Based Decision-Making Workshops</li>
-          <li>Technical Support & Mentorship</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="portfolio" class="py-20 bg-gray-100">
+<section id="services" class="py-20 bg-white" data-aos="fade-up">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">
-      Selected Consulting Experience
-    </h2>
-
-    <div class="grid md:grid-cols-2 gap-8">
-
-      <div class="bg-white p-6 rounded-2xl shadow">
-        <h3 class="font-semibold text-lg mb-2">
-          Governance & Accountability Evaluation — Buni Media
-        </h3>
-        <p class="text-sm mb-2">
-          Evaluation of a multi-county civic engagement program.
-        </p>
-        <p class="text-sm">
-          <strong>Role:</strong> Lead Evaluation Consultant<br>
-          <strong>Methods:</strong> Mixed methods (survey, KIIs, FGDs)<br>
-          <strong>Sample:</strong> 1,200 respondents across 3 counties<br>
-          <strong>Outputs:</strong> Baseline, midline, endline reports
-        </p>
+    <h2 class="text-3xl font-bold text-center mb-6 text-blue-900">Services</h2>
+    <p class="text-center max-w-3xl mx-auto mb-12 text-gray-700">I provide end-to-end evaluation and analytical services — from study design and data collection to advanced analysis and reporting — ensuring programs generate credible evidence to inform policy and investment decisions.</p>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition-transform">
+        <h3 class="font-semibold text-xl mb-4">Monitoring & Evaluation</h3>
+        <ul class="space-y-2 text-sm">
+          <li>Impact evaluations</li>
+          <li>Baseline, midline & endline studies</li>
+          <li>Monitoring systems & indicators</li>
+          <li>OECD-DAC assessments</li>
+        </ul>
       </div>
-
-      <div class="bg-white p-6 rounded-2xl shadow">
-        <h3 class="font-semibold text-lg mb-2">
-          Adolescent SRHR Study — International NGO
-        </h3>
-        <p class="text-sm mb-2">
-          Study on youth knowledge, attitudes, and behaviors.
-        </p>
-        <p class="text-sm">
-          <strong>Methods:</strong> Mixed methods<br>
-          <strong>Coverage:</strong> Urban and rural regions<br>
-          <strong>Outputs:</strong> Evidence for program redesign
-        </p>
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition-transform">
+        <h3 class="font-semibold text-xl mb-4">Statistical & Econometric Analysis</h3>
+        <ul class="space-y-2 text-sm">
+          <li>Advanced statistical modeling</li>
+          <li>Causal inference & impact estimation</li>
+          <li>Sampling design & power calculations</li>
+          <li>Data visualization & dashboards</li>
+        </ul>
       </div>
-
-      <div class="bg-white p-6 rounded-2xl shadow">
-        <h3 class="font-semibold text-lg mb-2">
-          Education Program Evaluation — CRS Project
-        </h3>
-        <p class="text-sm mb-2">
-          Baseline to endline assessment of learning outcomes.
-        </p>
-        <p class="text-sm">
-          <strong>Methods:</strong> Longitudinal survey design<br>
-          <strong>Focus:</strong> Student wellbeing and retention
-        </p>
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:scale-105 transition-transform">
+        <h3 class="font-semibold text-xl mb-4">Mixed-Methods Research</h3>
+        <ul class="space-y-2 text-sm">
+          <li>Qualitative studies (KIIs, FGDs)</li>
+          <li>Theory of Change development</li>
+          <li>Process evaluations</li>
+          <li>Triangulation & synthesis</li>
+        </ul>
       </div>
-
-      <div class="bg-white p-6 rounded-2xl shadow">
-        <h3 class="font-semibold text-lg mb-2">
-          Livelihoods & Youth Empowerment Study
-        </h3>
-        <p class="text-sm">
-          Evaluation of employment outcomes and economic resilience among youth participants.
-        </p>
-      </div>
-
     </div>
   </div>
 </section>
 
+<!-- TECHNICAL EXPERTISE -->
+<section id="expertise" class="py-20 bg-gray-100" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12 text-blue-900">Technical Expertise</h2>
+    <p class="text-gray-700 mb-8">Impact evaluation design · Quasi-experimental methods (DiD, PSM) · Statistical analysis · Sampling & survey statistics · Indicator development · Data quality systems · Dashboard analytics</p>
+    <div class="flex flex-wrap justify-center gap-3 mt-4">
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">STATA</span>
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">R</span>
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">SPSS</span>
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">Python</span>
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">Power BI</span>
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">Tableau</span>
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">KoboToolbox</span>
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">SurveyCTO</span>
+      <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full font-semibold">ODK</span>
+    </div>
+  </div>
+</section>
 
-  <!-- PROCESS (INFOGRAPHIC) -->
-<section id="process" class="py-20 bg-white">
+ <!-- PROCESS (INFOGRAPHIC WITH HORIZONTAL LINE AT TOP-10) -->
+<section id="process" class="py-20 bg-gray-100" data-aos="fade-up">
   <div class="max-w-6xl mx-auto px-6">
 
     <h2 class="text-3xl font-bold text-center mb-16 text-blue-900">
@@ -243,10 +141,11 @@
 
     <div class="relative">
 
-      <!-- Connecting line -->
+      <!-- Connecting horizontal line at same position as reference -->
       <div class="hidden md:block absolute top-10 left-0 w-full h-1 bg-blue-200"></div>
 
-      <div class="grid md:grid-cols-5 gap-12 text-center">
+      <!-- Steps grid -->
+      <div class="grid md:grid-cols-5 gap-12 text-center relative z-10">
 
         <!-- STEP 1 -->
         <div class="relative">
@@ -309,95 +208,153 @@
   </div>
 </section>
 
-<!-- ================= WHY ME ================= -->
-<section id="why" class="py-20 bg-gray-100 text-center">
-  <h2 class="text-3xl font-bold mb-12 text-blue-900">Why Clients Engage My Services</h2>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-20 bg-white" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">Selected Consulting Experience</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Governance & Accountability Evaluation — Buni Media</h3>
+        <p class="text-sm mb-2">Evaluation of a multi-county civic engagement program.</p>
+        <p class="text-sm"><strong>Role:</strong> Lead Evaluation Consultant<br><strong>Methods:</strong> Mixed methods (survey, KIIs, FGDs)<br><strong>Sample:</strong> 1,200 respondents across 3 counties<br><strong>Outputs:</strong> Baseline, midline, endline reports</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Adolescent SRHR Study — International NGO</h3>
+        <p class="text-sm mb-2">Study on youth knowledge, attitudes, and behaviors.</p>
+        <p class="text-sm"><strong>Methods:</strong> Mixed methods<br><strong>Coverage:</strong> Urban and rural regions<br><strong>Outputs:</strong> Evidence for program redesign</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Education Program Evaluation — CRS Project</h3>
+        <p class="text-sm mb-2">Baseline to endline assessment of learning outcomes.</p>
+        <p class="text-sm"><strong>Methods:</strong> Longitudinal survey design<br><strong>Focus:</strong> Student wellbeing and retention</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-lg mb-2">Livelihoods & Youth Empowerment Study</h3>
+        <p class="text-sm">Evaluation of employment outcomes and economic resilience among youth participants.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section id="why" class="py-20 bg-white text-center">
+  <h2 class="text-3xl font-bold mb-12 text-blue-900">
+    Why Clients Engage My Services
+  </h2>
 
   <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-6">
 
     <div>
-      <div class="mx-auto bg-blue-100 text-blue-900 w-14 h-14 rounded-xl flex items-center justify-center mb-4"><i data-lucide="sigma"></i></div>
       <h3 class="font-semibold text-lg mb-2">Rigorous Methods</h3>
-      <p class="text-sm">Credible evaluation designs ensuring reliable results.</p>
+      <p class="text-sm">
+        Strong statistical and evaluation design expertise ensuring credible results.
+      </p>
     </div>
 
     <div>
-      <div class="mx-auto bg-blue-100 text-blue-900 w-14 h-14 rounded-xl flex items-center justify-center mb-4"><i data-lucide="globe"></i></div>
       <h3 class="font-semibold text-lg mb-2">Field Experience</h3>
-      <p class="text-sm">Extensive work across diverse African contexts.</p>
+      <p class="text-sm">
+        Extensive work across diverse African contexts and sectors.
+      </p>
     </div>
 
     <div>
-      <div class="mx-auto bg-blue-100 text-blue-900 w-14 h-14 rounded-xl flex items-center justify-center mb-4"><i data-lucide="lightbulb"></i></div>
       <h3 class="font-semibold text-lg mb-2">Actionable Insights</h3>
-      <p class="text-sm">Evidence translated into practical decisions.</p>
+      <p class="text-sm">
+        Evidence translated into practical recommendations for decision-makers.
+      </p>
     </div>
 
   </div>
 </section>
+      
 
 <!-- TESTIMONIALS -->
-<section id="testimonials" class="py-20 bg-white">
-  <div class="max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12 text-blue-900">
-      Testimonials
-    </h2>
-
+<section id="testimonials" class="py-20 bg-white" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12 text-blue-900">Testimonials</h2>
     <div class="grid md:grid-cols-2 gap-8">
-
-      <div class="bg-gray-50 p-6 rounded-xl shadow">
-        <p class="italic">
-          “Abigael delivered a rigorous evaluation under tight timelines.
-          Her insights directly shaped program redesign.”
-        </p>
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <p class="italic">“Abigael delivered a rigorous evaluation under tight timelines. Her insights directly shaped program redesign.”</p>
         <p class="mt-4 font-semibold">Program Director — International NGO</p>
       </div>
-
-      <div class="bg-gray-50 p-6 rounded-xl shadow">
-        <p class="italic">
-          “Exceptional analytical skills and stakeholder engagement.
-          Highly recommended for complex multi-country studies.”
-        </p>
+      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <p class="italic">“Exceptional analytical skills and stakeholder engagement. Highly recommended for complex multi-country studies.”</p>
         <p class="mt-4 font-semibold">Research Lead — Development Consultancy</p>
       </div>
-
     </div>
   </div>
 </section>
 
-
-<!-- CONTACT -->
-<section id="contact" class="py-20 bg-blue-900 text-white text-center">
+<!-- CONTACT WITH FREE FORMSPREE -->
+<section id="contact" class="py-20 bg-blue-900 text-white text-center" data-aos="fade-up">
   <h2 class="text-3xl font-bold mb-6">Contact</h2>
-
-  <p>Email: abigaelcherotich867@gmail.com</p>
-  <p class="mt-2">Phone: +254 704 990 012</p>
-  <p class="mt-2">Nairobi, Kenya</p>
+  <form action="https://formspree.io/f/meelkweb" method="POST" class="max-w-xl mx-auto flex flex-col gap-4">
+    <input type="text" name="name" placeholder="Please enter your name" class="p-3 rounded-md text-gray-900" required>
+    <input type="Enter email" name="email" placeholder="Enter Email" class="p-3 rounded-md text-gray-900" required>
+    <input type="Subject" name="Subject" placeholder="Subject" class="p-3 rounded-md text-gray-900" required>
+    <textarea name="message" placeholder="Message" class="p-3 rounded-md text-gray-900" rows="5" required></textarea>
+    <button type="submit" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Send Message</button>
+  </form>
+  <p class="mt-6">Email: abigaelcherotich867@gmail.com · Phone: +254 704 990 012 · Nairobi, Kenya</p>
 </section>
-
-<footer class="py-6 text-center text-sm text-gray-400">
-  © 2026 Abigael Cherotich. All rights reserved.
-</footer>
-
-<!-- SCROLL SPY SCRIPT -->
 <script>
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
+  const form = document.getElementById('contactForm');
+  const messageEl = document.getElementById('formMessage');
 
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => link.classList.remove("active"));
-        const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
-        if (activeLink) activeLink.classList.add("active");
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      messageEl.textContent = "✅ Thank you! Your message has been sent.";
+      messageEl.classList.remove('hidden');
+      messageEl.classList.add('text-green-300');
+      form.reset();
+    } else {
+      messageEl.textContent = "⚠️ Oops! There was a problem sending your message.";
+      messageEl.classList.remove('hidden');
+      messageEl.classList.add('text-red-300');
+    }
+  });
+</script>
+
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+  <script>
+  // ScrollSpy functionality
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function activateNavLink() {
+    let scrollY = window.pageYOffset;
+
+    sections.forEach(section => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 120; // offset for fixed header
+      const sectionId = section.getAttribute('id');
+
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
       }
     });
-  },
-  { threshold: 0.6 }
-);
+  }
 
-sections.forEach(section => observer.observe(section));
+  window.addEventListener('scroll', activateNavLink);
+  window.addEventListener('load', activateNavLink);
 </script>
 
 </body>
