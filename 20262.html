@@ -384,11 +384,6 @@
     </div>
 </section>
 
-<div class="fixed bottom-6 right-6 z-50">
-    <a href="https://wa.me/254704990012" target="_blank" id="whatsapp-btn" class="bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-green-600 transition-all">
-        <i data-lucide="message-circle" class="w-6 h-6"></i>
-    </a>
-</div>
 
 <script>
     // Initialize Icons
@@ -445,8 +440,8 @@
   const whatsappPopup = document.getElementById('whatsapp-popup');
 
   whatsappBtn.addEventListener('click', () => {
-    whatsappPopup.classList.toggle('hidden');
-  });
+  window.open("https://wa.me/254704990012", "_blank");
+});
 
   // Close popup when clicking outside
   document.addEventListener('click', (e) => {
