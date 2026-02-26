@@ -1,69 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Abigael Cherotich | M&E & Statistical Analysis Consultant</title>
-<meta name="description" content="Independent consultant providing rigorous impact evaluations and statistical modeling across East Africa.">
+<header id="site-header"
+class="fixed top-0 w-full z-50 transition-all duration-300
+bg-transparent">
 
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
+    <nav class="max-w-7xl mx-auto flex items-center justify-between p-4 md:px-8">
+        
+        <div>
+            <div class="font-bold text-xl text-slate-900 tracking-tighter">
+                ABIGAEL <span class="text-amber-500">CHEROTICH</span>
+            </div>
+            <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">
+                Monitoring, Evaluation & Statistical Analysis Consultant
+            </div>
+        </div>
+        
+        <ul class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
+            <li><a href="#home" class="nav-link hover:text-slate-900">Home</a></li>
+            <li><a href="#services" class="nav-link hover:text-slate-900">Services</a></li>
+            <li><a href="#process" class="nav-link hover:text-slate-900">Process</a></li>
+            <li><a href="#deliverables" class="nav-link hover:text-slate-900">Typical deliverables</a></li>
+            <li><a href="#experience" class="nav-link hover:text-slate-900">Experience</a></li>
+            <li><a href="#testimonials" class="nav-link hover:text-slate-900">Testimonials</a></li>
+            <li>
+                <a href="#contact"
+                   class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-slate-800 transition">
+                   Work With Me
+                </a>
+            </li>
+        </ul>
 
-<!-- Fonts & AOS -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        <button class="lg:hidden"
+                onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <i data-lucide="menu"></i>
+        </button>
 
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest" defer></script>
+    </nav>
 
-<style>
-body { font-family: 'Inter', sans-serif; scroll-padding-top: 100px; }
-h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
-.glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
-.gradient-text { background: linear-gradient(90deg, #fbbf24, #f59e0b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.nav-link { position: relative; transition: color 0.3s; }
-.nav-link.active::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 100%; height: 2px; background: #fbbf24; }
-#whatsapp-btn { animation: pulse 2s infinite; }
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
-.group:hover { transform: translateY(-4px); transition: all 0.3s ease; }
-</style>
-</head>
+    <div id="mobile-menu"
+         class="hidden lg:hidden bg-white border-b p-4 space-y-4 shadow-xl">
+        <a href="#home" class="block text-slate-700">Home</a>
+        <a href="#services" class="block text-slate-700">Services</a>
+        <a href="#experience" class="block text-slate-700">Experience</a>
+        <a href="#contact" class="block font-bold text-amber-600">Contact</a>
+    </div>
+
+</header>
 
 <body class="bg-slate-50 text-slate-900 scroll-smooth">
 
-<!-- Header -->
 <header class="fixed w-full z-50 transition-all duration-300 glass border-b border-slate-200">
-<nav class="max-w-7xl mx-auto flex items-center justify-between p-4 md:px-8">
-    <div>
-        <div class="font-bold text-xl text-slate-900 tracking-tighter">ABIGAEL <span class="text-amber-500">CHEROTICH</span></div>
-        <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Monitoring, Evaluation & Statistical Analysis Consultant</div>
-    </div>
-    
-    <ul class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
-        <li><a href="#home" class="nav-link hover:text-slate-900">Home</a></li>
-        <li><a href="#services" class="nav-link hover:text-slate-900">Services</a></li>
-        <li><a href="#process" class="nav-link hover:text-slate-900">Process</a></li>
-        <li><a href="#experience" class="nav-link hover:text-slate-900">Experience</a></li>
-        <li><a href="#testimonials" class="nav-link hover:text-slate-900">Testimonials</a></li>
-        <li><a href="#contact" class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-slate-800 transition">Work With Me</a></li>
-    </ul>
+    <nav class="max-w-7xl mx-auto flex items-center justify-between p-4 md:px-8">
+        <div>
+            <div class="font-bold text-xl text-slate-900 tracking-tighter">ABIGAEL <span class="text-amber-500">CHEROTICH</span></div>
+            <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Monitoring, Evaluation & Statistical Analysis Consultant</div>
+        </div>
+        
+        <ul class="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
+            <li><a href="#home" class="nav-link hover:text-slate-900">Home</a></li>
+            <li><a href="#services" class="nav-link hover:text-slate-900">Services</a></li>
+            <li><a href="#process" class="nav-link hover:text-slate-900">Process</a></li>
+            <li><a href="#deliverables" class="nav-link hover:text-slate-900">Typical deliverables</a></li>
+            <li><a href="#experience" class="nav-link hover:text-slate-900">Experience</a></li>
+            <li><a href="#testimonials" class="nav-link hover:text-slate-900">Testimonials</a></li>
+            <li><a href="#contact" class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-slate-800 transition">Work With Me</a></li>
+        </ul>
 
-    <button class="lg:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-        <i data-lucide="menu"></i>
-    </button>
-</nav>
-<div id="mobile-menu" class="hidden lg:hidden bg-white border-b p-4 space-y-4 shadow-xl">
-    <a href="#home" class="block text-slate-700">Home</a>
-    <a href="#services" class="block text-slate-700">Services</a>
-    <a href="#process" class="block text-slate-700">Process</a>
-    <a href="#experience" class="block text-slate-700">Experience</a>
-    <a href="#testimonials" class="block text-slate-700">Testimonials</a>
-    <a href="#contact" class="block font-bold text-amber-600">Contact</a>
-</div>
+        <button class="lg:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b p-4 space-y-4 shadow-xl">
+        <a href="#home" class="block text-slate-700">Home</a>
+        <a href="#services" class="block text-slate-700">Services</a>
+        <a href="#experience" class="block text-slate-700">Experience</a>
+        <a href="#contact" class="block font-bold text-amber-600">Contact</a>
+    </div>
 </header>
 
-<!-- Home -->
+<!-- Home Section -->
 <section id="home" class="relative pt-40 pb-20 overflow-hidden bg-slate-900 text-white">
   <div class="absolute top-0 right-0 w-1/3 h-full bg-amber-500/5 skew-x-12 transform translate-x-20 pointer-events-none"></div>
   <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
@@ -79,9 +93,9 @@ h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
       <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
         I help donors and international organizations across East Africa measure impact and make high-stakes decisions through rigorous statistical analysis and M&E systems.
       </p>
-      <p class="mt-4 text-xl text-slate-300 leading-relaxed max-w-xl">
-        With an education background in Economics and Statistics as well as MEAL training, I specialize in evaluating programs in Education, WASH, GBV, SRHR, Youth, and Economic Empowerment.
-      </p>
+         <p class="mt-6 text-xl text-slate-300 leading-relaxed max-w-xl">
+        With education background in Economics and Statistics as well as MEAL course, I specialize in evaluation of programs in Education, WASH, GBV, SRHR,Youth and Economic empowerment
+          </p>
 
       <div class="mt-12 flex gap-8 items-center border-t border-white/10 pt-8">
         <div><p class="text-2xl font-bold">20+</p><p class="text-slate-400 text-sm font-medium">Projects Delivered</p></div>
@@ -90,8 +104,8 @@ h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
         <div class="w-px h-10 bg-white/10"></div>
         <div><p class="text-2xl font-bold">5+</p><p class="text-slate-400 text-sm font-medium">Target Sectors</p></div>
       </div>
-
-      <div class="mt-10 flex flex-wrap gap-4">
+         
+       <div class="mt-10 flex flex-wrap gap-4">
         <a href="#contact" class="bg-amber-500 hover:bg-amber-400 text-slate-900 px-8 py-4 rounded-xl font-bold shadow-lg shadow-amber-500/20 transition-all transform hover:-translate-y-1">
           Start a Consultation
         </a>
@@ -99,196 +113,170 @@ h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
           <i data-lucide="download" class="w-5 h-5"></i> Download CV
         </a>
       </div>
+
     </div>
 
+    <!-- Profile Image -->
     <div class="relative flex justify-center" data-aos="fade-left">
       <div class="absolute -inset-4 bg-amber-500/20 blur-3xl rounded-full pointer-events-none"></div>
-      <img 
-        src="images/profile/may.jpg" 
-        alt="Abigael Cherotich, M&E and Statistical Analysis Consultant" 
-        loading="lazy"
-        onerror="this.src='https://via.placeholder.com/400x500?text=Profile+Image';" 
-        class="relative rounded-3xl shadow-2xl border border-white/10 w-full max-w-md object-cover aspect-[4/5]"
-      >
+        <img 
+          src="images/profile/may1.jpg" 
+          alt="Abigael Cherotich" 
+          onerror="this.src='https://via.placeholder.com/400?text=Profile+Image';" 
+          class="relative rounded-full shadow-2xl border-4 border-amber-500 w-85 h-85 object-cover"
+       >
     </div>
   </div>
 </section>
 
-<!-- Services -->
+
+
 <section id="services" class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Services</h2>
-      <div class="h-1.5 w-20 bg-amber-500 mx-auto mt-4 rounded-full"></div>
-      <p class="text-center max-w-3xl mx-auto mb-12 text-gray-700">
-        I provide end-to-end evaluation, analytical, and research services generating credible evidence to inform policy, strategy, and investment decisions.
-      </p>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Services</h2>
+             <div class="h-1.5 w-20 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+              <p class="text-center max-w-3xl mx-auto mb-12 text-gray-700">
+      I provide high-level end-to -end evaluation, analytical, and research services generating 
+      credible evidence to inform policy, strategy, and investment decisions. The services are highlighted below.
+    </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
+                <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <i data-lucide="bar-chart-3"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Evaluation & Evidence</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">Rigorous frameworks aligned with OECD-DAC standards to validate program performance and impact.</p>
+                <ul class="space-y-3 text-sm font-medium text-slate-500">
+                   <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Impact and performance evaluations</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Baseline to Endline Studies</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Theory of Change Development</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Indicator Framework Development</li>
+                </ul>
+            </div>
+
+            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
+                <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <i data-lucide="database"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Statistical Leadership</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">Advanced quantitative modeling to establish causal attribution in complex development settings.</p>
+                <ul class="space-y-3 text-sm font-medium text-slate-500">
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Quasi-experimental (DiD, PSM)</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Sampling design and Power Calculations</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Automated dashboard development</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Data Quality Audits and validation</li>
+                </ul>
+            </div>
+
+            <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
+                <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                    <i data-lucide="users"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Mixed-Methods</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-6">Synthesizing KIIs, FGDs, and surveys to provide a 360-degree view of program outcomes.</p>
+                <ul class="space-y-3 text-sm font-medium text-slate-500">
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Survey tool design and scripting</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Triangulation and integrated analysis</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Policy Brief Development</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Workshops and presentations</li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Service Cards -->
-      <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
-          <i data-lucide="bar-chart-3"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Evaluation & Evidence</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Rigorous frameworks aligned with OECD-DAC standards to validate program performance and impact.</p>
-        <ul class="space-y-3 text-sm font-medium text-slate-500">
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Impact and performance evaluations</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Baseline to Endline Studies</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Theory of Change Development</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Indicator Framework Development</li>
-        </ul>
-      </div>
-      <!-- Repeat similar 2 other service cards... -->
-      <!-- ===================== PART 1 ===================== -->
-<!-- Home section already included in previous snippet, so we continue from Services -->
-<section id="services" class="py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16" data-aos="fade-up">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Services</h2>
-      <div class="h-1.5 w-20 bg-amber-500 mx-auto mt-4 rounded-full"></div>
-      <p class="text-center max-w-3xl mx-auto mb-12 text-gray-700">
-        I provide end-to-end evaluation, analytical, and research services generating credible evidence to inform policy, strategy, and investment decisions.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Service Cards -->
-      <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
-          <i data-lucide="bar-chart-3"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Evaluation & Evidence</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Rigorous frameworks aligned with OECD-DAC standards to validate program performance and impact.</p>
-        <ul class="space-y-3 text-sm font-medium text-slate-500">
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Impact and performance evaluations</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Baseline to Endline Studies</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Theory of Change Development</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Indicator Framework Development</li>
-        </ul>
-      </div>
-
-      <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
-          <i data-lucide="database"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Statistical Leadership</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Advanced quantitative modeling to establish causal attribution in complex development settings.</p>
-        <ul class="space-y-3 text-sm font-medium text-slate-500">
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Quasi-experimental (DiD, PSM)</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Sampling design & Power Calculations</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Automated dashboard development</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Data Quality Audits & Validation</li>
-        </ul>
-      </div>
-
-      <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="300">
-        <div class="w-14 h-14 bg-amber-500/10 text-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all">
-          <i data-lucide="users"></i>
-        </div>
-        <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Mixed-Methods</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Synthesizing KIIs, FGDs, and surveys to provide a 360-degree view of program outcomes.</p>
-        <ul class="space-y-3 text-sm font-medium text-slate-500">
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Survey tool design & scripting</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Triangulation & integrated analysis</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Policy Brief Development</li>
-          <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Workshops & presentations</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </section>
 
-<!-- Consulting Process -->
 <section id="process" class="py-24 bg-slate-900 text-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-20">The Consulting Lifecycle</h2>
-    <div class="relative grid md:grid-cols-5 gap-8">
-      <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-700"></div>
-
-      <!-- Steps -->
-      <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-16 h-16 bg-slate-800 border-2 border-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
-          <span class="text-xl font-bold">01</span>
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-20">The Consulting Lifecycle</h2>
+        <div class="relative grid md:grid-cols-5 gap-8">
+            <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-700"></div>
+            
+            <div class="relative z-10 text-center group">
+                <div class="w-16 h-16 bg-slate-800 border-2 border-amber-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
+                    <span class="text-xl font-bold">01</span>
+                </div>
+                <h4 class="font-bold mb-2">Scoping</h4>
+                <p class="text-xs text-slate-400">Defining objectives and evaluation questions.</p>
+            </div>
+            <div class="relative z-10 text-center group">
+                <div class="w-16 h-16 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
+                    <span class="text-xl font-bold">02</span>
+                </div>
+                <h4 class="font-bold mb-2">Design</h4>
+                <p class="text-xs text-slate-400">Sampling strategy, tool development and scripting.</p>
+            </div>
+            <div class="relative z-10 text-center group">
+                <div class="w-16 h-16 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
+                    <span class="text-xl font-bold">03</span>
+                </div>
+                <h4 class="font-bold mb-2">Fieldwork</h4>
+                <p class="text-xs text-slate-400">Enumerator training, supervision, and data collection with real-time QA.</p>
+            </div>
+            <div class="relative z-10 text-center group">
+                <div class="w-16 h-16 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
+                    <span class="text-xl font-bold">04</span>
+                </div>
+                <h4 class="font-bold mb-2">Analysis</h4>
+                <p class="text-xs text-slate-400">Data cleaning,coding,statistical analysis, and Statistical modeling.</p>
+            </div>
+            <div class="relative z-10 text-center group">
+                <div class="w-16 h-16 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
+                    <span class="text-xl font-bold">05</span>
+                </div>
+                <h4 class="font-bold mb-2">Insights</h4>
+                <p class="text-xs text-slate-400">Evidence synthesis, recommendations and dissemination.</p>
+            </div>
         </div>
-        <h4 class="font-bold mb-2">Scoping</h4>
-        <p class="text-xs text-slate-400">Defining objectives and evaluation questions.</p>
-      </div>
-
-      <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="150">
-        <div class="w-16 h-16 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
-          <span class="text-xl font-bold">02</span>
-        </div>
-        <h4 class="font-bold mb-2">Design</h4>
-        <p class="text-xs text-slate-400">Sampling strategy, tool development, and scripting.</p>
-      </div>
-
-      <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-16 h-16 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
-          <span class="text-xl font-bold">03</span>
-        </div>
-        <h4 class="font-bold mb-2">Fieldwork</h4>
-        <p class="text-xs text-slate-400">Enumerator training, supervision, and real-time data QA.</p>
-      </div>
-
-      <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="250">
-        <div class="w-16 h-16 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
-          <span class="text-xl font-bold">04</span>
-        </div>
-        <h4 class="font-bold mb-2">Analysis</h4>
-        <p class="text-xs text-slate-400">Data cleaning, coding, statistical analysis, and modeling.</p>
-      </div>
-
-      <div class="relative z-10 text-center group" data-aos="fade-up" data-aos-delay="300">
-        <div class="w-16 h-16 bg-slate-800 border-2 border-slate-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500 transition-colors">
-          <span class="text-xl font-bold">05</span>
-        </div>
-        <h4 class="font-bold mb-2">Insights</h4>
-        <p class="text-xs text-slate-400">Evidence synthesis, recommendations, and dissemination.</p>
-      </div>
     </div>
-  </div>
 </section>
-
-<!-- Deliverables -->
+<!-- DELIVERABLES -->
 <section id="deliverables" class="py-24 bg-slate-50">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16" data-aos="fade-up">
+    
+    <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Typical Deliverables</h2>
       <div class="h-1.5 w-20 bg-amber-500 mx-auto mt-4 rounded-full"></div>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8 text-sm">
-      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="100">
+      
+      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
         <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Evaluation Reports</h3>
         <p class="text-slate-600 text-sm leading-relaxed">Baseline, midline, endline, and impact evaluation reports aligned with donor standards.</p>
       </div>
-      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="150">
+
+      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
         <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Datasets & Codebooks</h3>
         <p class="text-slate-600 text-sm leading-relaxed">Clean datasets with full documentation for transparency and reuse.</p>
       </div>
-      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="200">
+
+      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
         <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Dashboards</h3>
         <p class="text-slate-600 text-sm leading-relaxed">Interactive dashboards for monitoring and decision support.</p>
       </div>
-      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="250">
+
+      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
         <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Policy Briefs</h3>
         <p class="text-slate-600 text-sm leading-relaxed">Concise summaries tailored for policymakers and executives.</p>
       </div>
-      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="300">
+
+      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
         <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Indicator Frameworks</h3>
         <p class="text-slate-600 text-sm leading-relaxed">Theory of Change, logframes, and performance systems.</p>
       </div>
-      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm" data-aos="fade-up" data-aos-delay="350">
+
+      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 transition-all group shadow-sm">
         <h3 class="text-xl font-bold mb-4 group-hover:text-amber-500 transition-colors">Presentations</h3>
         <p class="text-slate-600 text-sm leading-relaxed">Stakeholder presentations and dissemination workshops.</p>
       </div>
+
     </div>
   </div>
 </section>
-<!-- ===================== PART 2 ===================== -->
-
+    
 <!-- EXPERIENCE / CASE STUDIES -->
 <section id="experience" class="py-24 bg-slate-900 text-white">
   <div class="max-w-7xl mx-auto px-6">
@@ -306,8 +294,7 @@ h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
     </div>
 
     <div class="grid md:grid-cols-2 gap-8">
-      <!-- Case Study 1 -->
-      <div class="bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-700 hover:shadow-md transition-shadow" data-aos="fade-up">
+      <div class="bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-700 hover:shadow-md transition-shadow">
         <div class="flex justify-between items-start mb-4">
           <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Governance & Accountability</span>
           <span class="text-slate-400 text-xs font-medium">Buni Media</span>
@@ -320,8 +307,7 @@ h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
         </div>
       </div>
 
-      <!-- Case Study 2 -->
-      <div class="bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-700 hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+      <div class="bg-slate-800 p-8 rounded-3xl shadow-sm border border-slate-700 hover:shadow-md transition-shadow">
         <div class="flex justify-between items-start mb-4">
           <span class="text-amber-500 font-bold text-xs uppercase tracking-widest">Education</span>
           <span class="text-slate-400 text-xs font-medium">CRS Project</span>
@@ -336,82 +322,141 @@ h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; letter-spacing: -0.02em; }
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS -->
 <section id="testimonials" class="py-24 bg-slate-50">
   <div class="max-w-7xl mx-auto px-6 text-center">
-    <div class="text-center mb-16" data-aos="fade-up">
+
+    <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Testimonials</h2>
       <div class="h-1.5 w-20 bg-amber-500 mx-auto mt-4 rounded-full"></div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8">
-      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 shadow-sm hover:shadow-md transition-all group" data-aos="fade-up">
+
+      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 shadow-sm hover:shadow-md transition-all group">
         <p class="italic text-slate-600 mb-4">“Abigael delivered a rigorous evaluation under tight timelines. Her insights directly shaped program redesign.”</p>
         <p class="font-semibold text-slate-900">Program Director — International NGO</p>
       </div>
 
-      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 shadow-sm hover:shadow-md transition-all group" data-aos="fade-up" data-aos-delay="100">
+      <div class="p-8 rounded-3xl bg-white border border-slate-100 hover:border-amber-500/50 shadow-sm hover:shadow-md transition-all group">
         <p class="italic text-slate-600 mb-4">“Exceptional analytical skills and stakeholder engagement. Highly recommended for complex multi-country studies.”</p>
         <p class="font-semibold text-slate-900">Research Lead — Development Consultancy</p>
       </div>
+
     </div>
   </div>
 </section>
-
-<!-- CONTACT -->
 <section id="contact" class="py-24 bg-slate-900 text-white">
-  <div class="max-w-3xl mx-auto px-6 text-center" data-aos="fade-up">
-    <h2 class="text-4xl font-bold mb-6 text-white">Ready to <span class="text-amber-500">Measure Impact?</span></h2>
-    <p class="text-slate-400 mb-12">I am available for short-term technical assignments and long-term advisory roles.</p>
-
-    <form action="https://formspree.io/f/meelkweb" method="POST" class="space-y-4 text-left">
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" name="name" placeholder="Full Name" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 focus:border-amber-500 outline-none transition" required>
-        <input type="email" name="email" placeholder="Email Address" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 focus:border-amber-500 outline-none transition" required>
-      </div>
-      <input type="text" name="subject" placeholder="Project Type (e.g., Baseline Study)" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 focus:border-amber-500 outline-none transition" required>
-      <textarea name="message" rows="5" placeholder="Tell me about your program objectives..." class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 focus:border-amber-500 outline-none transition" required></textarea>
-      <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-4 rounded-xl shadow-lg transition-all">Send Consultancy Inquiry</button>
-    </form>
-
-    <div class="mt-12 pt-12 border-t border-slate-800 flex flex-wrap justify-center gap-8 text-sm text-slate-400">
-      <a href="mailto:abigaelcherotich867@gmail.com" class="hover:text-amber-500 transition">abigaelcherotich867@gmail.com</a>
-      <span>+254 704 990 012</span>
-      <span>Nairobi, Kenya</span>
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6 text-white">Ready to <span class="text-amber-500">Measure Impact?</span></h2>
+        <p class="text-slate-400 mb-12">I am available for short-term technical assignments and long-term advisory roles.</p>
+     
+        <form action="https://formspree.io/f/meelkweb" method="POST" class="space-y-4 text-left">
+            <div class="grid md:grid-cols-2 gap-4">
+                <input type="text" name="name" placeholder="Full Name" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 focus:border-amber-500 outline-none transition" required>
+                <input type="email" name="email" placeholder="Email Address" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 focus:border-amber-500 outline-none transition" required>
+            </div>
+            <input type="text" name="subject" placeholder="Project Type (e.g., Baseline Study)" class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 focus:border-amber-500 outline-none transition" required>
+            <textarea name="message" rows="5" placeholder="Tell me about your program objectives..." class="w-full p-4 rounded-xl bg-slate-800 border border-slate-700 focus:border-amber-500 outline-none transition" required></textarea>
+            <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold py-4 rounded-xl shadow-lg transition-all">Send Consultancy Inquiry</button>
+        </form>
+        
+        <div class="mt-12 pt-12 border-t border-slate-800 flex flex-wrap justify-center gap-8 text-sm text-slate-400">
+            <a href="mailto:abigaelcherotich867@gmail.com" class="hover:text-amber-500 transition">abigaelcherotich867@gmail.com</a>
+            <span>+254 704 990 012</span>
+            <span>Nairobi, Kenya</span>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- WHATSAPP BUTTON -->
-<div class="fixed bottom-6 right-6 z-50">
-  <a href="https://wa.me/254704990012" target="_blank" id="whatsapp-btn" class="bg-green-500 text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:bg-green-600 transition-all">
-    <i data-lucide="message-circle" class="w-6 h-6"></i>
-  </a>
-</div>
 
-<!-- SCRIPTS -->
-<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    // Initialize Icons
+    lucide.createIcons();
+    // Initialize Animations
+    AOS.init({ duration: 800, once: true });
+
+    // ScrollSpy
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 120) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+<!-- Add this before closing </body> -->
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-  lucide.createIcons();
   AOS.init({ duration: 800, once: true });
+</script>
+ <!-- Persistent WhatsApp Button with Popup -->
+<div class="whatsapp-container fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
 
-  // ScrollSpy
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (pageYOffset >= sectionTop - 120) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
+  <!-- Popup message -->
+  <div id="whatsapp-popup" class="hidden bg-white text-gray-900 p-4 rounded-lg shadow-lg max-w-xs">
+    <p class="text-sm">Hi! 👋 Need help with M&E or Statistical Analysis? Chat with me on WhatsApp!</p>
+    <a href="https://wa.me/254704990012" target="_blank" 
+       class="mt-2 inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold">
+      Chat Now
+    </a>
+  </div>
+
+  <!-- Floating button -->
+  <button id="whatsapp-btn" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center justify-center transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20.52 3.48a11.88 11.88 0 00-16.8 0c-4.62 4.63-4.62 12.16 0 16.79a11.92 11.92 0 0016.8 0c4.63-4.63 4.63-12.16 0-16.79zm-8.52 17a9.82 9.82 0 01-5.25-1.53l-3.13.82.82-3.14A9.83 9.83 0 013 12c0-5.52 4.48-10 10-10 5.52 0 10 4.48 10 10 0 5.51-4.48 10-10 10zm5.44-7.55c-.23-.11-1.36-.67-1.57-.74-.21-.07-.36-.11-.51.11s-.59.74-.72.89c-.13.16-.26.18-.49.07s-1.17-.43-2.23-1.36c-.82-.73-1.37-1.63-1.53-1.8-.16-.18-.02-.28.12-.39.12-.11.27-.28.41-.42.14-.14.18-.24.27-.4.09-.16.05-.3-.02-.42-.07-.12-.51-1.23-.7-1.68-.18-.44-.36-.38-.51-.39-.13 0-.28-.01-.43-.01s-.4.06-.61.3c-.21.24-.81.79-.81 1.92s.83 2.23.95 2.38c.11.14 1.65 2.53 4 3.54 2.35 1 2.35.67 2.77.63.42-.05 1.36-.55 1.55-1.08.19-.53.19-.98.13-1.08-.06-.1-.21-.16-.44-.27z"/>
+    </svg>
+  </button>
+</div>
+<script>
+  const whatsappBtn = document.getElementById('whatsapp-btn');
+  const whatsappPopup = document.getElementById('whatsapp-popup');
+
+  whatsappBtn.addEventListener('click', () => {
+  window.open("https://wa.me/254704990012", "_blank");
+});
+
+  // Close popup when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!whatsappPopup.contains(e.target) && !whatsappBtn.contains(e.target)) {
+      whatsappPopup.classList.add('hidden');
+    }
   });
 </script>
+    <script>
+const header = document.getElementById("site-header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 40) {
+    header.classList.add(
+      "bg-white/80",
+      "backdrop-blur-lg",
+      "shadow-md",
+      "border-b",
+      "border-slate-200"
+    );
+  } else {
+    header.classList.remove(
+      "bg-white/80",
+      "backdrop-blur-lg",
+      "shadow-md",
+      "border-b",
+      "border-slate-200"
+    );
+  }
+});
+</script>
+</body>
+</html>
