@@ -129,7 +129,6 @@
   }
   .hero-photo {
     width: 100%; height: 100%; object-fit: cover;
-    object-position: center top;
     clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
     position: relative; z-index: 1; display: block;
   }
@@ -158,7 +157,7 @@
   .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 4vw, 52px); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
   .section-title em { font-style: italic; color: var(--teal); }
 
-  /* ── ABOUT ME── */
+  /* ── ABOUT ── */
   .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
   .about-text p { font-size: 16px; line-height: 1.8; color: var(--cream-dim); margin-bottom: 20px; font-weight: 300; }
   .about-text p strong { color: var(--cream); font-weight: 500; }
@@ -307,7 +306,7 @@
   <div class="hero-inner">
 
     <div class="hero-content">
-      <div class="hero-tag">AI Trainer &amp; Evaluator · Open to AI Training, evaluation and data anotation</div>
+      <div class="hero-tag">AI Trainer &amp; Evaluator · Open to Turing · Scale AI · Outlier · DataAnnotation</div>
       <h1 class="hero-name">Abigael<br><em>Cherotich</em></h1>
       <p class="hero-title">AI Trainer · Model Evaluator · Benchmark Engineer</p>
       <p class="hero-desc">
@@ -338,24 +337,30 @@
              <img src="your-photo.jpg" alt="Abigael Cherotich" class="hero-photo">
           2. Upload your-photo.jpg to the same folder as index.html on GitHub
         -->
-        <img src="images/profile/may.jpg" alt="Abigael Cherotich" class="hero-photo">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="30" r="16" stroke="#00C9A7" stroke-width="1.5" opacity="0.4"/>
+            <path d="M10 70c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="#00C9A7" stroke-width="1.5" opacity="0.4"/>
+          </svg>
+          <span>Add your photo here</span>
+        </div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ABOUT ME-->
+<!-- ABOUT -->
 <section id="about">
   <div class="section-label">About</div>
-  <h2 class="section-title">Background<br><em>and transition</em></h2>
+  <h2 class="section-title">Built for<br><em>AI evaluation work</em></h2>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>
         I spent seven years as a researcher and data analyst at
         <strong>Dalberg Research</strong> and <strong>NielsenIQ</strong>,
         building evaluation frameworks and data pipelines for the World Bank,
-        IFC,Triggerise, Coca-Cola, and Safaricom. The work demanded one thing above all:
+        IFC, Coca-Cola, and Safaricom. The work demanded one thing above all:
         knowing whether an output was actually correct — not just whether it
         looked right.
       </p>
@@ -406,7 +411,7 @@
     <div style="padding:12px 22px; border:1px solid var(--border); background:var(--card-bg); font-family:'DM Mono',monospace; font-size:12px; color:var(--teal); letter-spacing:0.1em; box-shadow:0 1px 4px rgba(26,58,107,0.06);">REMOTASKS</div>
   </div>
   <p style="margin-top:16px; font-size:13px; color:var(--text-muted); font-family:'DM Mono',monospace; letter-spacing:0.05em;">
-    Available 40 hrs/week · Remote · PST overlap · Kenya (EAT)
+    Available 20–40 hrs/week · Remote · PST overlap · Kenya (EAT)
   </p>
 </section>
 
@@ -426,12 +431,29 @@
     <!-- PROJECT 1 -->
     <div class="project-card reveal">
       <div class="project-image">
-         <img src="https://raw.githubusercontent.com/Abigael-hub/ml-output-evaluator/main/regression_evaluation.png"
-         alt="ML Output Evaluator — Regression Evaluation">
+        <!--
+          TO ADD PROJECT IMAGE:
+          Replace the div.project-image-placeholder with:
+          <img src="project1-preview.png" alt="ML Output Evaluator">
+          Upload project1-preview.png to your GitHub repo.
+          Tip: screenshot your notebook's charts and use that.
+        -->
+        <div class="project-image-placeholder">
+          <div class="chart-lines">
+            <div class="bar" style="height:30px"></div>
+            <div class="bar" style="height:55px"></div>
+            <div class="bar" style="height:42px"></div>
+            <div class="bar" style="height:68px"></div>
+            <div class="bar" style="height:38px"></div>
+            <div class="bar" style="height:60px"></div>
+            <div class="bar" style="height:48px"></div>
+          </div>
+          <span>Classification · Regression · Threshold</span>
+        </div>
         <div class="project-image-overlay"></div>
-     <div class="project-image-tag">Project 01</div>
-    </div>
-    <div class="project-body">
+        <div class="project-image-tag">Project 01</div>
+      </div>
+      <div class="project-body">
         <div class="project-number">ML EVALUATION · PYTHON · SKLEARN · JUPYTER</div>
         <h3 class="project-title">ML Output Evaluator</h3>
         <p class="project-desc">
