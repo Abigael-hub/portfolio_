@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abigael Cherotich — AI Evaluation Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1B2D;
+    --navy-mid: #1A2E4A;
+    --navy-light: #243D5E;
+    --teal: #00C9A7;
+    --teal-dim: #00A389;
+    --amber: #F5A623;
+    --cream: #F5F0E8;
+    --cream-dim: #EAE4D8;
+    --white: #FFFFFF;
+    --text-muted: #8B9BB4;
+    --card-bg: #162338;
+    --border: rgba(0,201,167,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--navy); color: var(--cream); overflow-x: hidden; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 60px;
+    background: rgba(15,27,45,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--text-muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px 60px 80px; position: relative; overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(0,201,167,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,201,167,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+  }
+  .hero-glow {
+    position: absolute; width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,201,167,0.08) 0%, transparent 70%);
+    top: -100px; right: -100px; pointer-events: none;
+  }
+  .hero-inner {
+    position: relative; display: grid; grid-template-columns: 1fr auto;
+    gap: 80px; align-items: center; width: 100%; max-width: 1100px;
+  }
+  .hero-content { max-width: 700px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal);
+    letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 32px;
+    opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards;
+  }
+  .hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--teal); }
+  .hero-name {
+    font-family: 'DM Serif Display', serif; font-size: clamp(52px, 7vw, 88px);
+    line-height: 1.0; color: var(--white); margin-bottom: 16px;
+    opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards;
+  }
+  .hero-name em { font-style: italic; color: var(--teal); }
+  .hero-title {
+    font-family: 'DM Serif Display', serif; font-size: clamp(18px, 2.5vw, 28px);
+    color: var(--text-muted); font-weight: 400; margin-bottom: 28px;
+    opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards;
+  }
+  .hero-desc {
+    font-size: 16px; line-height: 1.75; color: var(--cream-dim); max-width: 560px;
+    margin-bottom: 40px; font-weight: 300;
+    opacity: 0; animation: fadeUp 0.6s ease 0.4s forwards;
+  }
+  .hero-stats {
+    display: flex; gap: 40px; margin-bottom: 48px;
+    opacity: 0; animation: fadeUp 0.6s ease 0.5s forwards;
+  }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--teal); line-height: 1; }
+  .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+  .hero-ctas {
+    display: flex; gap: 16px;
+    opacity: 0; animation: fadeUp 0.6s ease 0.6s forwards;
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+    background: var(--teal); color: var(--navy); font-size: 14px; font-weight: 600;
+    text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+  }
+  .btn-primary:hover { background: var(--white); transform: translateY(-2px); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+    border: 1px solid var(--border); color: var(--cream); font-size: 14px;
+    font-weight: 500; text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* ── PROFILE IMAGE ── */
+  .hero-photo-wrap {
+    opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards; flex-shrink: 0;
+  }
+  .hero-photo-frame {
+    width: 280px; height: 320px; position: relative;
+  }
+  .hero-photo-frame::before {
+    content: '';
+    position: absolute; inset: -2px;
+    background: linear-gradient(135deg, var(--teal), transparent 60%);
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+  .hero-photo-frame::after {
+    content: '';
+    position: absolute; bottom: -12px; right: -12px;
+    width: 100%; height: 100%;
+    border: 1px solid rgba(0,201,167,0.2);
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    z-index: -1;
+  }
+  .hero-photo {
+    width: 100%; height: 100%; object-fit: cover;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    position: relative; z-index: 1; display: block;
+  }
+  .photo-placeholder {
+    width: 100%; height: 100%;
+    background: var(--card-bg);
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; position: relative; z-index: 1;
+    border: 1px solid var(--border);
+  }
+  .photo-placeholder svg { width: 64px; height: 64px; opacity: 0.3; }
+  .photo-placeholder span {
+    font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted);
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 60px; }
+  .section-label {
+    font-family: 'DM Mono', monospace; font-size: 11px; color: var(--teal);
+    letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--teal); opacity: 0.4; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 4vw, 52px); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+  .section-title em { font-style: italic; color: var(--teal); }
+
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+  .about-text p { font-size: 16px; line-height: 1.8; color: var(--cream-dim); margin-bottom: 20px; font-weight: 300; }
+  .about-text p strong { color: var(--cream); font-weight: 500; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .skill-item { display: flex; align-items: center; gap: 10px; padding: 11px 14px; background: var(--card-bg); border: 1px solid var(--border); font-size: 12px; color: var(--cream-dim); font-family: 'DM Mono', monospace; transition: all 0.2s; }
+  .skill-item:hover { border-color: var(--teal); color: var(--teal); }
+  .skill-dot { width: 5px; height: 5px; background: var(--teal); flex-shrink: 0; }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--navy-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .projects-intro { font-size: 16px; line-height: 1.75; color: var(--cream-dim); max-width: 600px; margin-bottom: 60px; font-weight: 300; }
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  .project-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    overflow: hidden; transition: all 0.3s; display: flex;
+    flex-direction: column; text-decoration: none; position: relative;
+  }
+  .project-card:hover { transform: translateY(-6px); border-color: rgba(0,201,167,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+
+  /* project image — now at bottom */
+  .project-image {
+    width: 100%; height: 200px; overflow: hidden; position: relative;
+    border-top: 1px solid var(--border); order: 2;
+  }
+  .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+  .project-card:hover .project-image img { transform: scale(1.05); }
+  .project-image-placeholder {
+    width: 100%; height: 100%; background: var(--navy-light);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; position: relative;
+  }
+  .project-image-placeholder .chart-lines { display: flex; align-items: flex-end; gap: 6px; height: 60px; }
+  .project-image-placeholder .bar {
+    width: 14px; background: rgba(0,201,167,0.3);
+    border-radius: 2px 2px 0 0; transition: height 0.3s;
+  }
+  .project-card:hover .project-image-placeholder .bar { background: rgba(0,201,167,0.5); }
+  .project-image-placeholder span { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+
+  /* image overlay */
+  .project-image-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 40%, var(--card-bg) 100%);
+    pointer-events: none;
+  }
+  .project-image-tag {
+    position: absolute; top: 12px; left: 12px;
+    font-family: 'DM Mono', monospace; font-size: 9px; color: var(--teal);
+    background: rgba(15,27,45,0.85); border: 1px solid var(--border);
+    padding: 4px 10px; letter-spacing: 0.15em; text-transform: uppercase;
+  }
+
+  /* project body — appears first */
+  .project-body { padding: 28px 28px 24px; order: 1; flex: 1; }
+  .project-number { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); letter-spacing: 0.15em; margin-bottom: 10px; opacity: 0.7; }
+  .project-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+  .project-desc { font-size: 13px; line-height: 1.7; color: var(--text-muted); margin-bottom: 20px; font-weight: 300; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .tag { font-family: 'DM Mono', monospace; font-size: 9px; padding: 3px 8px; border: 1px solid var(--border); color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .project-results {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    padding-top: 18px; border-top: 1px solid var(--border); margin-bottom: 20px;
+  }
+  .result-num { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--teal); }
+  .result-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; line-height: 1.4; }
+
+  /* project links row */
+  .project-links-row {
+    display: flex; gap: 10px; padding-top: 16px; border-top: 1px solid var(--border);
+  }
+  .proj-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px; font-family: 'DM Mono', monospace; font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    transition: all 0.2s; border: 1px solid var(--border); color: var(--text-muted);
+  }
+  .proj-link:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,201,167,0.05); }
+  .proj-link.primary { background: rgba(0,201,167,0.08); border-color: rgba(0,201,167,0.3); color: var(--teal); }
+  .proj-link.primary:hover { background: var(--teal); color: var(--navy); }
+
+  /* ── EXPERIENCE ── */
+  .timeline { margin-top: 60px; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px; background: linear-gradient(to bottom, var(--teal), transparent); }
+  .timeline-item { padding-left: 40px; padding-bottom: 56px; position: relative; }
+  .timeline-item::before { content: ''; position: absolute; left: -4px; top: 8px; width: 9px; height: 9px; background: var(--teal); transform: rotate(45deg); }
+  .timeline-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--teal); letter-spacing: 0.15em; margin-bottom: 8px; }
+  .timeline-role { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--white); margin-bottom: 4px; }
+  .timeline-company { font-size: 14px; color: var(--text-muted); margin-bottom: 18px; font-style: italic; }
+  .timeline-points { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .timeline-points li { font-size: 14px; line-height: 1.65; color: var(--cream-dim); padding-left: 16px; position: relative; font-weight: 300; }
+  .timeline-points li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 12px; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--navy-mid); border-top: 1px solid var(--border); text-align: center; }
+  .contact-inner { max-width: 600px; margin: 0 auto; }
+  .contact-desc { font-size: 16px; line-height: 1.7; color: var(--cream-dim); margin: 20px 0 48px; font-weight: 300; }
+  .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .contact-link { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border: 1px solid var(--border); color: var(--cream-dim); text-decoration: none; font-size: 13px; font-family: 'DM Mono', monospace; letter-spacing: 0.08em; transition: all 0.2s; }
+  .contact-link:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,201,167,0.05); }
+
+  /* ── FOOTER ── */
+  footer { padding: 28px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
+  footer p { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    nav { padding: 16px 24px; }
+    section { padding: 80px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-photo-wrap { order: -1; display: flex; justify-content: center; }
+    .hero-photo-frame { width: 200px; height: 230px; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 28px; flex-wrap: wrap; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AC / Portfolio</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+
+    <div class="hero-content">
+      <div class="hero-tag">AI Evaluation Specialist · Nairobi, Kenya</div>
+      <h1 class="hero-name">Abigael<br><em>Cherotich</em></h1>
+      <p class="hero-title">Data Analyst → AI Evaluation Engineer</p>
+      <p class="hero-desc">
+        Researcher and analyst turned AI evaluation specialist.
+        Seven years of rigorous evaluation work across social impact
+        and market research — now contributing to US-based AI projects
+        remotely, building the pipelines and benchmarks that make
+        AI systems trustworthy.
+      </p>
+      <div class="hero-stats">
+        <div><div class="stat-num">5+</div><div class="stat-label">Years experience</div></div>
+        <div><div class="stat-num">4</div><div class="stat-label">AI eval projects</div></div>
+        <div><div class="stat-num">50+</div><div class="stat-label">Dashboards delivered</div></div>
+        <div><div class="stat-num">96.7%</div><div class="stat-label">LLM eval pass rate</div></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Projects ↓</a>
+        <a href="#contact" class="btn-secondary">Get in touch</a>
+      </div>
+    </div>
+
+    <!-- PROFILE PHOTO -->
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <!--
+          TO ADD YOUR PHOTO:
+          1. Replace the div.photo-placeholder below with:
+             <img src="your-photo.jpg" alt="Abigael Cherotich" class="hero-photo">
+          2. Upload your-photo.jpg to the same folder as index.html on GitHub
+        -->
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="30" r="16" stroke="#00C9A7" stroke-width="1.5" opacity="0.4"/>
+            <path d="M10 70c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="#00C9A7" stroke-width="1.5" opacity="0.4"/>
+          </svg>
+          <span>Add your photo here</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title">Analyst turned<br><em>evaluation engineer</em></h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        I spent seven years as a researcher and data analyst at
+        <strong>Dalberg Research</strong> and <strong>NielsenIQ</strong>,
+        building evaluation frameworks and data pipelines for the World Bank,
+        IFC, Coca-Cola, and Safaricom. Rigour was not optional —
+        you either caught errors before they reached clients, or you
+        faced the consequences.
+      </p>
+      <p>
+        When AI moved into production, I recognised that what I had been
+        doing for years — <strong>validating outputs, auditing against
+        ground truth, building scoring frameworks</strong> — was exactly
+        what AI development needed most. The transition was not a leap.
+        It was a natural extension.
+      </p>
+      <p>
+        I now contribute to <strong>US-based AI evaluation projects
+        remotely</strong>, designing benchmark tasks, scoring model
+        outputs, and classifying failure modes for research teams.
+        My edge is the combination of engineering depth and
+        <strong>domain expertise in economics and research methodology</strong>
+        that pure technical backgrounds rarely bring.
+      </p>
+    </div>
+    <div class="reveal">
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-dot"></span>Python / pandas</div>
+        <div class="skill-item"><span class="skill-dot"></span>SQL</div>
+        <div class="skill-item"><span class="skill-dot"></span>Eval pipelines</div>
+        <div class="skill-item"><span class="skill-dot"></span>pytest</div>
+        <div class="skill-item"><span class="skill-dot"></span>Benchmark design</div>
+        <div class="skill-item"><span class="skill-dot"></span>RLHF / SFT data</div>
+        <div class="skill-item"><span class="skill-dot"></span>sklearn metrics</div>
+        <div class="skill-item"><span class="skill-dot"></span>Docker / Git</div>
+        <div class="skill-item"><span class="skill-dot"></span>Power BI</div>
+        <div class="skill-item"><span class="skill-dot"></span>R / STATA</div>
+        <div class="skill-item"><span class="skill-dot"></span>A/B testing</div>
+        <div class="skill-item"><span class="skill-dot"></span>JSON reporting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <h2 class="section-title">AI Evaluation<br><em>Portfolio</em></h2>
+  <p class="projects-intro reveal">
+    Four end-to-end projects demonstrating the core skills of an AI evaluation
+    engineer — metrics analysis, data validation, benchmark design, and LLM
+    output evaluation.
+  </p>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 1 -->
+    <div class="project-card reveal">
+      <div class="project-image">
+        <!--
+          TO ADD PROJECT IMAGE:
+          Replace the div.project-image-placeholder with:
+          <img src="project1-preview.png" alt="ML Output Evaluator">
+          Upload project1-preview.png to your GitHub repo.
+          Tip: screenshot your notebook's charts and use that.
+        -->
+        <div class="project-image-placeholder">
+          <div class="chart-lines">
+            <div class="bar" style="height:30px"></div>
+            <div class="bar" style="height:55px"></div>
+            <div class="bar" style="height:42px"></div>
+            <div class="bar" style="height:68px"></div>
+            <div class="bar" style="height:38px"></div>
+            <div class="bar" style="height:60px"></div>
+            <div class="bar" style="height:48px"></div>
+          </div>
+          <span>Classification · Regression · Threshold</span>
+        </div>
+        <div class="project-image-overlay"></div>
+        <div class="project-image-tag">Project 01</div>
+      </div>
+      <div class="project-body">
+        <div class="project-number">ML EVALUATION · PYTHON · SKLEARN</div>
+        <h3 class="project-title">ML Output Evaluator</h3>
+        <p class="project-desc">
+          End-to-end notebook evaluating classification and regression model outputs
+          on breast cancer data. Includes threshold sensitivity analysis showing
+          how adjusting the decision boundary recovers missed diagnoses.
+        </p>
+        <div class="project-tags">
+          <span class="tag">sklearn</span>
+          <span class="tag">Classification</span>
+          <span class="tag">Regression</span>
+          <span class="tag">Threshold analysis</span>
+          <span class="tag">Jupyter</span>
+        </div>
+        <div class="project-results">
+          <div><div class="result-num">0.9976</div><div class="result-label">AUC-ROC score</div></div>
+          <div><div class="result-num">0.9996</div><div class="result-label">Regression R²</div></div>
+          <div><div class="result-num">6</div><div class="result-label">Eval steps</div></div>
+        </div>
+        <div class="project-links-row">
+          <!-- UPDATE HREF with your actual GitHub URL -->
+          <a href="https://github.com/yourusername/ml-output-evaluator"
+             class="proj-link primary" target="_blank">↗ View on GitHub</a>
+          <a href="https://github.com/yourusername/ml-output-evaluator/blob/main/ml_output_evaluator.ipynb"
+             class="proj-link" target="_blank">📓 Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project-card reveal">
+      <div class="project-image">
+        <!--
+          TO ADD PROJECT IMAGE:
+          Replace with: <img src="project2-preview.png" alt="Data Quality Validator">
+          Use a screenshot of your quality_report.png chart.
+        -->
+        <div class="project-image-placeholder">
+          <div class="chart-lines">
+            <div class="bar" style="height:20px; background:rgba(245,166,35,0.4)"></div>
+            <div class="bar" style="height:50px; background:rgba(245,166,35,0.4)"></div>
+            <div class="bar" style="height:35px; background:rgba(0,201,167,0.3)"></div>
+            <div class="bar" style="height:65px; background:rgba(245,166,35,0.4)"></div>
+            <div class="bar" style="height:28px; background:rgba(245,166,35,0.4)"></div>
+            <div class="bar" style="height:45px; background:rgba(0,201,167,0.3)"></div>
+          </div>
+          <span>Nulls · Duplicates · Ranges · Outliers</span>
+        </div>
+        <div class="project-image-overlay"></div>
+        <div class="project-image-tag">Project 02</div>
+      </div>
+      <div class="project-body">
+        <div class="project-number">DATA VALIDATION · PYTEST · JSON REPORTS</div>
+        <h3 class="project-title">Data Quality Validator</h3>
+        <p class="project-desc">
+          Reusable Python module running automated quality checks on any CSV —
+          nulls, duplicates, schema validation, range enforcement, outlier
+          detection, and category consistency. With 9 pytest tests.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python module</span>
+          <span class="tag">pytest</span>
+          <span class="tag">JSON reports</span>
+          <span class="tag">Pipeline</span>
+          <span class="tag">Validation</span>
+        </div>
+        <div class="project-results">
+          <div><div class="result-num">6</div><div class="result-label">Check functions</div></div>
+          <div><div class="result-num">9</div><div class="result-label">pytest tests</div></div>
+          <div><div class="result-num">5</div><div class="result-label">Issue types caught</div></div>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/yourusername/data-quality-validator"
+             class="proj-link primary" target="_blank">↗ View on GitHub</a>
+          <a href="https://github.com/yourusername/data-quality-validator/blob/main/data_quality_validator.ipynb"
+             class="proj-link" target="_blank">📓 Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 3 -->
+    <div class="project-card reveal">
+      <div class="project-image">
+        <!--
+          TO ADD PROJECT IMAGE:
+          Replace with: <img src="project3-preview.png" alt="Benchmark Task Suite">
+          Use a screenshot of your benchmark_results.png chart.
+        -->
+        <div class="project-image-placeholder">
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:6px; width:140px;">
+            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.2); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.2); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.2); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
+            <div style="height:8px; background:rgba(245,166,35,0.4); border-radius:1px"></div>
+          </div>
+          <span>20 tasks · 4 categories · Auto-scored</span>
+        </div>
+        <div class="project-image-overlay"></div>
+        <div class="project-image-tag">Project 03</div>
+      </div>
+      <div class="project-body">
+        <div class="project-number">BENCHMARK DESIGN · SCORING RUBRICS · ECONOMICS</div>
+        <h3 class="project-title">Benchmark Task Suite</h3>
+        <p class="project-desc">
+          20 structured benchmark tasks for evaluating AI systems on data analysis
+          and economics problems. Each task has defined inputs, expected outputs,
+          and an automated Python scoring function — MLE Bench style.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Benchmark design</span>
+          <span class="tag">Scoring rubrics</span>
+          <span class="tag">Economics</span>
+          <span class="tag">MLE Bench</span>
+          <span class="tag">Auto-scoring</span>
+        </div>
+        <div class="project-results">
+          <div><div class="result-num">20</div><div class="result-label">Benchmark tasks</div></div>
+          <div><div class="result-num">4</div><div class="result-label">Task categories</div></div>
+          <div><div class="result-num">100%</div><div class="result-label">Auto-scored</div></div>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Abigael-hub/benchmark-task-suite"
+             class="proj-link primary" target="_blank">↗ View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/benchmark-task-suite/blob/main/benchmark_task_suite.ipynb"
+             class="proj-link" target="_blank">📓 Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 4 -->
+    <div class="project-card reveal">
+      <div class="project-image">
+        <!--
+          TO ADD PROJECT IMAGE:
+          Replace with: <img src="project4-preview.png" alt="LLM Output Analyser">
+          Use your actual llm_evaluation_results.png — it looks great as a preview.
+          This is the best one to use as a real image since you have it already.
+        -->
+        <img src="https://raw.githubusercontent.com/Abigael-hub/llm-eval-analysis/main/llm_evaluation_results.png"
+             alt="LLM Output Analyser — Evaluation Results">
+        <div class="project-image-overlay"></div>
+        <div class="project-image-tag">Project 04</div>
+      </div>
+      <div class="project-body">
+        <div class="project-number">LLM EVALUATION · OPENAI API · FAILURE MODES</div>
+        <h3 class="project-title">LLM Output Analyser</h3>
+        <p class="project-desc">
+          End-to-end pipeline evaluating GPT-3.5-turbo across 30 questions in
+          economics, data analysis, and research methodology. Multi-dimensional
+          rubric scoring, failure mode classification, and structured JSON reporting.
+        </p>
+        <div class="project-tags">
+          <span class="tag">OpenAI API</span>
+          <span class="tag">Rubric design</span>
+          <span class="tag">Failure modes</span>
+          <span class="tag">JSON reports</span>
+          <span class="tag">GPT-3.5</span>
+        </div>
+        <div class="project-results">
+          <div><div class="result-num">96.7%</div><div class="result-label">Pass rate</div></div>
+          <div><div class="result-num">30</div><div class="result-label">Questions eval'd</div></div>
+          <div><div class="result-num">4</div><div class="result-label">Rubric dimensions</div></div>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Abigael-hub/llm-eval-analysis"
+             class="proj-link primary" target="_blank">↗ View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/llm-eval-analysis/blob/main/llm_output_analyser.ipynb"
+             class="proj-link" target="_blank">📓 Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Where I have<br><em>done the work</em></h2>
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">FEB 2024 — PRESENT</div>
+      <div class="timeline-role">Data Analytics Executive</div>
+      <div class="timeline-company">Dalberg Research — IFC, World Bank, Palladium, Triggerise</div>
+      <ul class="timeline-points">
+        <li>Designed multi-stage Python evaluation pipelines with schema checks, business-rule assertions, and statistical sanity checks — reducing output inconsistencies by 30%</li>
+        <li>Built benchmark-style analytical tasks with defined inputs, expected outputs, and scoring criteria — directly equivalent to SFT task and eval harness design</li>
+        <li>Audited platform data by cross-checking reported metrics against raw transaction logs — equivalent to evaluating model outputs against ground truth</li>
+        <li>Delivered 50+ dashboards in R Shiny, Tableau, Power BI, and Excel for real-time monitoring</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">MAY 2021 — JAN 2024</div>
+      <div class="timeline-role">Senior Research Executive</div>
+      <div class="timeline-company">NielsenIQ — Coca-Cola, SCB Bank, Safaricom, Vodacom</div>
+      <ul class="timeline-points">
+        <li>Built Python automation and validation workflows for large-scale datasets, reducing vendor dependency by 25%</li>
+        <li>Designed transformation validation steps ensuring outputs matched expected statistical distributions — analogous to reward model evaluation in RLHF pipelines</li>
+        <li>Conducted A/B testing experiments for major clients, producing measurable improvements in revenue and engagement</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">NOV 2020 — APR 2021</div>
+      <div class="timeline-role">Research Analyst</div>
+      <div class="timeline-company">Metropol Corporation</div>
+      <ul class="timeline-points">
+        <li>Built automated revenue dashboards in Excel and Tableau generating KES 100,000 in additional revenue</li>
+        <li>Analysed loan default behaviour for NCBA and M-Shwari using structured data analysis</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label" style="justify-content:center">Contact</div>
+    <h2 class="section-title">Let's <em>work together</em></h2>
+    <p class="contact-desc">
+      Open to AI evaluation engineering roles, RLHF specialist positions,
+      and data analyst roles at AI companies. Remote-ready with PST overlap availability.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:abigaelcherotich867@gmail.com" class="contact-link">✉ abigaelcherotich867@gmail.com</a>
+      <a href="https://linkedin.com/in/abigael-cherotich" class="contact-link" target="_blank">↗ LinkedIn</a>
+      <a href="https://github.com/Abigael-hub" class="contact-link" target="_blank">↗ GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Abigael Cherotich</p>
+  <p>AI Evaluation Engineering Portfolio</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
