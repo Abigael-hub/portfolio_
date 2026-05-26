@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abigael Cherotich — AI Evaluation Specialist</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
+<style> 
   :root {
     --navy: #0F1B2D;
     --navy-mid: #1A2E4A;
@@ -129,6 +129,7 @@
   }
   .hero-photo {
     width: 100%; height: 100%; object-fit: cover;
+    object-position: center top;
     clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
     position: relative; z-index: 1; display: block;
   }
@@ -178,10 +179,11 @@
   }
   .project-card:hover { transform: translateY(-6px); border-color: rgba(0,201,167,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
 
-  /* project image — now at bottom */
+  /* project image — between tags and results */
   .project-image {
     width: 100%; height: 200px; overflow: hidden; position: relative;
-    border-top: 1px solid var(--border); order: 2;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
   .project-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
   .project-card:hover .project-image img { transform: scale(1.05); }
@@ -212,13 +214,14 @@
   }
 
   /* project body — appears first */
-  .project-body { padding: 28px 28px 24px; order: 1; flex: 1; }
+  .project-body { padding: 28px 28px 20px; }
   .project-number { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); letter-spacing: 0.15em; margin-bottom: 10px; opacity: 0.7; }
   .project-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
   .project-desc { font-size: 13px; line-height: 1.7; color: var(--text-muted); margin-bottom: 20px; font-weight: 300; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
   .tag { font-family: 'DM Mono', monospace; font-size: 9px; padding: 3px 8px; border: 1px solid var(--border); color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
 
+  .project-footer { padding: 0 28px 24px; }
   .project-results {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
     padding-top: 18px; border-top: 1px solid var(--border); margin-bottom: 20px;
@@ -311,13 +314,13 @@
       <p class="hero-desc">
         Researcher and analyst turned AI evaluation specialist.
         Seven years of rigorous evaluation work across social impact
-        and market research — now contributing to US-based AI projects
-        remotely, building the pipelines and benchmarks that make
+        and market research — now contributing to AI projects
+        , building the pipelines and benchmarks that make
         AI systems trustworthy.
       </p>
       <div class="hero-stats">
         <div><div class="stat-num">5+</div><div class="stat-label">Years experience</div></div>
-        <div><div class="stat-num">4</div><div class="stat-label">AI eval projects</div></div>
+        <div><div class="stat-num">5</div><div class="stat-label">AI projects built</div></div>
         <div><div class="stat-num">50+</div><div class="stat-label">Dashboards delivered</div></div>
         <div><div class="stat-num">96.7%</div><div class="stat-label">LLM eval pass rate</div></div>
       </div>
@@ -333,18 +336,10 @@
         <!--
           TO ADD YOUR PHOTO:
           1. Replace the div.photo-placeholder below with:
-             <img src="your-photo.jpg" alt="Abigael Cherotich" class="hero-photo">
+             <img src="images/profile/may.jpg" alt="Abigael Cherotich" class="hero-photo">
           2. Upload your-photo.jpg to the same folder as index.html on GitHub
         -->
-        <div class="photo-placeholder">
-          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="30" r="16" stroke="#00C9A7" stroke-width="1.5" opacity="0.4"/>
-            <path d="M10 70c0-16.569 13.431-30 30-30s30 13.431 30 30" stroke="#00C9A7" stroke-width="1.5" opacity="0.4"/>
-          </svg>
-          <span>Add your photo here</span>
-        </div>
-      </div>
-    </div>
+       <img src="images/profile/may.jpg" alt="Abigael Cherotich" class="hero-photo">
 
   </div>
 </section>
@@ -403,46 +398,22 @@
   <div class="section-label">Projects</div>
   <h2 class="section-title">AI Evaluation<br><em>Portfolio</em></h2>
   <p class="projects-intro reveal">
-    Four end-to-end projects demonstrating the core skills of an AI evaluation
-    engineer — metrics analysis, data validation, benchmark design, and LLM
-    output evaluation.
+    Five end-to-end projects spanning AI evaluation and enterprise AI transformation
+    — model output analysis, data validation pipelines, benchmark design, LLM
+    evaluation, and a real-world workflow redesign case study with compliance
+    documentation.
   </p>
 
   <div class="projects-grid">
 
-    <!-- PROJECT 1 -->
+    <!-- PROJECT 01 -->
     <div class="project-card reveal">
-      <div class="project-image">
-        <!--
-          TO ADD PROJECT IMAGE:
-          Replace the div.project-image-placeholder with:
-          <img src="project1-preview.png" alt="ML Output Evaluator">
-          Upload project1-preview.png to your GitHub repo.
-          Tip: screenshot your notebook's charts and use that.
-        -->
-        <div class="project-image-placeholder">
-          <div class="chart-lines">
-            <div class="bar" style="height:30px"></div>
-            <div class="bar" style="height:55px"></div>
-            <div class="bar" style="height:42px"></div>
-            <div class="bar" style="height:68px"></div>
-            <div class="bar" style="height:38px"></div>
-            <div class="bar" style="height:60px"></div>
-            <div class="bar" style="height:48px"></div>
-          </div>
-          <span>Classification · Regression · Threshold</span>
-        </div>
-        <div class="project-image-overlay"></div>
-        <div class="project-image-tag">Project 01</div>
-      </div>
+
+      <!-- top: number, title, description, tags -->
       <div class="project-body">
-        <div class="project-number">ML EVALUATION · PYTHON · SKLEARN</div>
+        <div class="project-number">ML EVALUATION · PYTHON · SKLEARN · JUPYTER</div>
         <h3 class="project-title">ML Output Evaluator</h3>
-        <p class="project-desc">
-          End-to-end notebook evaluating classification and regression model outputs
-          on breast cancer data. Includes threshold sensitivity analysis showing
-          how adjusting the decision boundary recovers missed diagnoses.
-        </p>
+        <p class="project-desc">Built to answer two clinical questions from breast cancer data: is this tumour malignant or benign, and how large is it likely to be? The project computes classification and regression metrics, investigates failure modes, and runs a threshold sensitivity analysis — finding that lowering the decision threshold from 0.5 to 0.35 recovers missed malignant cases with minimal increase in false alarms.</p>
         <div class="project-tags">
           <span class="tag">sklearn</span>
           <span class="tag">Classification</span>
@@ -450,170 +421,200 @@
           <span class="tag">Threshold analysis</span>
           <span class="tag">Jupyter</span>
         </div>
+      </div>
+
+      <!-- middle: project image -->
+      <div class="project-image">
+        <img src="https://raw.githubusercontent.com/Abigael-hub/ml-output-evaluator/main/regression_evaluation.png" alt="ML Output Evaluator — Regression Evaluation">
+        <div class="project-image-overlay"></div>
+        <div class="project-image-tag">Project 01</div>
+      </div>
+
+      <!-- bottom: results + links -->
+      <div class="project-footer">
         <div class="project-results">
           <div><div class="result-num">0.9976</div><div class="result-label">AUC-ROC score</div></div>
           <div><div class="result-num">0.9996</div><div class="result-label">Regression R²</div></div>
           <div><div class="result-num">6</div><div class="result-label">Eval steps</div></div>
         </div>
         <div class="project-links-row">
-          <!-- UPDATE HREF with your actual GitHub URL -->
-          <a href="https://github.com/yourusername/ml-output-evaluator"
-             class="proj-link primary" target="_blank">↗ View on GitHub</a>
-          <a href="https://github.com/yourusername/ml-output-evaluator/blob/main/ml_output_evaluator.ipynb"
-             class="proj-link" target="_blank">📓 Open Notebook</a>
+          <a href="https://github.com/Abigael-hub/ml-output-evaluator/blob/main/README.md" class="proj-link primary" target="_blank">↗ View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/ml-output-evaluator/blob/main/ml_output_evaluator%20(2).ipynb" class="proj-link" target="_blank">📓 Open Notebook</a>
         </div>
       </div>
+
     </div>
 
-    <!-- PROJECT 2 -->
+    <!-- PROJECT 02 -->
     <div class="project-card reveal">
-      <div class="project-image">
-        <!--
-          TO ADD PROJECT IMAGE:
-          Replace with: <img src="project2-preview.png" alt="Data Quality Validator">
-          Use a screenshot of your quality_report.png chart.
-        -->
-        <div class="project-image-placeholder">
-          <div class="chart-lines">
-            <div class="bar" style="height:20px; background:rgba(245,166,35,0.4)"></div>
-            <div class="bar" style="height:50px; background:rgba(245,166,35,0.4)"></div>
-            <div class="bar" style="height:35px; background:rgba(0,201,167,0.3)"></div>
-            <div class="bar" style="height:65px; background:rgba(245,166,35,0.4)"></div>
-            <div class="bar" style="height:28px; background:rgba(245,166,35,0.4)"></div>
-            <div class="bar" style="height:45px; background:rgba(0,201,167,0.3)"></div>
-          </div>
-          <span>Nulls · Duplicates · Ranges · Outliers</span>
-        </div>
-        <div class="project-image-overlay"></div>
-        <div class="project-image-tag">Project 02</div>
-      </div>
+
+      <!-- top: number, title, description, tags -->
       <div class="project-body">
-        <div class="project-number">DATA VALIDATION · PYTEST · JSON REPORTS</div>
+        <div class="project-number">DATA VALIDATION · PYTHON MODULE · PYTEST · JSON REPORTS</div>
         <h3 class="project-title">Data Quality Validator</h3>
-        <p class="project-desc">
-          Reusable Python module running automated quality checks on any CSV —
-          nulls, duplicates, schema validation, range enforcement, outlier
-          detection, and category consistency. With 9 pytest tests.
-        </p>
+        <p class="project-desc">Production datasets are almost never clean. This module runs six automated checks on any CSV — nulls, duplicates, schema mismatches, value range violations, statistical outliers, and category inconsistencies. Applied to a synthetic clinical dataset it surfaced five high-severity issues including a 999mm tumour entry and inconsistent diagnosis labelling, producing a structured JSON report with severity ratings and fix recommendations.</p>
         <div class="project-tags">
           <span class="tag">Python module</span>
           <span class="tag">pytest</span>
+          <span class="tag">Pipeline design</span>
           <span class="tag">JSON reports</span>
-          <span class="tag">Pipeline</span>
-          <span class="tag">Validation</span>
+          <span class="tag">Data validation</span>
         </div>
+      </div>
+
+      <!-- middle: project image -->
+      <div class="project-image">
+        <img src="https://raw.githubusercontent.com/Abigael-hub/data-quality-validator/main/quality_report.png" alt="Data Quality Validator — Quality Report">
+        <div class="project-image-overlay"></div>
+        <div class="project-image-tag">Project 02</div>
+      </div>
+
+      <!-- bottom: results + links -->
+      <div class="project-footer">
         <div class="project-results">
           <div><div class="result-num">6</div><div class="result-label">Check functions</div></div>
           <div><div class="result-num">9</div><div class="result-label">pytest tests</div></div>
           <div><div class="result-num">5</div><div class="result-label">Issue types caught</div></div>
         </div>
         <div class="project-links-row">
-          <a href="https://github.com/yourusername/data-quality-validator"
-             class="proj-link primary" target="_blank">↗ View on GitHub</a>
-          <a href="https://github.com/yourusername/data-quality-validator/blob/main/data_quality_validator.ipynb"
-             class="proj-link" target="_blank">📓 Open Notebook</a>
+          <a href="https://github.com/Abigael-hub/data-quality-validator/blob/main/README.md" class="proj-link primary" target="_blank">↗ View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/data-quality-validator/blob/main/data_quality_validator.ipynb" class="proj-link" target="_blank">📓 Open Notebook</a>
         </div>
       </div>
+
     </div>
 
-    <!-- PROJECT 3 -->
+    <!-- PROJECT 03 -->
     <div class="project-card reveal">
-      <div class="project-image">
-        <!--
-          TO ADD PROJECT IMAGE:
-          Replace with: <img src="project3-preview.png" alt="Benchmark Task Suite">
-          Use a screenshot of your benchmark_results.png chart.
-        -->
-        <div class="project-image-placeholder">
-          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:6px; width:140px;">
-            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.2); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.2); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.2); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(0,201,167,0.4); border-radius:1px"></div>
-            <div style="height:8px; background:rgba(245,166,35,0.4); border-radius:1px"></div>
-          </div>
-          <span>20 tasks · 4 categories · Auto-scored</span>
-        </div>
-        <div class="project-image-overlay"></div>
-        <div class="project-image-tag">Project 03</div>
-      </div>
+
+      <!-- top: number, title, description, tags -->
       <div class="project-body">
         <div class="project-number">BENCHMARK DESIGN · SCORING RUBRICS · ECONOMICS</div>
         <h3 class="project-title">Benchmark Task Suite</h3>
-        <p class="project-desc">
-          20 structured benchmark tasks for evaluating AI systems on data analysis
-          and economics problems. Each task has defined inputs, expected outputs,
-          and an automated Python scoring function — MLE Bench style.
-        </p>
+        <p class="project-desc">Designed 20 structured tasks to test whether an AI system can perform real-world analytical work — computing statistics, cleaning messy data, interpreting economic indicators, and evaluating other AI outputs. Each task has a defined input, expected output, difficulty rating, and an automated Python scoring function that awards partial credit. The suite reveals where AI systems fail on domain-specific reasoning that general benchmarks miss.</p>
         <div class="project-tags">
           <span class="tag">Benchmark design</span>
-          <span class="tag">Scoring rubrics</span>
-          <span class="tag">Economics</span>
-          <span class="tag">MLE Bench</span>
-          <span class="tag">Auto-scoring</span>
+          <span class="tag">Scoring functions</span>
+          <span class="tag">Difficulty calibration</span>
+          <span class="tag">Economics domain</span>
+          <span class="tag">Partial credit rubrics</span>
         </div>
+      </div>
+
+      <!-- middle: project image -->
+      <div class="project-image">
+        <img src="https://raw.githubusercontent.com/Abigael-hub/benchmark-task-suite/main/benchmark_results.png" alt="Benchmark Task Suite — Results">
+        <div class="project-image-overlay"></div>
+        <div class="project-image-tag">Project 03</div>
+      </div>
+
+      <!-- bottom: results + links -->
+      <div class="project-footer">
         <div class="project-results">
           <div><div class="result-num">20</div><div class="result-label">Benchmark tasks</div></div>
           <div><div class="result-num">4</div><div class="result-label">Task categories</div></div>
           <div><div class="result-num">100%</div><div class="result-label">Auto-scored</div></div>
         </div>
         <div class="project-links-row">
-          <a href="https://github.com/Abigael-hub/benchmark-task-suite"
-             class="proj-link primary" target="_blank">↗ View on GitHub</a>
-          <a href="https://github.com/Abigael-hub/benchmark-task-suite/blob/main/benchmark_task_suite.ipynb"
-             class="proj-link" target="_blank">📓 Open Notebook</a>
+          <a href="https://github.com/Abigael-hub/benchmark-task-suite/blob/main/README.md" class="proj-link primary" target="_blank">↗ View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/benchmark-task-suite/blob/main/benchmark_task_suite.ipynb" class="proj-link" target="_blank">📓 Open Notebook</a>
         </div>
       </div>
+
     </div>
 
-    <!-- PROJECT 4 -->
+    <!-- PROJECT 04 -->
     <div class="project-card reveal">
+
+      <!-- top: number, title, description, tags -->
+      <div class="project-body">
+        <div class="project-number">LLM EVALUATION · OPENAI API · FAILURE MODE ANALYSIS</div>
+        <h3 class="project-title">LLM Output Analyser</h3>
+        <p class="project-desc">Evaluated GPT-3.5-turbo across 30 questions in economics, data analysis, and research methodology — asking not just whether answers were correct but how they failed when they fell short. The pipeline scores each response on concept coverage, accuracy, clarity, and completeness. Key finding: the model scored perfectly on accuracy and clarity but only 0.577 on concept coverage — it answers correctly without always using the precise technical vocabulary the domain requires.</p>
+        <div class="project-tags">
+          <span class="tag">LLM evaluation</span>
+          <span class="tag">Output scoring</span>
+          <span class="tag">Failure mode taxonomy</span>
+          <span class="tag">Rubric design</span>
+          <span class="tag">JSON reporting</span>
+        </div>
+      </div>
+
+      <!-- middle: project image -->
       <div class="project-image">
-        <!--
-          TO ADD PROJECT IMAGE:
-          Replace with: <img src="project4-preview.png" alt="LLM Output Analyser">
-          Use your actual llm_evaluation_results.png — it looks great as a preview.
-          This is the best one to use as a real image since you have it already.
-        -->
-        <img src="https://raw.githubusercontent.com/Abigael-hub/llm-eval-analysis/main/llm_evaluation_results.png"
-             alt="LLM Output Analyser — Evaluation Results">
+        <img src="https://raw.githubusercontent.com/Abigael-hub/llm-eval-analysis/main/llm_evaluation_results%20(1).png" alt="LLM Output Analyser — Evaluation Results">
         <div class="project-image-overlay"></div>
         <div class="project-image-tag">Project 04</div>
       </div>
-      <div class="project-body">
-        <div class="project-number">LLM EVALUATION · OPENAI API · FAILURE MODES</div>
-        <h3 class="project-title">LLM Output Analyser</h3>
-        <p class="project-desc">
-          End-to-end pipeline evaluating GPT-3.5-turbo across 30 questions in
-          economics, data analysis, and research methodology. Multi-dimensional
-          rubric scoring, failure mode classification, and structured JSON reporting.
-        </p>
-        <div class="project-tags">
-          <span class="tag">OpenAI API</span>
-          <span class="tag">Rubric design</span>
-          <span class="tag">Failure modes</span>
-          <span class="tag">JSON reports</span>
-          <span class="tag">GPT-3.5</span>
-        </div>
+
+      <!-- bottom: results + links -->
+      <div class="project-footer">
         <div class="project-results">
           <div><div class="result-num">96.7%</div><div class="result-label">Pass rate</div></div>
           <div><div class="result-num">30</div><div class="result-label">Questions eval'd</div></div>
           <div><div class="result-num">4</div><div class="result-label">Rubric dimensions</div></div>
         </div>
         <div class="project-links-row">
-          <a href="https://github.com/Abigael-hub/llm-eval-analysis"
-             class="proj-link primary" target="_blank">↗ View on GitHub</a>
-          <a href="https://github.com/Abigael-hub/llm-eval-analysis/blob/main/llm_output_analyser.ipynb"
-             class="proj-link" target="_blank">📓 Open Notebook</a>
+          <a href="https://github.com/Abigael-hub/llm-eval-analysis/blob/main/README.md" class="proj-link primary" target="_blank">↗ View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/llm-eval-analysis/blob/main/llm_output_analyser_(1).ipynb" class="proj-link" target="_blank">📓 Open Notebook</a>
         </div>
       </div>
+
+    </div>
+    <!-- PROJECT 05 -->
+    <div class="project-card reveal">
+
+      <div class="project-body">
+        <div class="project-number">AI TRANSFORMATION · WORKFLOW REDESIGN · COMPLIANCE</div>
+        <h3 class="project-title">AI Workflow Transformation</h3>
+        <p class="project-desc">
+          A hands-on account of how I identified a broken data process at Dalberg
+          Research and rebuilt it end-to-end using Python automation and AI-assisted
+          validation. Covers the real findings — including systematic metric inflation
+          in client data — plus the compliance audit trail, before/after workflow
+          comparison, and what I learned about deploying AI tools in enterprise settings.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Workflow redesign</span>
+          <span class="tag">Python pipeline</span>
+          <span class="tag">Audit trail</span>
+          <span class="tag">Compliance</span>
+          <span class="tag">Enterprise AI</span>
+        </div>
+      </div>
+
+      <div class="project-image">
+        <div class="project-image-placeholder" style="background:#1A1A2E; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; height:100%;">
+          <div style="font-family:'DM Mono',monospace; font-size:9px; color:rgba(200,69,10,0.8); letter-spacing:0.2em; text-transform:uppercase;">Case Study · 6 Sections</div>
+          <div style="display:flex; flex-direction:column; gap:5px; width:160px;">
+            <div style="height:5px; background:rgba(200,69,10,0.6); border-radius:2px;"></div>
+            <div style="height:5px; background:rgba(200,69,10,0.35); border-radius:2px; width:75%;"></div>
+            <div style="height:5px; background:rgba(200,69,10,0.2); border-radius:2px; width:90%;"></div>
+            <div style="height:1px; background:rgba(255,255,255,0.08); margin:4px 0;"></div>
+            <div style="height:5px; background:rgba(10,123,108,0.6); border-radius:2px; width:80%;"></div>
+            <div style="height:5px; background:rgba(10,123,108,0.35); border-radius:2px;"></div>
+            <div style="height:1px; background:rgba(255,255,255,0.08); margin:4px 0;"></div>
+            <div style="height:5px; background:rgba(184,134,11,0.5); border-radius:2px; width:65%;"></div>
+            <div style="height:5px; background:rgba(184,134,11,0.3); border-radius:2px; width:85%;"></div>
+          </div>
+          <div style="font-family:'DM Mono',monospace; font-size:8px; color:rgba(255,255,255,0.25); letter-spacing:0.1em;">DALBERG · IFC · WORLD BANK · PALLADIUM</div>
+        </div>
+        <div class="project-image-overlay"></div>
+        <div class="project-image-tag">Project 05</div>
+      </div>
+
+      <div class="project-footer">
+        <div class="project-results">
+          <div><div class="result-num">40%</div><div class="result-label">Processing time saved</div></div>
+          <div><div class="result-num">3</div><div class="result-label">Real data findings</div></div>
+          <div><div class="result-num">0</div><div class="result-label">Audit incidents post-launch</div></div>
+        </div>
+        <div class="project-links-row">
+          <a href="ai_workflow_transformation.html" class="proj-link primary" target="_blank">↗ Read Case Study</a>
+          <a href="https://github.com/Abigael-hub" class="proj-link" target="_blank">📁 GitHub</a>
+        </div>
+      </div>
+
     </div>
 
   </div>
