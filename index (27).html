@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abigael Cherotich — AI Evaluation &amp; Data Analytics</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1B2D; --navy-mid: #1A2E4A; --navy-light: #243D5E;
+    --teal: #00C9A7; --teal-dim: #00A389;
+    --amber: #F5A623; --amber-dim: #C8861A;
+    --cream: #F5F0E8; --cream-dim: #EAE4D8;
+    --white: #FFFFFF; --text-muted: #8B9BB4;
+    --card-bg: #162338; --border: rgba(0,201,167,0.15);
+    --border-amber: rgba(245,166,35,0.2);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Outfit', sans-serif; background: var(--navy); color: var(--cream); overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 60px; background: rgba(15,27,45,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--text-muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 60px 80px; position: relative; overflow: hidden; }
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,201,167,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,201,167,0.04) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent); }
+  .hero-glow { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,201,167,0.08) 0%, transparent 70%); top: -100px; right: -100px; pointer-events: none; }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center; width: 100%; max-width: 1100px; }
+  .hero-content { max-width: 700px; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Mono', monospace; font-size: 12px; color: var(--teal); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards; }
+  .hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--teal); }
+  .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(52px, 7vw, 88px); line-height: 1.0; color: var(--white); margin-bottom: 16px; opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards; }
+  .hero-name em { font-style: italic; color: var(--teal); }
+  .hero-title { font-family: 'DM Serif Display', serif; font-size: clamp(18px, 2.5vw, 28px); color: var(--text-muted); font-weight: 400; margin-bottom: 28px; opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards; }
+  .hero-desc { font-size: 16px; line-height: 1.75; color: var(--cream-dim); max-width: 560px; margin-bottom: 40px; font-weight: 300; opacity: 0; animation: fadeUp 0.6s ease 0.4s forwards; }
+  .hero-stats { display: flex; gap: 40px; margin-bottom: 48px; opacity: 0; animation: fadeUp 0.6s ease 0.5s forwards; }
+  .stat-num { font-family: 'DM Serif Display', serif; font-size: 36px; color: var(--teal); line-height: 1; }
+  .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.6s ease 0.6s forwards; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: var(--teal); color: var(--navy); font-size: 13px; font-weight: 600; text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+  .btn-primary:hover { background: var(--white); transform: translateY(-2px); }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border: 1px solid var(--border); color: var(--cream); font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s; }
+  .btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
+  .btn-cv { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; border: 1px solid rgba(245,166,35,0.35); color: var(--amber); font-size: 13px; font-weight: 500; text-decoration: none; letter-spacing: 0.05em; transition: all 0.2s; background: rgba(245,166,35,0.06); }
+  .btn-cv:hover { border-color: var(--amber); background: rgba(245,166,35,0.12); transform: translateY(-2px); }
+
+  /* PROFILE PHOTO */
+  .hero-photo-wrap { opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards; flex-shrink: 0; }
+  .hero-photo-frame { width: 280px; height: 320px; position: relative; }
+  .hero-photo-frame::before { content: ''; position: absolute; inset: -2px; background: linear-gradient(135deg, var(--teal), transparent 60%); clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px)); }
+  .hero-photo-frame::after { content: ''; position: absolute; bottom: -12px; right: -12px; width: 100%; height: 100%; border: 1px solid rgba(0,201,167,0.2); clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px)); z-index: -1; }
+  .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px)); position: relative; z-index: 1; display: block; }
+
+  /* SECTIONS */
+  section { padding: 100px 60px; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--teal); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+  .section-label::after { content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--teal); opacity: 0.4; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: clamp(32px, 4vw, 52px); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+  .section-title em { font-style: italic; color: var(--teal); }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+  .about-text p { font-size: 16px; line-height: 1.8; color: var(--cream-dim); margin-bottom: 20px; font-weight: 300; }
+  .about-text p strong { color: var(--cream); font-weight: 500; }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .skill-item { display: flex; align-items: center; gap: 10px; padding: 11px 14px; background: var(--card-bg); border: 1px solid var(--border); font-size: 12px; color: var(--cream-dim); font-family: 'DM Mono', monospace; transition: all 0.2s; }
+  .skill-item:hover { border-color: var(--teal); color: var(--teal); }
+  .skill-dot { width: 5px; height: 5px; background: var(--teal); flex-shrink: 0; }
+
+  /* PROJECTS */
+  #projects { background: var(--navy-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  /* PROJECT FILTER */
+  .filter-bar-wrap {
+    margin-bottom: 52px;
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+    display: flex; align-items: center; gap: 0; flex-wrap: wrap;
+  }
+  .filter-label {
+    font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    margin-right: 20px; white-space: nowrap; flex-shrink: 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .filter-label::after {
+    content: ''; display: inline-block; width: 1px; height: 20px;
+    background: var(--border); margin-left: 12px;
+  }
+  .filter-pills { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; flex: 1; }
+  .filter-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px; font-family: 'DM Mono', monospace; font-size: 11px;
+    letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+    border: 1px solid transparent; background: transparent;
+    color: var(--text-muted); transition: all 0.18s; border-radius: 2px;
+  }
+  .filter-pill:hover { color: var(--cream); background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.15); }
+  .filter-pill .pill-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .filter-pill .pill-count {
+    font-size: 10px; min-width: 20px; height: 18px; line-height: 18px;
+    text-align: center; background: rgba(255,255,255,0.07);
+    border-radius: 2px; padding: 0 5px;
+  }
+  /* active states — clearly selected */
+  .filter-pill.active-all {
+    background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.3);
+    color: var(--cream);
+  }
+  .filter-pill.active-all  .pill-count { background: rgba(255,255,255,0.15); }
+  .filter-pill.active-ai {
+    background: rgba(0,201,167,0.12); border-color: var(--teal);
+    color: var(--teal); box-shadow: 0 0 0 1px rgba(0,201,167,0.15);
+  }
+  .filter-pill.active-ai   .pill-count { background: rgba(0,201,167,0.2); }
+  .filter-pill.active-data {
+    background: rgba(245,166,35,0.12); border-color: var(--amber);
+    color: var(--amber); box-shadow: 0 0 0 1px rgba(245,166,35,0.15);
+  }
+  .filter-pill.active-data .pill-count { background: rgba(245,166,35,0.2); }
+  /* hint text on the right */
+  .filter-hint {
+    font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted);
+    letter-spacing: 0.08em; margin-left: auto; opacity: 0.5; white-space: nowrap;
+  }
+  @media (max-width: 960px) { .filter-hint { display: none; } }
+
+  /* IN-GRID HEADERS */
+  .grid-section-header { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; padding: 20px 0 8px; margin-top: 4px; border-top: 1px solid var(--border); }
+  .grid-section-header.first-header { border-top: none; padding-top: 0; margin-top: 0; }
+  .gh-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; white-space: nowrap; }
+  .gh-label-ai   { color: var(--teal); }
+  .gh-label-data { color: var(--amber); }
+  .gh-line { flex: 1; height: 1px; }
+  .gh-line-ai   { background: rgba(0,201,167,0.15); }
+  .gh-line-data { background: rgba(245,166,35,0.15); }
+  .gh-count { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted); letter-spacing: 0.1em; white-space: nowrap; }
+
+  /* PROJECT GRID */
+  .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .project-card { background: var(--card-bg); border: 1px solid var(--border); overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; position: relative; }
+  .project-card[data-cat="ai"]:hover   { transform: translateY(-6px); border-color: rgba(0,201,167,0.4);  box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .project-card[data-cat="data"]:hover { transform: translateY(-6px); border-color: rgba(245,166,35,0.4); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .project-card.filtered-out { display: none; }
+  .project-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+  .project-card[data-cat="ai"]::before   { background: var(--teal); }
+  .project-card[data-cat="data"]::before { background: var(--amber); }
+  .project-card.placeholder { opacity: 0.5; }
+  .project-card.placeholder:hover { opacity: 0.7; transform: none !important; box-shadow: none !important; }
+  .card-category-badge { display: inline-flex; align-items: center; gap: 6px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 10px; border: 1px solid; margin-bottom: 14px; width: fit-content; }
+  .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+  .badge-ai   { color: var(--teal);  border-color: rgba(0,201,167,0.3);  background: rgba(0,201,167,0.06); }
+  .badge-data { color: var(--amber); border-color: rgba(245,166,35,0.3); background: rgba(245,166,35,0.06); }
+  .placeholder-image-inner { width: 100%; height: 100%; background: var(--navy-light); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+  .placeholder-image-inner svg { opacity: 0.2; }
+  .placeholder-image-inner span { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
+  .placeholder-links-note { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 0 0; border-top: 1px solid var(--border); opacity: 0.6; }
+  .project-image { width: 100%; height: 240px; overflow: hidden; position: relative; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); cursor: zoom-in; background: var(--navy-light); }
+  .project-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: opacity 0.3s ease; display: block; padding: 0; }
+  .project-card:not(.placeholder):hover .project-image img { opacity: 0.9; }
+  .project-image-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, rgba(22,35,56,0.5) 100%); pointer-events: none; }
+  .zoom-hint { position: absolute; bottom: 10px; right: 10px; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); background: rgba(15,27,45,0.85); border: 1px solid var(--border); padding: 3px 8px; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+  .project-image:hover .zoom-hint { opacity: 1; }
+  .lightbox { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(10,18,30,0.96); align-items: center; justify-content: center; cursor: zoom-out; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 92vw; max-height: 88vh; object-fit: contain; border: 1px solid var(--border); box-shadow: 0 40px 120px rgba(0,0,0,0.8); }
+  .lightbox-close { position: absolute; top: 20px; right: 28px; font-family: "DM Mono", monospace; font-size: 11px; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--border); padding: 6px 14px; background: rgba(15,27,45,0.9); transition: color 0.2s; }
+  .lightbox-close:hover { color: var(--cream); }
+  .project-image-tag { position: absolute; top: 12px; left: 12px; font-family: 'DM Mono', monospace; font-size: 9px; background: rgba(15,27,45,0.85); border: 1px solid var(--border); padding: 4px 10px; letter-spacing: 0.15em; text-transform: uppercase; }
+  .project-card[data-cat="ai"]   .project-image-tag { color: var(--teal); }
+  .project-card[data-cat="data"] .project-image-tag { color: var(--amber); border-color: var(--border-amber); }
+  .project-body   { padding: 28px 28px 20px; padding-left: 32px; }
+  .project-footer { padding: 0 28px 24px; padding-left: 32px; }
+  .project-number { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em; margin-bottom: 10px; opacity: 0.7; }
+  .project-card[data-cat="ai"]   .project-number { color: var(--teal); }
+  .project-card[data-cat="data"] .project-number { color: var(--amber); }
+  .project-title { font-family: 'DM Serif Display', serif; font-size: 22px; color: var(--white); line-height: 1.2; margin-bottom: 12px; }
+  .project-desc { font-size: 13px; line-height: 1.7; color: var(--text-muted); margin-bottom: 20px; font-weight: 300; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag      { font-family: 'DM Mono', monospace; font-size: 9px; padding: 3px 8px; border: 1px solid var(--border); color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
+  .tag-data { color: var(--amber); border-color: var(--border-amber); }
+  .project-results { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-top: 18px; border-top: 1px solid var(--border); margin-bottom: 20px; }
+  .result-num   { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--teal); }
+  .result-label { font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; line-height: 1.4; }
+  .project-links-row { display: flex; gap: 10px; padding-top: 16px; border-top: 1px solid var(--border); }
+  .proj-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 1px solid var(--border); color: var(--text-muted); }
+  .proj-link:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,201,167,0.05); }
+  .proj-link.primary { background: rgba(0,201,167,0.08); border-color: rgba(0,201,167,0.3); color: var(--teal); }
+  .proj-link.primary:hover { background: var(--teal); color: var(--navy); }
+
+  /* ── EXPERIENCE — compact logos strip ── */
+  #experience { background: var(--navy-mid); border-top: 1px solid var(--border); }
+  .exp-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 52px; background: var(--border); border: 1px solid var(--border); }
+  .exp-tile { background: var(--card-bg); padding: 32px 28px; display: flex; flex-direction: column; gap: 10px; transition: background 0.2s; }
+  .exp-tile:hover { background: var(--navy-light); }
+  .exp-period { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); letter-spacing: 0.15em; text-transform: uppercase; }
+  .exp-role { font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.3; }
+  .exp-company { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--cream); font-style: italic; }
+  .exp-clients { font-size: 12px; color: var(--text-muted); font-weight: 300; }
+  .exp-location { font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); display: inline-flex; align-items: center; gap: 5px; margin-top: 2px; }
+
+  /* ── CV SECTION ── */
+  #cv { border-top: 1px solid var(--border); }
+  .cv-header-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 52px; flex-wrap: wrap; gap: 16px; }
+  .cv-download-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border: 1px solid rgba(245,166,35,0.35); color: var(--amber); font-size: 12px; font-family: 'DM Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; background: rgba(245,166,35,0.06); transition: all 0.2s; }
+  .cv-download-btn:hover { background: rgba(245,166,35,0.12); border-color: var(--amber); }
+  .cv-body { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; align-items: start; }
+  .cv-block { margin-bottom: 44px; }
+  .cv-block-title { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cv-entry { margin-bottom: 28px; padding-left: 20px; border-left: 2px solid var(--border); }
+  .cv-entry:last-child { margin-bottom: 0; }
+  .cv-entry-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 4px; flex-wrap: wrap; }
+  .cv-entry-role { font-size: 15px; font-weight: 600; color: var(--white); }
+  .cv-entry-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); letter-spacing: 0.12em; white-space: nowrap; }
+  .cv-entry-org  { font-size: 13px; color: var(--text-muted); font-style: italic; margin-bottom: 10px; }
+  .cv-entry-points { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .cv-entry-points li { font-size: 13px; line-height: 1.65; color: var(--cream-dim); padding-left: 14px; position: relative; font-weight: 300; }
+  .cv-entry-points li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-size: 11px; }
+  .cv-sidebar-block { margin-bottom: 36px; }
+  .cv-sidebar-title { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .cv-skill-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .cv-skill-name { font-size: 12px; color: var(--cream-dim); font-family: 'DM Mono', monospace; min-width: 120px; }
+  .cv-skill-bar { flex: 1; height: 2px; background: rgba(0,201,167,0.12); }
+  .cv-skill-fill { height: 100%; background: var(--teal); }
+  .cv-edu-entry { margin-bottom: 16px; }
+  .cv-edu-degree { font-size: 14px; font-weight: 500; color: var(--cream); }
+  .cv-edu-school { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .cv-edu-year   { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); margin-top: 2px; }
+  .cv-cert-item { font-size: 13px; color: var(--cream-dim); padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 8px; }
+  .cv-cert-item::before { content: ''; width: 4px; height: 4px; background: var(--teal); flex-shrink: 0; }
+  .cv-cert-item:last-child { border-bottom: none; }
+
+  /* CONTACT */
+  #contact { background: var(--navy-mid); border-top: 1px solid var(--border); text-align: center; }
+  .contact-inner { max-width: 600px; margin: 0 auto; }
+  .contact-desc { font-size: 16px; line-height: 1.7; color: var(--cream-dim); margin: 20px 0 48px; font-weight: 300; }
+  .contact-links { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .contact-link { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border: 1px solid var(--border); color: var(--cream-dim); text-decoration: none; font-size: 13px; font-family: 'DM Mono', monospace; letter-spacing: 0.08em; transition: all 0.2s; }
+  .contact-link:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,201,167,0.05); }
+
+  /* FOOTER */
+  footer { padding: 28px 60px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); }
+  footer p { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    nav { padding: 16px 24px; }
+    section { padding: 80px 24px; }
+    .hero { padding: 100px 24px 60px; }
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-photo-wrap { order: -1; display: flex; justify-content: center; }
+    .hero-photo-frame { width: 200px; height: 230px; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .projects-grid { grid-template-columns: 1fr; }
+
+    .hero-stats { gap: 28px; flex-wrap: wrap; }
+    .exp-strip { grid-template-columns: 1fr; }
+    .cv-body { grid-template-columns: 1fr; }
+    footer { padding: 24px; flex-direction: column; gap: 12px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">AC / Portfolio</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-tag">AI Evaluation &amp; Data Analytics · Nairobi, Kenya</div>
+      <h1 class="hero-name">Abigael<br><em>Cherotich</em></h1>
+      <p class="hero-title">Economist · BI Analyst · AI Evaluator</p>
+      <p class="hero-desc">Five years building data pipelines, dashboards, and research frameworks for the World Bank, IFC, Coca-Cola, and Safaricom — and now applying that same rigour to AI. I evaluate models the way I evaluated client data: against ground truth, with documented evidence, and zero tolerance for outputs that only look correct.</p>
+      <div class="hero-stats">
+        <div><div class="stat-num">5+</div><div class="stat-label">Years experience</div></div>
+        <div><div class="stat-num">5</div><div class="stat-label">AI eval projects</div></div>
+        <div><div class="stat-num">50+</div><div class="stat-label">Dashboards delivered</div></div>
+        <div><div class="stat-num">96.7%</div><div class="stat-label">LLM eval pass rate</div></div>
+      </div>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Projects &#8595;</a>
+        <a href="abigael_cherotich_cv.pdf" class="btn-cv" download>&#8595; Download CV</a>
+        <a href="#contact" class="btn-secondary">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-frame">
+        <img src="images/profile/may.jpg" alt="Abigael Cherotich" class="hero-photo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title">Analyst turned<br><em>evaluation engineer</em></h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>At <strong>Dalberg Research</strong>, I built multi-stage Python pipelines that caught systematic metric inflation in client data before it reached the World Bank and IFC — the kind of error that doesn't surface until it's expensive. At <strong>NielsenIQ</strong>, I designed the validation logic that ensured Coca-Cola and Safaricom were making decisions from clean numbers, not artefacts of bad data processing.</p>
+      <p>When AI systems started appearing in production workflows, I recognised immediately that <strong>what I had been doing for years was evaluation</strong> — comparing outputs against ground truth, scoring against rubrics, documenting failure modes. The skills transferred directly. The stakes are the same: a wrong output that looks plausible is the most dangerous kind.</p>
+      <p>I now design benchmark tasks and evaluation pipelines for <strong>US-based AI research teams</strong>, working remotely from Nairobi. My edge is specific: I bring <strong>economics and research methodology depth</strong> that catches the failure modes pure engineers miss — models that get the maths right but use the wrong framework for the question being asked.</p>
+    </div>
+    <div class="reveal">
+      <div class="skills-grid">
+        <div class="skill-item"><span class="skill-dot"></span>Python / pandas</div>
+        <div class="skill-item"><span class="skill-dot"></span>SQL</div>
+        <div class="skill-item"><span class="skill-dot"></span>Eval pipelines</div>
+        <div class="skill-item"><span class="skill-dot"></span>pytest</div>
+        <div class="skill-item"><span class="skill-dot"></span>Benchmark design</div>
+        <div class="skill-item"><span class="skill-dot"></span>RLHF / SFT data</div>
+        <div class="skill-item"><span class="skill-dot"></span>sklearn metrics</div>
+        <div class="skill-item"><span class="skill-dot"></span>Docker / Git</div>
+        <div class="skill-item"><span class="skill-dot"></span>Power BI</div>
+        <div class="skill-item"><span class="skill-dot"></span>R / STATA</div>
+        <div class="skill-item"><span class="skill-dot"></span>A/B testing</div>
+        <div class="skill-item"><span class="skill-dot"></span>JSON reporting</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <h2 class="section-title">Work across<br><em>two disciplines</em></h2>
+  <div class="filter-bar-wrap">
+    <span class="filter-label">&#9638; Filter by</span>
+    <div class="filter-pills">
+      <button class="filter-pill active-all" onclick="filterProjects('all',this)">
+        <span class="pill-dot"></span>All projects<span class="pill-count">11</span>
+      </button>
+      <button class="filter-pill" onclick="filterProjects('ai',this)">
+        <span class="pill-dot"></span>AI Evaluation<span class="pill-count">5</span>
+      </button>
+      <button class="filter-pill" onclick="filterProjects('data',this)">
+        <span class="pill-dot"></span>Data Analyst<span class="pill-count">6</span>
+      </button>
+    </div>
+    <span class="filter-hint">Click to filter &#x2192;</span>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+    <div class="grid-section-header first-header" id="header-ai">
+      <span class="gh-label gh-label-ai">AI Evaluation</span>
+      <span class="gh-line gh-line-ai"></span>
+      <span class="gh-count">5 projects</span>
+    </div>
+
+    <!-- P01 -->
+    <div class="project-card reveal" data-cat="ai">
+      <div class="project-body">
+        <span class="card-category-badge badge-ai"><span class="badge-dot"></span>AI Evaluation</span>
+        <div class="project-number">AI TRANSFORMATION · WORKFLOW REDESIGN · COMPLIANCE</div>
+        <h3 class="project-title">AI Workflow Transformation</h3>
+        <p class="project-desc">A hands-on account of how I identified a broken data process at Dalberg Research and rebuilt it end-to-end using Python automation and AI-assisted validation. Covers the real findings — including systematic metric inflation in client data — plus the compliance audit trail, before/after workflow comparison, and what I learned about deploying AI tools in enterprise settings.</p>
+        <div class="project-tags"><span class="tag">Workflow redesign</span><span class="tag">Python pipeline</span><span class="tag">Audit trail</span><span class="tag">Compliance</span><span class="tag">Enterprise AI</span></div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/profile/AI.png" alt="AI Workflow Transformation">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div><div class="project-image-tag">Project 01</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-links-row">
+          <a href="https://abigael-hub.github.io/AI-Workflow-Transformation/ai_workflow_transformation.html" class="proj-link primary" target="_blank">&#x2197; View on GitHub</a>
+          <a href="https://abigael-hub.github.io/AI-Workflow-Transformation/ai_workflow_transformation.html" class="proj-link" target="_blank">&#x1F4D3; Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P02 -->
+    <div class="project-card reveal" data-cat="ai">
+      <div class="project-body">
+        <span class="card-category-badge badge-ai"><span class="badge-dot"></span>AI Evaluation</span>
+        <div class="project-number">ML EVALUATION · PYTHON · SKLEARN · JUPYTER</div>
+        <h3 class="project-title">ML Output Evaluator</h3>
+        <p class="project-desc">Built to answer two clinical questions from breast cancer data: is this tumour malignant or benign, and how large is it likely to be? The project computes classification and regression metrics, investigates failure modes, and runs a threshold sensitivity analysis — finding that lowering the decision threshold from 0.5 to 0.35 recovers missed malignant cases with minimal increase in false alarms.</p>
+        <div class="project-tags"><span class="tag">sklearn</span><span class="tag">Classification</span><span class="tag">Regression</span><span class="tag">Threshold analysis</span><span class="tag">Jupyter</span></div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/profile/regression_evaluation.png" alt="ML Output Evaluator">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div><div class="project-image-tag">Project 02</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-results">
+          <div><div class="result-num">0.9976</div><div class="result-label">AUC-ROC score</div></div>
+          <div><div class="result-num">0.9996</div><div class="result-label">Regression R&#178;</div></div>
+          <div><div class="result-num">6</div><div class="result-label">Eval steps</div></div>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Abigael-hub/ml-output-evaluator/blob/main/README.md" class="proj-link primary" target="_blank">&#x2197; View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/ml-output-evaluator/blob/main/ml_output_evaluator%20(2).ipynb" class="proj-link" target="_blank">&#x1F4D3; Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P03 -->
+    <div class="project-card reveal" data-cat="ai">
+      <div class="project-body">
+        <span class="card-category-badge badge-ai"><span class="badge-dot"></span>AI Evaluation</span>
+        <div class="project-number">DATA VALIDATION · PYTHON MODULE · PYTEST · JSON REPORTS</div>
+        <h3 class="project-title">Data Quality Validator</h3>
+        <p class="project-desc">Production datasets are almost never clean. This module runs six automated checks on any CSV — nulls, duplicates, schema mismatches, value range violations, statistical outliers, and category inconsistencies. Applied to a synthetic clinical dataset it surfaced five high-severity issues including a 999mm tumour entry and inconsistent diagnosis labelling, producing a structured JSON report with severity ratings and fix recommendations.</p>
+        <div class="project-tags"><span class="tag">Python module</span><span class="tag">pytest</span><span class="tag">Pipeline design</span><span class="tag">JSON reports</span><span class="tag">Data validation</span></div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/profile/quality_report.png" alt="Data Quality Validator">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div><div class="project-image-tag">Project 03</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-results">
+          <div><div class="result-num">6</div><div class="result-label">Check functions</div></div>
+          <div><div class="result-num">9</div><div class="result-label">pytest tests</div></div>
+          <div><div class="result-num">5</div><div class="result-label">Issue types caught</div></div>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Abigael-hub/data-quality-validator/blob/main/README.md" class="proj-link primary" target="_blank">&#x2197; View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/data-quality-validator/blob/main/data_quality_validator.ipynb" class="proj-link" target="_blank">&#x1F4D3; Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P04 -->
+    <div class="project-card reveal" data-cat="ai">
+      <div class="project-body">
+        <span class="card-category-badge badge-ai"><span class="badge-dot"></span>AI Evaluation</span>
+        <div class="project-number">BENCHMARK DESIGN · SCORING RUBRICS · ECONOMICS</div>
+        <h3 class="project-title">Benchmark Task Suite</h3>
+        <p class="project-desc">Designed 20 structured tasks to test whether an AI system can perform real-world analytical work — computing statistics, cleaning messy data, interpreting economic indicators, and evaluating other AI outputs. Each task has a defined input, expected output, difficulty rating, and an automated Python scoring function that awards partial credit.</p>
+        <div class="project-tags"><span class="tag">Benchmark design</span><span class="tag">Scoring functions</span><span class="tag">Difficulty calibration</span><span class="tag">Economics domain</span><span class="tag">Partial credit rubrics</span></div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/profile/benchmark_results.png" alt="Benchmark Task Suite">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div><div class="project-image-tag">Project 04</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-results">
+          <div><div class="result-num">20</div><div class="result-label">Benchmark tasks</div></div>
+          <div><div class="result-num">4</div><div class="result-label">Task categories</div></div>
+          <div><div class="result-num">100%</div><div class="result-label">Auto-scored</div></div>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Abigael-hub/benchmark-task-suite/blob/main/README.md" class="proj-link primary" target="_blank">&#x2197; View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/benchmark-task-suite/blob/main/benchmark_task_suite.ipynb" class="proj-link" target="_blank">&#x1F4D3; Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P05 -->
+    <div class="project-card reveal" data-cat="ai">
+      <div class="project-body">
+        <span class="card-category-badge badge-ai"><span class="badge-dot"></span>AI Evaluation</span>
+        <div class="project-number">LLM EVALUATION · OPENAI API · FAILURE MODE ANALYSIS</div>
+        <h3 class="project-title">LLM Output Analyser</h3>
+        <p class="project-desc">Evaluated GPT-3.5-turbo across 30 questions in economics, data analysis, and research methodology — asking not just whether answers were correct but how they failed when they fell short. Key finding: the model scored perfectly on accuracy and clarity but only 0.577 on concept coverage — it answers correctly without always using the precise technical vocabulary the domain requires.</p>
+        <div class="project-tags"><span class="tag">LLM evaluation</span><span class="tag">Output scoring</span><span class="tag">Failure mode taxonomy</span><span class="tag">Rubric design</span><span class="tag">JSON reporting</span></div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/profile/llm_evaluation_results.png" alt="LLM Output Analyser">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div><div class="project-image-tag">Project 05</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-results">
+          <div><div class="result-num">96.7%</div><div class="result-label">Pass rate</div></div>
+          <div><div class="result-num">30</div><div class="result-label">Questions eval'd</div></div>
+          <div><div class="result-num">4</div><div class="result-label">Rubric dimensions</div></div>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Abigael-hub/llm-eval-analysis/blob/main/README.md" class="proj-link primary" target="_blank">&#x2197; View on GitHub</a>
+          <a href="https://github.com/Abigael-hub/llm-eval-analysis/blob/main/llm_output_analyser_(1).ipynb" class="proj-link" target="_blank">&#x1F4D3; Open Notebook</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-section-header" id="header-data">
+      <span class="gh-label gh-label-data">Data Analyst</span>
+      <span class="gh-line gh-line-data"></span>
+      <span class="gh-count">6 projects</span>
+    </div>
+
+    <!-- P06 — Customer Segmentation & Clustering -->
+    <div class="project-card reveal" data-cat="data">
+      <div class="project-body">
+        <span class="card-category-badge badge-data"><span class="badge-dot"></span>Data Analyst</span>
+        <div class="project-number">STATISTICAL ANALYSIS · CLUSTERING · PYTHON · DATA MINING</div>
+        <h3 class="project-title">Customer Segmentation &amp; Clustering</h3>
+        <p class="project-desc">Implemented K-means clustering to partition a mall's customer base by age, gender, income, and expenditure patterns. Segmentation strategies were developed for each cluster to tailor marketing initiatives and mall amenities — aligning services with the distinctive preferences and behaviours of each identified group to drive customer satisfaction and business growth.</p>
+        <div class="project-tags">
+          <span class="tag tag-data">K-means clustering</span>
+          <span class="tag tag-data">Python</span>
+          <span class="tag tag-data">Customer segmentation</span>
+          <span class="tag tag-data">Data mining</span>
+          <span class="tag tag-data">Statistical analysis</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/projects/clustering.png" alt="Customer Segmentation &amp; Clustering">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div>
+        <div class="project-image-tag">Project 06</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-links-row">
+          <a href="images/projects/Python Customer segmentation(Clustering).pdf" class="proj-link primary" target="_blank">&#x2197; View Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P07 — Customer Churn Prediction -->
+    <div class="project-card reveal" data-cat="data">
+      <div class="project-body">
+        <span class="card-category-badge badge-data"><span class="badge-dot"></span>Data Analyst</span>
+        <div class="project-number">PREDICTIVE MODELLING · CHURN ANALYSIS · FORECASTING</div>
+        <h3 class="project-title">Customer Churn Prediction</h3>
+        <p class="project-desc">Predicted churn risk for an electricity company by modelling customer behaviour and usage characteristics that signal cancellation. Churn is defined as cancellations within a period divided by active customers at the start — and identifying high-risk customers early enables targeted retention action before revenue is lost. The model surfaces the key behavioural signals that precede churn.</p>
+        <div class="project-tags">
+          <span class="tag tag-data">Predictive modelling</span>
+          <span class="tag tag-data">Churn analysis</span>
+          <span class="tag tag-data">Forecasting</span>
+          <span class="tag tag-data">Python</span>
+          <span class="tag tag-data">Retention strategy</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/projects/Analytics%20background.png" alt="Customer Churn Prediction">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div>
+        <div class="project-image-tag">Project 07</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-links-row">
+          <a href="images/projects/DATA ANALYTICS-Document.pdf" class="proj-link primary" target="_blank">&#x2197; View Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P08 — Sales Funnel Analysis -->
+    <div class="project-card reveal" data-cat="data">
+      <div class="project-body">
+        <span class="card-category-badge badge-data"><span class="badge-dot"></span>Data Analyst</span>
+        <div class="project-number">DIGITAL ANALYTICS · FUNNEL ANALYSIS · CROSS-FUNCTIONAL INSIGHTS</div>
+        <h3 class="project-title">Sales Funnel Analysis</h3>
+        <p class="project-desc">Conducted an extensive sales funnel analysis for a webshop to pinpoint where customers drop out during the ordering process and whether distinct customer types behave differently at each stage. The analysis identified optimisation opportunities that could increase turnover by up to 5.8% — packaged as a strategic presentation to business stakeholders with clear, actionable recommendations at each funnel stage.</p>
+        <div class="project-tags">
+          <span class="tag tag-data">Funnel analysis</span>
+          <span class="tag tag-data">Digital analytics</span>
+          <span class="tag tag-data">Business insights</span>
+          <span class="tag tag-data">Strategic thinking</span>
+          <span class="tag tag-data">Stakeholder reporting</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/projects/Data%20Analysis%20Background.png" alt="Sales Funnel Analysis">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div>
+        <div class="project-image-tag">Project 08</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-links-row">
+          <a href="images/projects/Data AnalysisV1.docx" class="proj-link primary" target="_blank">&#x2197; View Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P09 — Ads Performance Dashboard -->
+    <div class="project-card reveal" data-cat="data">
+      <div class="project-body">
+        <span class="card-category-badge badge-data"><span class="badge-dot"></span>Data Analyst</span>
+        <div class="project-number">DIGITAL ANALYTICS · DASHBOARDING · LOOKER STUDIO · MEASUREMENT</div>
+        <h3 class="project-title">Ads Performance Dashboard</h3>
+        <p class="project-desc">Built an interactive Looker Studio dashboard presenting key performance metrics across Google Ads, Facebook, and Instagram campaigns. Displays KPIs including Impressions, Clicks, Conversions, Spend, Revenue, CTR, CPC, CPA, ROAS, CPM, and Conversion Rate — with time series charts and comparison indicators that enable marketing teams and ad managers to track trends and make data-driven decisions quickly.</p>
+        <div class="project-tags">
+          <span class="tag tag-data">Looker Studio</span>
+          <span class="tag tag-data">Digital analytics</span>
+          <span class="tag tag-data">Dashboarding</span>
+          <span class="tag tag-data">ROAS / CPA</span>
+          <span class="tag tag-data">Marketing KPIs</span>
+          <span class="tag tag-data">Measurement frameworks</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/projects/ads%20dashboard.png" alt="Ads Performance Dashboard">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div>
+        <div class="project-image-tag">Project 09</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-links-row">
+          <a href="https://lookerstudio.google.com/s/iCFVRKLUIcU" class="proj-link primary" target="_blank">&#x2197; View Dashboard</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P10 — Sales Performance Dashboard -->
+    <div class="project-card reveal" data-cat="data">
+      <div class="project-body">
+        <span class="card-category-badge badge-data"><span class="badge-dot"></span>Data Analyst</span>
+        <div class="project-number">DASHBOARDING · BUSINESS INSIGHTS · SALES ANALYTICS · LOOKER STUDIO</div>
+        <h3 class="project-title">Supermarket Sales Performance Dashboard</h3>
+        <p class="project-desc">Real-time sales performance dashboard tracking key financial health metrics for a supermarket chain. Monitors revenue performance, sales growth, and profitability across product categories and time periods — empowering the leadership team to drive strategic initiatives with precision. Built in Looker Studio with live data connections and executive-ready visual design.</p>
+        <div class="project-tags">
+          <span class="tag tag-data">Looker Studio</span>
+          <span class="tag tag-data">Sales analytics</span>
+          <span class="tag tag-data">Dashboarding</span>
+          <span class="tag tag-data">Business insights</span>
+          <span class="tag tag-data">Leadership reporting</span>
+        </div>
+      </div> 
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/projects/Tableau Dashboard -Restaurant performance dashboard.png" alt="Supermarket Sales Performance Dashboard">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div>
+        <div class="project-image-tag">Project 10</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-links-row">
+          <a href="https://lookerstudio.google.com/s/s_cxUXllOto" class="proj-link primary" target="_blank">&#x2197; View Dashboard</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- P11 — Revenue Performance Dashboard -->
+    <div class="project-card reveal" data-cat="data">
+      <div class="project-body">
+        <span class="card-category-badge badge-data"><span class="badge-dot"></span>Data Analyst</span>
+        <div class="project-number">REVENUE ANALYTICS · FORECASTING · DASHBOARDING · STRATEGIC INSIGHTS</div>
+        <h3 class="project-title">Revenue Performance Dashboard</h3>
+        <p class="project-desc">Financial health dashboard delivering real-time revenue insights to leadership teams. Tracks revenue growth trends, sales performance by segment, and profitability metrics — surfacing the analytical clarity needed to make swift, informed strategic decisions. Designed with business acumen at the forefront: every metric connects directly to a decision the leadership team needs to make.</p>
+        <div class="project-tags">
+          <span class="tag tag-data">Revenue analytics</span>
+          <span class="tag tag-data">Forecasting</span>
+          <span class="tag tag-data">Dashboarding</span>
+          <span class="tag tag-data">Strategic insights</span>
+          <span class="tag tag-data">Leadership reporting</span>
+        </div>
+      </div>
+      <div class="project-image">
+        <img onclick="openLightbox(this)" src="images/projects/Monthly%20Revenue%20perfomance%20dashboard.png" alt="Revenue Performance Dashboard">
+        <div class="project-image-overlay">
+        <span class="zoom-hint">&#x26F6; Click to zoom</span>
+      </div>
+        <div class="project-image-tag">Project 11</div>
+      </div>
+      <div class="project-footer">
+        <div class="project-links-row">
+          <a href="images/projects/Dashboard-documentv3.docx" class="proj-link primary" target="_blank">&#x2197; View Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE — compact strip -->
+<section id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Where I have<br><em>done the work</em></h2>
+  <div class="exp-strip reveal">
+
+    <div class="exp-tile">
+      <div class="exp-period">2023 — Present</div>
+      <div class="exp-role">AI Evaluation Specialist</div>
+      <div class="exp-company">Rebound Tech</div>
+      <div class="exp-clients">AI evaluation · Remote</div>
+      <div class="exp-location">&#x1F1FA;&#x1F1F8; United States</div>
+    </div>
+
+    <div class="exp-tile">
+      <div class="exp-period">Feb 2024 — Present</div>
+      <div class="exp-role">Data Analytics Executive</div>
+      <div class="exp-company">Dalberg Research</div>
+      <div class="exp-clients">IFC · World Bank · Palladium · Triggerise</div>
+    </div>
+
+    <div class="exp-tile">
+      <div class="exp-period">May 2021 — Jan 2024</div>
+      <div class="exp-role">Senior Research Executive</div>
+      <div class="exp-company">NielsenIQ</div>
+      <div class="exp-clients">Coca-Cola · SCB Bank · Safaricom · Vodacom</div>
+    </div>
+
+    <div class="exp-tile">
+      <div class="exp-period">Nov 2020 — Apr 2021</div>
+      <div class="exp-role">Research Analyst</div>
+      <div class="exp-company">Metropol Corporation</div>
+      <div class="exp-clients">NCBA · M-Shwari</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-label" style="justify-content:center">Contact</div>
+    <h2 class="section-title">Let's <em>work together</em></h2>
+    <p class="contact-desc">Open to AI evaluation engineering roles, RLHF specialist positions, and data analyst roles at AI companies. Remote-ready with PST overlap availability.</p>
+    <div class="contact-links">
+      <a href="mailto:abigaelcherotich867@gmail.com" class="contact-link">&#x2709; abigaelcherotich867@gmail.com</a>
+      <a href="https://linkedin.com/in/abigael-cherotich" class="contact-link" target="_blank">&#x2197; LinkedIn</a>
+      <a href="https://github.com/Abigael-hub" class="contact-link" target="_blank">&#x2197; GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&#169; 2026 Abigael Cherotich</p>
+  <p>AI Evaluation &amp; Data Analytics Portfolio</p>
+</footer>
+
+<script>
+function filterProjects(cat, btn) {
+  document.querySelectorAll('.filter-pill').forEach(function(b) { b.className = 'filter-pill'; });
+  if (cat==='all')  btn.classList.add('active-all');
+  if (cat==='ai')   btn.classList.add('active-ai');
+  if (cat==='data') btn.classList.add('active-data');
+  document.querySelectorAll('.project-card').forEach(function(card) {
+    card.classList.toggle('filtered-out', cat !== 'all' && card.dataset.cat !== cat);
+  });
+  var hAI = document.getElementById('header-ai');
+  var hDA = document.getElementById('header-data');
+  hAI.style.display = cat === 'all' ? '' : 'none';
+  hDA.style.display = cat === 'all' ? '' : 'none';
+}
+window.addEventListener('load', function() {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function() { entry.target.classList.add('visible'); }, i * 80);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+});
+function openLightbox(img) {
+  document.getElementById("lightbox-img").src = img.src;
+  document.getElementById("lightbox").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeLightbox();
+});
+
+</script>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&#x2715; Close</span>
+  <img id="lightbox-img" src="" alt="Project preview">
+</div>
+
+</body>
+</html>
