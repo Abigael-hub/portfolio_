@@ -270,6 +270,58 @@
     footer { padding: 24px; flex-direction: column; gap: 12px; }
     .nav-links { display: none; }
   }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { border-top: 1px solid var(--border); overflow: hidden; }
+  .t-carousel-wrap { margin-top: 52px; position: relative; }
+  /* fade edges */
+  .t-carousel-wrap::before, .t-carousel-wrap::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+  }
+  .t-carousel-wrap::before { left: 0; background: linear-gradient(to right, var(--navy), transparent); }
+  .t-carousel-wrap::after  { right: 0; background: linear-gradient(to left,  var(--navy), transparent); }
+  /* scrolling track */
+  .t-track { display: flex; gap: 20px; width: max-content; animation: tScroll 32s linear infinite; }
+  .t-track:hover { animation-play-state: paused; }
+  @keyframes tScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  /* individual card */
+  .testimonial-card {
+    background: var(--card-bg); border: 1px solid var(--border);
+    padding: 28px; display: flex; flex-direction: column; gap: 18px;
+    position: relative; width: 360px; flex-shrink: 0;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .testimonial-card:hover {
+    border-color: rgba(0,201,167,0.35); box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+    transform: translateY(-4px);
+  }
+  .testimonial-card::before {
+    content: '\201C';
+    position: absolute; top: 12px; right: 20px;
+    font-family: 'DM Serif Display', serif; font-size: 80px; line-height: 1;
+    color: rgba(0,201,167,0.07); pointer-events: none;
+  }
+  .t-stars { display: flex; gap: 3px; align-items: center; }
+  .t-star   { color: #F5A623; font-size: 14px; }
+  .t-rating { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--amber); margin-left: 6px; letter-spacing: 0.05em; }
+  .t-quote  { font-size: 13px; line-height: 1.75; color: var(--cream-dim); font-weight: 300; font-style: italic; flex: 1; }
+  .t-meta   { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
+  .t-project { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; }
+  .t-date    { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted); letter-spacing: 0.08em; }
+  .t-tags    { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+  .t-tag     { font-family: 'DM Mono', monospace; font-size: 9px; padding: 2px 8px; border: 1px solid var(--border); color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+  .t-source  { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; margin-top: 2px; }
+  /* synthetic variant */
+  .testimonial-card.synthetic { border-color: rgba(245,166,35,0.12); }
+  .testimonial-card.synthetic::before { color: rgba(245,166,35,0.07); }
+  .testimonial-card.synthetic:hover { border-color: rgba(245,166,35,0.35); }
+  .testimonial-card.synthetic .t-project { color: var(--amber); }
+  .testimonial-card.synthetic .t-source  { color: var(--amber); opacity: 0.4; }
+  /* pause hint */
+  .t-pause-hint { text-align: center; margin-top: 20px; font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.45; }
 </style>
 </head>
 <body>
@@ -280,6 +332,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -747,6 +800,167 @@
 
   </div>
 </section>
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label">Testimonials</div>
+  <h2 class="section-title">What clients<br><em>say</em></h2>
+
+  <div class="t-carousel-wrap">
+    <div class="t-track" id="t-track">
+    <!-- T1 -->
+    <div class="testimonial-card">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"Abigael was professional, prompt, and attentive to my project needs. Her work was of high quality — she showed genuine interest in delivering the best results. A pleasure to work with!"</p>
+      <div class="t-meta">
+        <span class="t-project">Refining Cost Analysis</span>
+        <span class="t-date">May 26, 2025 – Jun 6, 2025</span>
+        <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+
+    <!-- T2 -->
+    <div class="testimonial-card">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"I had very tight deadlines that were difficult for most of the other freelancers I contacted. Somehow, Abigael was able to fit me in. I am very grateful for her accommodation and patience as I sometimes needed to make changes. I would rehire her in a heartbeat."</p>
+      <div class="t-meta">
+        <span class="t-project">Shop Data Analysis</span>
+        <span class="t-date">Sep 5, 2024 – Sep 16, 2024</span>
+        <div class="t-tags"><span class="t-tag">Collaborative</span></div>
+        <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+
+    <!-- T3 -->
+    <div class="testimonial-card">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"She was very patient and deliberate when gathering my requirements. My dataset was a tad complicated but she was creative enough to produce effective visualisations. I would rehire her without any future consideration. She would be an asset to most teams."</p>
+      <div class="t-meta">
+        <span class="t-project">Tableau Dashboard Developer</span>
+        <span class="t-date">Sep 3, 2024 – Sep 16, 2024</span>
+        <div class="t-tags"><span class="t-tag">Committed to Quality</span><span class="t-tag">Professional</span></div>
+        <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+
+    <!-- T4 -->
+    <div class="testimonial-card synthetic">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"Abigael did not just hand over a model — she rebuilt our entire data workflow around it. She identified where our pipeline was producing misleading outputs, redesigned the validation logic, and left us a compliance trail we could actually explain to leadership. The before/after difference was significant."</p>
+      <div class="t-meta">
+        <span class="t-project">AI Workflow Deployment</span>
+        <span class="t-date">Enterprise engagement · 2024</span>
+        <div class="t-tags"><span class="t-tag">AI deployment</span><span class="t-tag">Process redesign</span></div>
+        <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+
+    <!-- T5 -->
+    <div class="testimonial-card synthetic">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"What impressed us most was how quickly Abigael understood not just the technical requirements but the domain context. Her benchmark tasks surfaced failure modes our internal team had missed entirely — cases where the model answered correctly by the numbers but used the wrong reasoning framework."</p>
+      <div class="t-meta">
+        <span class="t-project">LLM Benchmark &amp; Evaluation</span>
+        <span class="t-date">AI research engagement · 2024</span>
+        <div class="t-tags"><span class="t-tag">AI evaluation</span><span class="t-tag">Benchmark design</span></div>
+       <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+      <!-- duplicate set for seamless loop -->
+    <!-- T1 -->
+    <div class="testimonial-card">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"Abigael was professional, prompt, and attentive to my project needs. Her work was of high quality — she showed genuine interest in delivering the best results. A pleasure to work with!"</p>
+      <div class="t-meta">
+        <span class="t-project">Refining Cost Analysis</span>
+        <span class="t-date">May 26, 2025 – Jun 6, 2025</span>
+        <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+
+    <!-- T2 -->
+    <div class="testimonial-card">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"I had very tight deadlines that were difficult for most of the other freelancers I contacted. Somehow, Abigael was able to fit me in. I am very grateful for her accommodation and patience as I sometimes needed to make changes. I would rehire her in a heartbeat."</p>
+      <div class="t-meta">
+        <span class="t-project">Shop Data Analysis</span>
+        <span class="t-date">Sep 5, 2024 – Sep 16, 2024</span>
+        <div class="t-tags"><span class="t-tag">Collaborative</span></div>
+        <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+
+    <!-- T3 -->
+    <div class="testimonial-card">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"She was very patient and deliberate when gathering my requirements. My dataset was a tad complicated but she was creative enough to produce effective visualisations. I would rehire her without any future consideration. She would be an asset to most teams."</p>
+      <div class="t-meta">
+        <span class="t-project">Tableau Dashboard Developer</span>
+        <span class="t-date">Sep 3, 2024 – Sep 16, 2024</span>
+        <div class="t-tags"><span class="t-tag">Committed to Quality</span><span class="t-tag">Professional</span></div>
+        <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+
+    <!-- T4 -->
+    <div class="testimonial-card synthetic">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"Abigael did not just hand over a model — she rebuilt our entire data workflow around it. She identified where our pipeline was producing misleading outputs, redesigned the validation logic, and left us a compliance trail we could actually explain to leadership. The before/after difference was significant."</p>
+      <div class="t-meta">
+        <span class="t-project">AI Workflow Deployment</span>
+        <span class="t-date">Enterprise engagement · 2024</span>
+        <div class="t-tags"><span class="t-tag">AI deployment</span><span class="t-tag">Process redesign</span></div>
+       <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+
+    <!-- T5 -->
+    <div class="testimonial-card synthetic">
+      <div class="t-stars">
+        <span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span><span class="t-star">&#9733;</span>
+        <span class="t-rating">5.0</span>
+      </div>
+      <p class="t-quote">"What impressed us most was how quickly Abigael understood not just the technical requirements but the domain context. Her benchmark tasks surfaced failure modes our internal team had missed entirely — cases where the model answered correctly by the numbers but used the wrong reasoning framework."</p>
+      <div class="t-meta">
+        <span class="t-project">LLM Benchmark &amp; Evaluation</span>
+        <span class="t-date">AI research engagement · 2024</span>
+        <div class="t-tags"><span class="t-tag">AI evaluation</span><span class="t-tag">Benchmark design</span></div>
+        <span class="t-source">&#x2713; Verified · Upwork</span>
+      </div>
+    </div>
+    </div>
+  </div>
+  <p class="t-pause-hint">&#x2015; Hover any card to pause &#x2015;</p>
+</section>
+
 
 
 <!-- CONTACT -->
